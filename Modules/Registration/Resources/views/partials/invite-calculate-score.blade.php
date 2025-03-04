@@ -1,0 +1,1 @@
+Nhập mail của những người muốn tính điểm #{{ $id }}

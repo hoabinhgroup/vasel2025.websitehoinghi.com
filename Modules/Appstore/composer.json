@@ -1,0 +1,25 @@
+{
+    "name": "louis/appstore",
+    "description": "",
+    "authors": [
+        {
+            "name": "Louis",
+            "email": "louis.standbyme@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Appstore\\Providers\\AppstoreServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Appstore\\": ""
+        }
+    }
+}

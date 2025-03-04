@@ -1,0 +1,25 @@
+{
+    "name": "louis/seo",
+    "description": "",
+    "authors": [
+        {
+            "name": "Tuấn Louis",
+            "email": "louis.standbyme@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Seo\\Providers\\SeoServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Seo\\": ""
+        }
+    }
+}

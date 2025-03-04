@@ -1,0 +1,16 @@
+{
+    "name": "Slug",
+    "alias": "slug",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 5,
+    "providers": [
+        "Modules\\Slug\\Providers\\SlugServiceProvider"
+    ],
+    "aliases": {
+	     "Slug": "Modules\\Slug\\Facades\\SlugHelperFacade" 
+    },
+    "files": [],
+    "requires": []
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Notification",
+    "alias": "notification",
+    "author": "Tu\u1ea5n Louis",
+    "email": "louis.standbyme@gmail.com",
+    "version": "1.5",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 15,
+    "providers": [
+        "Modules\\Notification\\Providers\\NotificationServiceProvider"
+    ],
+    "aliases": [],
+    "files": [],
+    "requires": []
+}

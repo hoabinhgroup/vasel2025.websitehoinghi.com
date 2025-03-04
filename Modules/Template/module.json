@@ -1,0 +1,16 @@
+{
+    "name": "Template",
+    "alias": "template",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 8,
+    "providers": [
+        "Modules\\Template\\Providers\\TemplateServiceProvider"
+    ],
+    "aliases": {
+	     "Template": "Modules\\Template\\Facades\\TemplateFacade" 
+    },
+    "files": [],
+    "requires": []
+}

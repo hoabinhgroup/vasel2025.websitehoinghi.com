@@ -1,0 +1,17 @@
+{
+    "name": "Registration",
+    "alias": "registration",
+    "author": "Tuấn Louis",
+    "email": "louis.standbyme@gmail.com",
+    "version": "1.0",
+    "description": "",
+    "keywords": [],
+    "active": 0,
+    "order": 0,
+    "providers": [
+        "Modules\\Registration\\Providers\\RegistrationServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

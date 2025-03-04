@@ -1,0 +1,14 @@
+{
+    "name": "Appstore",
+    "alias": "appstore",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Appstore\\Providers\\AppstoreServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

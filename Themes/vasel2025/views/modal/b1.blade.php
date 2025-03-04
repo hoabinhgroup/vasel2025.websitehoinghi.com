@@ -1,0 +1,2 @@
+<h1>View Bio</h1>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, accusantium ipsam accusamus veritatis id ratione neque ex optio in fuga dignissimos quis minus tenetur eligendi expedita, dolor sit magnam voluptate?

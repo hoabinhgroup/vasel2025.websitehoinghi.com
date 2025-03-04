@@ -1,0 +1,16 @@
+{
+    "name": "Payment",
+    "alias": "payment",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 12,
+    "providers": [
+        "Modules\\Payment\\Providers\\PaymentServiceProvider"
+    ],
+    "aliases": {
+        "PaymentMethods": "Modules\\Payment\\Facades\\PaymentMethodsFacade"
+    },
+    "files": [],
+    "requires": []
+}

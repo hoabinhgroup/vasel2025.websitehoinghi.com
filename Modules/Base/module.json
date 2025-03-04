@@ -1,0 +1,18 @@
+{
+  "name": "Base",
+  "alias": "base",
+  "description": "",
+  "keywords": [],
+  "active": 1,
+  "order": 0,
+  "providers": ["Modules\\Base\\Providers\\BaseServiceProvider"],
+  "aliases": {
+    "Slim": "Modules\\Base\\Facades\\SlimFacade",
+    "MacroableModels": "Modules\\Base\\Facades\\MacroableModelsFacade",
+    "BaseHelper": "Modules\\Base\\Facades\\BaseHelperFacade",
+    "MetaBox": "Modules\\Base\\Facades\\MetaBoxFacade",
+    "Breadcrumbs": "Modules\\Base\\Facades\\BreadcrumbsFacade"
+  },
+  "files": [],
+  "requires": []
+}

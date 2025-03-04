@@ -1,0 +1,9 @@
+<?php
+
+if (!defined('{NAME}_NAME')) {
+    define('{NAME}_NAME', '{-name}');
+}
+
+if (!defined('{NAME}_SCREEN')) {
+    define('{NAME}_SCREEN', '{-name}');
+}

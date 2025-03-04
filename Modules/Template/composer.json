@@ -1,0 +1,25 @@
+{
+    "name": "louis/template",
+    "description": "",
+    "authors": [
+        {
+            "name": "Louis",
+            "email": "louis.standbyme@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Template\\Providers\\TemplateServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Template\\": ""
+        }
+    }
+}

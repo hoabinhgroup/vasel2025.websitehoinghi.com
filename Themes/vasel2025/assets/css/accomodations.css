@@ -1,0 +1,45 @@
+:root {
+	--primary-accomodation: #204d99;
+}
+
+h1 span {
+	font-size: 24px !important;
+}
+
+b,
+strong {
+	font-weight: 700;
+}
+
+h4 em {
+	line-height: 1.4rem;
+}
+
+table tr:first-child td {
+	padding: 5px 8px;
+}
+
+table tr:not(:first-child) td:nth-child(2) span {
+	color: var(--primary-accomodation) !important;
+}
+
+table tr:not(:first-child) td:nth-child(3) span {
+	color: red !important;
+}
+
+table tr:not(:first-child) td:nth-child(4) em,
+table tr:not(:first-child) td:nth-child(4) span {
+	color: #833C0B !important;
+	font-weight: 700;
+	font-size: 14px !important;
+	line-height: 1.4rem !important;
+}
+
+table tr td {
+	border-color: #000 !important;
+}
+
+table tbody tr:first-child,
+table tbody tr:first-child td span {
+	color: #fff !important;
+}

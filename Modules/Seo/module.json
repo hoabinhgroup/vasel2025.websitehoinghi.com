@@ -1,0 +1,19 @@
+{
+    "name": "Seo",
+    "alias": "seo",
+    "author": "Tu\u1ea5n Louis",
+    "email": "louis.standbyme@gmail.com",
+    "version": "1.0",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Seo\\Providers\\SeoServiceProvider"
+    ],
+    "aliases": {
+        "SeoHelper": "Modules\\Seo\\Facades\\SeoHelperFacade"
+    },
+    "files": [],
+    "requires": []
+}

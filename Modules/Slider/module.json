@@ -1,0 +1,17 @@
+{
+    "name": "Slider",
+    "alias": "slider",
+    "author": "Tu\u1ea5n Louis",
+    "email": "louis.standbyme@gmail.com",
+    "version": "1.0",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Slider\\Providers\\SliderServiceProvider"
+    ],
+    "aliases": [],
+    "files": [],
+    "requires": []
+}

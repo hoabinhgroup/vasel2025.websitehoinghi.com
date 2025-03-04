@@ -1,0 +1,80 @@
+name: Deploy to Vultr
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install SSH key
+      uses: webfactory/ssh-agent@v0.6.0
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    # Copy code to Vultr server by Louis
+    - name: Copy files to Vultr server
+      run: |
+        ssh -o StrictHostKeyChecking=no root@139.180.147.225 << 'EOF'
+          cd /www/wwwroot/vasel2025.websitehoinghi.com
+
+          export COMPOSER_ALLOW_SUPERUSER=1
+          
+          if [ ! -d ".git" ]; then
+            git init
+            git remote add origin git@github.com:hoabinhgroup/vasel2025.websitehoinghi.com.git
+            git pull origin main
+          else
+            git pull origin main
+          fi
+
+          # Kiểm tra nếu chưa có file .env thì tạo và ghi đè các biến từ GitHub Secrets
+          if [ ! -f .env ]; then
+            cp .env.example .env &&
+            sed -i "s|^APP_KEY=.*|APP_KEY=${{ secrets.APP_KEY }}|g" .env &&
+            sed -i "s|^# DB_CONNECTION=.*|DB_CONNECTION=${{ secrets.DB_CONNECTION }}|g; s|^DB_CONNECTION=.*|DB_CONNECTION=${{ secrets.DB_CONNECTION }}|g" .env &&
+            sed -i "s|^# DB_HOST=.*|DB_HOST=${{ secrets.DB_HOST }}|g; s|^DB_HOST=.*|DB_HOST=${{ secrets.DB_HOST }}|g" .env &&
+            sed -i "s|^# DB_PORT=.*|DB_PORT=${{ secrets.DB_PORT }}|g; s|^DB_PORT=.*|DB_PORT=${{ secrets.DB_PORT }}|g" .env &&
+            sed -i "s|^# DB_DATABASE=.*|DB_DATABASE=${{ secrets.DB_DATABASE }}|g; s|^DB_DATABASE=.*|DB_DATABASE=${{ secrets.DB_DATABASE }}|g" .env &&
+            sed -i "s|^# DB_USERNAME=.*|DB_USERNAME=${{ secrets.DB_USERNAME }}|g; s|^DB_USERNAME=.*|DB_USERNAME=${{ secrets.DB_USERNAME }}|g" .env &&
+            sed -i "s|^# DB_PASSWORD=.*|DB_PASSWORD=${{ secrets.DB_PASSWORD }}|g; s|^DB_PASSWORD=.*|DB_PASSWORD=${{ secrets.DB_PASSWORD }}|g" .env
+          fi
+          # php74 artisan storage:link
+          if [ ! -d "storage" ]; then
+            echo "Creating storage directories..." &&
+            mkdir -p storage/app storage/framework/cache storage/framework/sessions storage/framework/views storage/logs &&
+            chmod -R 775 storage bootstrap/cache &&
+            sudo chown -R www:www storage bootstrap/cache;
+          else
+            echo "Checking and creating missing storage subdirectories...";
+            [ ! -d "storage/app" ] && mkdir -p storage/app;
+            [ ! -d "storage/framework/cache" ] && mkdir -p storage/framework/cache;
+            [ ! -d "storage/framework/sessions" ] && mkdir -p storage/framework/sessions;
+            [ ! -d "storage/framework/views" ] && mkdir -p storage/framework/views;
+            [ ! -d "storage/logs" ] && mkdir -p storage/logs;
+            chmod -R 775 storage bootstrap/cache &&
+            sudo chown -R www:www storage bootstrap/cache;
+          fi
+          if [ ! -d vendor ]; then
+            if [ -L public/storage ]; then
+              echo "Removing existing storage link....."
+              rm public/storage
+            fi
+            if [ -L public/Themes ]; then
+              echo "Removing existing themes link..."
+              rm -rf public/Themes
+            fi
+            php74 /usr/bin/composer install --ignore-platform-reqs --no-dev --optimize-autoloader
+            sudo chown -R www:www storage
+          fi
+            curl -s -X POST https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage \
+            -d chat_id=${{ secrets.TELEGRAM_CHAT_ID }} \
+            -d text="📢 Dự án: ${{ github.repository }} - Code đã được deploy lên nhánh main bởi ${{ github.actor }}. Commit message: ${{ github.event.head_commit.message }}"
+        EOF
+        

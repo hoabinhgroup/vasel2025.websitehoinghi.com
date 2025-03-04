@@ -1,0 +1,17 @@
+{
+    "name": "Api",
+    "alias": "api",
+    "author": "Tuấn Louis",
+    "email": "louis.standbyme@gmail.com",
+    "version": "1.0",
+    "description": "",
+    "keywords": [],
+    "active": 0,
+    "order": 0,
+    "providers": [
+        "Modules\\Api\\Providers\\ApiServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

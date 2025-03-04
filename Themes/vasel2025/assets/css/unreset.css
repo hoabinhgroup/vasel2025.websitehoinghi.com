@@ -1,0 +1,124 @@
+@charset "utf-8";
+
+/**
+ * [unreset.css]
+ *
+ * 게시판 상세페이지 에디터 편집내용 부분을 위한 CSS
+ * author eosj.works@m2community.co.kr
+ * version 1.0.1
+ * built in 2015.08.07
+ */
+
+/* .unreset {font:9pt/1.5em sans-serif;}
+.unreset pre, .unreset code, .unreset tt {font:1em/1.5em 'Andale Mono', 'Lucida Console', monospace;}
+.unreset h1, .unreset h2, .unreset h3, .unreset h4, .unreset h5, .unreset h6, .unreset b, .unreset strong {font-weight:bold;}
+.unreset em, .unreset i, .unreset dfn {font-style:italic;}
+.unreset dfn {font-weight:bold;}
+.unreset p, .unreset code, .unreset pre, .unreset kbd {margin:0 0 1.5em 0;}
+.unreset blockquote {margin:0 1.5em 1.5em 1.5em;}
+.unreset cite {font-style: italic;}
+.unreset li ul,
+.unreset li ol {margin:0 1.5em;}
+.unreset ul, .unreset ol {margin:0 1.5em 1.5em 1.5em;}
+.unreset ul {list-style-type:disc;}
+.unreset ol {list-style-type:decimal;}
+.unreset ol ol {list-style: upper-alpha;}
+.unreset ol ol ol {list-style: lower-roman;}
+.unreset ol ol ol ol {list-style: lower-alpha;}
+.unreset dl {margin:0 0 1.5em 0;}
+.unreset dl dt {font-weight:bold;}
+.unreset dd {margin-left:1.5em;}
+.unreset table {margin-bottom:1.4em; width:100%;}
+.unreset th {font-weight:bold;}
+.unreset th, .unreset td, .unreset caption {padding:4px 10px 4px 5px;}
+.unreset tfoot {font-style:italic;}
+.unreset sup, .unreset sub {line-height:0;}
+.unreset abbr, .unreset acronym {border-bottom: 1px dotted;}
+.unreset address {margin:0 0 1.5em; font-style:italic;}
+.unreset del {text-decoration:line-through;}
+.unreset pre {margin:1.5em 0; white-space:pre;}
+.unreset img {max-width: 100%;}
+ */
+
+.unreset {font-size:12px; font-family:Verdana, Arial, Helvetica, sans-serif; font-style:normal; font-weight:normal; color:#000;}
+.unreset p {margin:3px 0 6px 0;}
+.unreset span, .unreset div {text-align: left;}
+.unreset h1, .unreset h2, .unreset h3, .unreset h4, .unreset h5, .unreset h6 {margin:15px 0 6px 0; font-weight:bold;}
+.unreset h1 {font-size:20px;}
+.unreset h2 {font-size:18px;}
+.unreset h3 {font-size:16px;}
+.unreset h4 {font-size:14px;}
+.unreset h5, .unreset h6 {font-size:12px; font-weight:normal; font-style:italic;}
+.unreset caption {font-style:italic}
+.unreset a:link {text-decoration:none;color:#3300ff;}
+.unreset a:visited {text-decoration:none;color:#cc33cc}
+.unreset a:active {text-decoration:none;color:#0099ff;}
+.unreset a:focus, .unreset a:hover {text-decoration:underline;color:#f00;}
+.unreset hr {color:#000;background:#fff;height:1px;border-style:solid;border-width:1px 0 0 0;border-color:#000;}
+.unreset ul, .unreset ol, .unreset dl {margin:12px 0;}
+.unreset ul li, .unreset ol li {/* margin:0 0 6px 24px; */list-style-position:outside;}
+.unreset ul li {list-style-type:disc;}
+.unreset ol li {list-style-image:none;list-style-type:decimal;}
+.unreset ul {list-style-type:disc;}
+.unreset ol {list-style-type:decimal;}
+.unreset ol ol {list-style: upper-alpha;}
+.unreset ol ol ol {list-style: lower-roman;}
+.unreset ol ol ol ol {list-style: lower-alpha;}
+.unreset dl dt {list-style-type:disc;margin:0;list-style-position:outside;font-weight:bold;}
+.unreset dl dd {margin:0 0 12px 12px;list-style-image:none;list-style-type:none;}
+.unreset address {margin:6px 0;font-size:12px;}
+.unreset b, .unreset strong {font-weight:bold}
+.unreset em, .unreset i, .unreset cite, .unreset dfn {font-style:italic;}
+.unreset cite {margin:0 0 6px 24px;}
+.unreset abbr, .unreset acronym {letter-spacing:2px;text-transform:uppercase;}
+.unreset abbr, .unreset acronym, .unreset dfn {border-bottom:1px solid #ccc;cursor:help;}
+.unreset blockquote {margin:6px 0 6px 24px;font-style:italic;font-family:Georgia, "Times New Roman", Times, serif;font-size:16px;line-height:18px;}
+.unreset small {font-size:8px;}
+.unreset sup {vertical-align:super; line-height:1.2;} /* vertical-align:text-top;font-size:8px */
+.unreset sub {vertical-align:sub; line-height:1.2;} /* vertical-align:text-bottom;font-size:8px */
+.unreset tt, .unreset code, .unreset samp, .unreset kbd {background:#000 none repeat scroll 0 0;border:1px solid #000;font-family:"Courier New", Courier, mono;margin:6px 0;}
+.unreset pre {border:1px solid #bbb;background: #f9f9f9;margin:6px 0;font-size:12px;font-family:"Courier New", Courier, mono;}
+.unreset del, .unreset s, .unreset strike {color:#666;text-decoration:line-through;}
+.unreset ins, .unreset dfn {border-bottom:1px solid #ccc;}
+.unreset fieldset {border:1px solid #ccc;margin-top:12px;}
+.unreset legend {background:#fff;margin:0 6px;}
+.unreset label {font-size:12px;font-weight:bold;}
+.unreset input {font-size:12px;padding:2px}
+.unreset textarea {font-size:12px;padding:2px;font-family:arial, helvetica, sans-serif;}
+.unreset select, .unreset button {cursor:pointer;padding:2px;}
+.unreset table {table-layout:auto;width:auto;margin:12px auto;border: 0 none;}
+.unreset table tr {}
+.unreset table th, .unreset table td {vertical-align:middle;}
+.unreset table th:first-child,
+/* .unreset table td:first-child {padding: 5px;border-left: 1px solid #ccc;} */
+.unreset table thead th, .unreset table thead td,
+.unreset table tbody th, .unreset table tbody td,
+.unreset table tfoot th, .unreset table tfoot td {height:auto;}
+.unreset table th {font-weight:bold;background:#000;}
+.unreset table tfoot th, .unreset table tfoot td {border-top:1px solid #000;border-width:0 1px 0 0;background:#eee;}
+.unreset table td {text-align: left;}
+
+.unreset table.noBorder {border: 0 none;}
+.unreset table.noBorder th,
+.unreset table.noBorder td {border: 0 none;padding: 0;vertical-align: top;}
+
+
+.unreset img {height:auto; max-width:100%;}
+
+/* CKeditor 에디터 영역 */
+.cke_button_label {display: none !important;}
+.cke_voice_label {display: none !important;}
+#cke_1_top{display:block;}
+/*
+.cke_top {}
+.cke_reset_all {}
+.cke_top.cke_reset_all {}
+*/
+/* //CKeditor 에디터 영역 */
+
+
+
+
+/* 타이니 에디터 */
+
+/* //타이니 에디터 */

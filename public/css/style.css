@@ -1,0 +1,14 @@
+#rv_media_modal .modal-dialog.modal-full{
+   max-width: 95% !important;
+}
+
+.navbar-brand{
+	display: block;
+	
+}
+
+.navbar-wrapper .navbar-header .nav-logo{
+	display: flex;
+	width: 100%;
+	justify-content: center;
+}

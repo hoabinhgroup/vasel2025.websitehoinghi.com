@@ -1,0 +1,25 @@
+{
+    "name": "louis/theme",
+    "description": "",
+    "authors": [
+        {
+            "name": "Louis Gemini",
+            "email": "louis.standbyme@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Theme\\Providers\\ThemeServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Theme\\": ""
+        }
+    }
+}

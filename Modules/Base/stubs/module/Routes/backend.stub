@@ -1,0 +1,16 @@
+<?php
+
+Route::group(['prefix' => '{-name}', 'as' => '{-name}.'], function(){
+
+    Route::resource("", "{Name}Controller")->parameters(["" => "{-name}"]);
+
+   Route::get('restore/{id}', '{Name}Controller@restore')
+   		->name('restore');
+
+   Route::post('delete/{id}', '{Name}Controller@destroy')
+   		->name('delete');
+
+   Route::post('deletes', '{Name}Controller@deletes')
+      ->name('deletes');
+
+});

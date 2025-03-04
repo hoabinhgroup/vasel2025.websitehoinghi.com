@@ -1,0 +1,25 @@
+{
+    "name": "louis/payment",
+    "description": "",
+    "authors": [
+        {
+            "name": "Louis",
+            "email": "louis.standbyme@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Payment\\Providers\\PaymentServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Payment\\": ""
+        }
+    }
+}

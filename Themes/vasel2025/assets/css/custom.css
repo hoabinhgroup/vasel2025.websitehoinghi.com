@@ -1,0 +1,345 @@
+html,
+body {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+p,
+span {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+.contents ul li b {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 16px;
+}
+
+.sub-tit-wrap>h3.sub-tit {
+    color: #225895;
+}
+
+.fa-home {
+    color: #225895;
+}
+
+@keyframes stuckMoveDown {
+    0% {
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes stuckMoveUp {
+    0% {
+        -webkit-transform: translateY(100%);
+        transform: translateY(100%);
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes stuckMoveUp {
+    0% {
+        -webkit-transform: translateY(100%);
+        transform: translateY(100%);
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes stuckFadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes stuckFadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#header.sticky {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 999999;
+    box-shadow: 1px 1px 10px rgb(0 0 0 / 15%);
+    -webkit-animation: stuckMoveDown .6s;
+    animation: stuckMoveDown .6s;
+    background: #fff !important;
+}
+
+#menu-primary-menu li a span {
+    color: #225895 !important;
+    font-weight: 700;
+}
+
+.gnb-wrap .gnb>li>ul {
+    width: 250px;
+}
+
+.dday-wrap .dday {
+    font-size: 30px !important;
+    color: #fff !important;
+    font-weight: bold;
+}
+
+.dday-wrap>div:has(.today)::after {
+    content: '';
+    background-image: url(https://cdn-icons-png.flaticon.com/512/6050/6050331.png) !important;
+    top: 38%;
+    background-size: cover;
+    position: absolute;
+    left: -18px;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 80px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+.general-information-category {
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-tit-wrap>.sub-tit {
+    color: #000;
+}
+
+.header-logo a img {
+    height: 70px;
+}
+
+.main-quick-menu {
+    width: 100%;
+}
+
+.main-quick-menu>li {
+    width: calc((100% - 20px) / 5);
+}
+
+.main-quick-menu>li:nth-child(4)>a {
+    background-image: url(https://cdn.websitehoinghi.com/apscvir25/award.png);
+    background-size: 68px;
+}
+
+.main-quick-menu>li:nth-child(5)>a {
+    background-image: url(https://cdn.websitehoinghi.com/apscvir25/grant.png);
+    background-size: 68px
+}
+
+p,
+span {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 16px !important;
+    color: #000 !important
+}
+
+body p,
+body span {
+    line-height: 2rem !important;
+}
+
+figcaption {
+    padding: .8rem 1rem;
+}
+
+li a.level-top {
+    text-transform: uppercase;
+}
+
+.sub-menu li a {
+    text-transform: capitalize;
+}
+
+.main-con-wrap {
+    display: grid;
+    grid-template-columns: 35% 65%;
+}
+
+.main-news-wrap {
+    width: 100%;
+}
+
+.main-news-wrap>.main-news-con {
+    display: block;
+    line-height: 1.6rem;
+}
+
+.main-news-wrap>.main-news-con p {
+    text-align: justify;
+}
+
+.read-more-wrap {
+    display: flex;
+
+}
+
+.read-more-wrap .btn-read-more {
+    background-color: #364ea2;
+    color: #fff;
+    border: 1px solid #000;
+    padding: 5px 10px;
+    border-radius: 22px;
+    margin: 30px auto;
+    font-size: 14px;
+    padding: 10px 20px;
+}
+
+.dday-wrap .today {
+    font-size: 80% !important;
+    line-height: 20px !important;
+}
+
+.main-dates>li {
+    padding: 45px 16px 35px;
+    min-height: 150px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+}
+
+.tabs button {
+    border: 3px solid #005596;
+    padding: 10px 100px;
+}
+
+.sub-tit-wrap>.sub-tit::before {
+    display: none !important;
+
+}
+
+.sub-tit-wrap>.sub-tit {
+    padding-left: 0px !important;
+}
+
+.news-detail .row {
+    row-gap: 30px;
+}
+
+.speaker-list img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    height: 230px;
+}
+
+.day-active {
+    width: 100%;
+}
+
+.main-banner-wrap {
+    background-image: url('https://cdn.websitehoinghi.com/acc-01.jpg');
+    background-repeat: no-repeat;
+    background-position: center 0;
+
+}
+
+.main-sponsor-wrap{
+    display: flex;
+    flex-direction: column;
+}
+
+.js-sponsor-rolling{
+    display: flex;
+    width: 100%;
+    column-gap: 30px;
+    position: relative;
+    top: 30px;
+}
+
+.main-sponsor-wrap>dl {
+    min-height: 100px;
+    width: 100%;
+    position: relative;
+    
+}
+
+.main-sponsor-wrap>dl::before{
+    content: "";
+    position: absolute;
+    top:70px;
+    left: 0px;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+.main-sponsor-wrap>dl>dt{
+    float: left;
+    position: relative;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.main-sponsor-wrap>dl+dl{
+    border-left: none;
+}
+
+.main-banner-wrap .main-banner-tit span.conference_name {
+    display: block;
+    font-size: 2rem !important;
+    line-height: 4rem !important;
+    color: #fff !important;
+    font-weight: bold;
+    text-shadow: 3px 3px 3px #000;
+}
+
+.main-banner-wrap .main-banner-tit span.conference_address {
+    display: block;
+    font-size: 1.5rem !important;
+    line-height: 4rem !important;
+    color: #fff !important;
+    font-weight: bold;
+    text-shadow: 3px 3px 3px #000;
+}
+
+.host-support-wrap img {
+    height: 100px;
+}
+
+.main-sponsor-wrap>dl dd a img{
+    width: 150px;
+    height: auto;
+}
+
+#countdown{
+    display: flex;
+    column-gap: 10px;
+    font-weight: bold;
+    color: #225895 !important;
+    
+}
+
+#days, #hours, #minutes, #seconds{
+    text-align: center;
+}
+body .footer-copy{
+    color: #fff !important;
+}

@@ -1,0 +1,25 @@
+{
+    "name": "louis/slider",
+    "description": "",
+    "authors": [
+        {
+            "name": "Tuấn Louis",
+            "email": "louis.standbyme@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Slider\\Providers\\SliderServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Slider\\": ""
+        }
+    }
+}

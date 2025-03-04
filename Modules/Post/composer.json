@@ -1,0 +1,25 @@
+{
+    "name": "louis/post",
+    "description": "",
+    "authors": [
+        {
+            "name": "Tuấn Louis",
+            "email": "louis.standbyme@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Post\\Providers\\PostServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Post\\": ""
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "name": "louis/registration",
+    "description": "",
+    "authors": [
+        {
+            "name": "Tuấn Louis",
+            "email": "louis.standbyme@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Registration\\Providers\\RegistrationServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Registration\\": ""
+        }
+    }
+}

@@ -1,0 +1,168 @@
+<?php
+
+namespace Modules\{Module}\Http\Controllers;
+
+use Auth;
+use Modules\Base\Http\Responses\BaseHttpResponse;
+use Modules\Base\Traits\HasDeleteManyItemsTrait;
+use Response;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use Modules\Acl\Entities\Users;
+use Modules\{Module}\Repositories\{Name}Interface;
+use Modules\Base\Events\CreatedContentEvent;
+use Modules\Base\Events\UpdatedContentEvent;
+use Modules\Base\Events\DeletedContentEvent;
+use Modules\{Module}\Entities\{Name};
+use Modules\{Module}\Tables\{Name}Table;
+use Modules\Base\Forms\FormBuilder;
+use Modules\{Module}\Forms\{Name}Form;
+use Carbon\Carbon;
+use Assets;
+
+
+class {Name}Controller extends Controller
+{
+    use HasDeleteManyItemsTrait;
+	 /**
+     * @var {Name}Interface
+     */
+    protected ${-name};
+
+
+    public function __construct(
+   		{Name}Interface ${+name}
+   			)
+    {
+        $this->{-name} = ${+name};
+    }
+
+    /**
+     * Display a listing of the resource.
+     * @return Response
+     */
+    public function index({Name}Table $table)
+    {
+	    page_title()->setTitle(__('{-module}::{-name}.list'));
+        return $table->renderTable();
+    }
+
+
+    /**
+     * Show the form for creating a new resource.
+     * @return Response
+     */
+    public function create(FormBuilder $formBuilder)
+    {
+	   page_title()->setTitle(__('{-module}::{-name}.add'));
+	   return $formBuilder->create({Name}Form::class)->renderForm();
+
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     * @param Request $request
+     * @return Response
+     */
+    public function store(Request $request, BaseHttpResponse $response)
+    {
+
+		   $request->merge(array('status' => $request->has('status')?1:0));
+		   ${-name} = $this->{-name}->create($request->all());
+
+		 event(new CreatedContentEvent($request->all(), ${-name}));
+
+         return $response
+            	->setPreviousUrl(route('{-name}.index'))
+				->setNextUrl(route('{-name}.edit', ${-name}->id))
+				->setMessage(__('base::form-validate.add-success'));
+
+
+    }
+
+    /**
+     * Show the specified resource.
+     * @param int $id
+     * @return Response
+     */
+    public function show($id)
+    {
+        return view('{-name}::show');
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     * @param int $id
+     * @return Response
+     */
+    public function edit(
+   		$id,
+    	FormBuilder $formBuilder,
+    	Request $request)
+    {
+
+        $subject = $this->{-name}->find($id);
+
+        page_title()->setTitle(__('{-module}::{-name}.edit'));
+
+		return $formBuilder->create({Name}Form::class, ['model' => $subject])->renderForm();
+    }
+
+    /**
+     * Update the specified resource in storage.
+     * @param Request $request
+     * @param int $id
+     * @return Response
+     */
+    public function update(
+    	Request $request,
+    	$id,
+		BaseHttpResponse $response)
+    {
+
+		$request->merge(array('status' => $request->has('status')?1:0));
+
+	    ${-name} = $this->{-name}->update($id, $request->all());
+
+        if(${-name}){
+	       event(new UpdatedContentEvent($request->all(), ${-name}));
+           return $response
+           		 ->setPreviousUrl(route('{-name}.index'))
+		   		 ->setMessage(__('base::form-validate.update-success'));
+
+         	}
+
+    }
+
+    public function restore(Request $request, BaseHttpResponse $response)
+    {
+	  ${-name} = $this->{-name}->getFirstByWithTrash(['{names}.id' => $request->id]);
+      $this->{-name}->restoreBy(['id' => $request->id]);
+      event(new DeletedContentEvent($request->all(), ${-name}, 'restore'));
+
+	  return $response
+           		 ->setPreviousUrl(route('{-name}.index'))
+		   		 ->setMessage(__('base::form-validate.update-success'));
+    }
+    /**
+     * Remove the specified resource from storage.
+     * @param int $id
+     * @return Response
+     */
+    public function destroy(Request $request, $id)
+    {
+	   ${-name} = $this->{-name}->find($id);
+       $this->{-name}->delete($id);
+       event(new DeletedContentEvent($request->all(), ${-name}));
+
+	   return Response::json(array(
+        			'success' => true), 200);
+    }
+
+    public function deletes(Request $request, BaseHttpResponse $response)
+      {
+        return $this->executeDeleteItems($request, $response, $this->menus);
+      }
+
+}

@@ -1,0 +1,14 @@
+{
+    "name": "Menu",
+    "alias": "menu",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 3,
+    "providers": ["Modules\\Menu\\Providers\\MenuServiceProvider"],
+    "aliases": {
+        "Categories": "Modules\\Post\\Facades\\CategoriesFacade"
+    },
+    "files": [],
+    "requires": []
+}

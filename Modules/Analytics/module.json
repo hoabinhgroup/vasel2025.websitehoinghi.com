@@ -1,0 +1,15 @@
+{
+  "name": "Analytics",
+  "alias": "analytics",
+  "author": "Tu\u1ea5n Louis",
+  "email": "louis.standbyme@gmail.com",
+  "version": "2.1",
+  "description": "",
+  "keywords": [],
+  "active": 1,
+  "order": 0,
+  "providers": ["Modules\\Analytics\\Providers\\AnalyticsServiceProvider"],
+  "aliases": [],
+  "files": [],
+  "requires": []
+}

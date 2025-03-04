@@ -1,0 +1,33 @@
+<?php
+
+return [
+    [
+        'name' => '{++Names}',
+        'flag' => '{-name}.index',
+    ],
+    [
+        'name' => 'Create',
+        'flag' => '{-name}.create',
+        'parent_flag' => '{-name}.index',
+    ],
+    [
+        'name' => 'Edit',
+        'flag' => '{-name}.edit',
+        'parent_flag' => '{-name}.index',
+    ],
+    [
+        'name' => 'Restore',
+        'flag' => '{-name}.restore',
+        'parent_flag' => '{-name}.index',
+    ],
+    [
+        'name' => 'Delete',
+        'flag' => '{-name}.delete',
+        'parent_flag' => '{-name}.index',
+    ],
+    [
+        'name' => 'Delete Many',
+        'flag' => '{-name}.deletes',
+        'parent_flag' => '{-name}.index',
+    ]
+];

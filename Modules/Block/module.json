@@ -1,0 +1,17 @@
+{
+    "name": "Block",
+    "alias": "block",
+    "author": "Tu\u1ea5n Louis",
+    "email": "louis.standbyme@gmail.com",
+    "version": "1.0",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Block\\Providers\\BlockServiceProvider"
+    ],
+    "aliases": [],
+    "files": [],
+    "requires": []
+}

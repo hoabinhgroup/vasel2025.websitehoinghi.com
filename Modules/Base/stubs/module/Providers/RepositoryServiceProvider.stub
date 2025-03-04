@@ -1,0 +1,19 @@
+<?php namespace Modules\{Module}\Providers;
+
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Database\Eloquent\Factory;
+
+class RepositoryServiceProvider extends ServiceProvider
+{
+
+
+    public function register()
+    {
+		  $this->app->bind(
+            'Modules\{Module}\Repositories\{Name}Interface',
+            'Modules\{Module}\Repositories\Eloquent\{Name}Repository'
+            );
+
+       
+    }
+}

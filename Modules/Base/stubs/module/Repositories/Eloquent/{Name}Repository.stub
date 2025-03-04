@@ -1,0 +1,24 @@
+<?php
+
+namespace Modules\{Module}\Repositories\Eloquent;
+
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\App;
+use Modules\Base\Repositories\Eloquent\EloquentRepository;
+use Modules\{Module}\Repositories\{Name}Interface;
+use Illuminate\Support\Carbon;
+
+class {Name}Repository extends EloquentRepository implements {Name}Interface
+{
+
+    /**
+     * get model
+     * @return string
+     */
+    public function getModel()
+    {
+        return \Modules\{Module}\Entities\{Name}::class;
+    }
+     
+     
+}

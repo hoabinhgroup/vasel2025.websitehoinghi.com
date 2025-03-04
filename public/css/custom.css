@@ -1,0 +1,345 @@
+.modal-title{
+		color: #000;
+	}
+	
+	.label {
+		display: inline;
+		padding: 0.2em 0.6em 0.3em;
+		font-size: 75%;
+		font-weight: 700;
+		line-height: 1;
+		color: #fff;
+		text-align: center;
+		white-space: nowrap;
+		vertical-align: baseline;
+		border-radius: 0.25em;
+	}
+	
+	.label.label-danger{
+		background-color: #d9534f;
+		color: #fff;
+	}
+	
+	.label.label-success{
+		background-color: #5cb85c;
+		color: #fff;
+	}
+	
+	.label.label-warning{
+		background-color: #f0ad4e;
+		color: #fff;
+	}
+	
+	.dataTables_length{
+		position: absolute;
+		z-index: 100;
+	}
+	
+	.dataTables_info{
+		position: absolute;
+		padding-top: 0px !important;
+	}
+	
+	.dataTables_wrapper{
+		padding-top: 10px;
+	}
+	
+	div.dataTables_wrapper{
+		float: left;
+	}
+	
+	div.dataTables_wrapper div.dataTables_filter label{
+		margin-top: 0px;
+	}
+	.dataTables_filter{
+		position: relative;
+		right: 6px;
+	}
+	
+	.dataTables_paginate{
+		position: relative;
+		right: 5px;
+	}
+	.help-block{
+		color: red;
+		font-size: 0.8em;
+		margin-top: 5px;
+		display: block;
+	}
+	div.DTTT_container {
+    position: relative;
+    float: left;
+	}
+div.dataTables_wrapper div.dataTables_filter {
+    float: right;
+}
+.table-toolbar{
+	height: 0px;
+}
+
+.mr15{
+	margin-right: 15px;
+}
+
+.pull-left{
+	float: left;
+}
+
+.dataTables_filter input[type="search"]{
+	height: 36px;
+	width: 200px !important;
+	position: relative;
+	top: 5px;
+}
+
+.dataTables_filter label::after {
+    font-family:FontAwesome;
+    content: "\F002";
+    position: absolute;
+    right: -4px;
+    top: 6px;
+    width: 40px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #495057;
+    font-weight: 900;
+}
+
+.ml15{
+		margin-left: 15px;
+	}
+	#section_bulk_action{
+		float: left;
+	}
+	#section_bulk_action input[type="submit"]{
+		float: left;
+	}
+	#bulk_action{
+		width: 200px;
+		float: left;
+		margin-right: 5px;
+	}
+	table tr th:first-child .pretty, table tr td:first-child .pretty{
+		margin-right: 0px;
+	}
+	table tr th:first-child input{
+		text-align: center;
+	}
+	table tr td:first-child, table th:first-child{
+		padding: 10px;
+		text-align: center;
+	}
+	table tr td, table th, table th input{
+		vertical-align: middle !important;
+	}
+	#section_bulk_action{
+		margin-right: 5px;
+	}
+	.tabbar{
+		padding: 10px;
+		margin-left: 5px;
+	}
+	
+	.anchor_tab{
+		color: #757373;
+	}
+	
+	.anchor_tab.active{
+		color: #008385 !important;
+	}
+	
+	.mr5{
+		margin-right: 5px;
+	}
+	
+	.w200{
+		width: 180px !important;
+	}
+	
+	.extra_toolbar{
+		display: block;
+	}
+	.extra_toolbar select{
+		width: fit-content;
+	}
+	
+	
+	/* table */ 
+.buttons-table{
+	display: inline-block;
+}	
+.select2-search__field[type="search"]{
+	outline-color: #00B5B8;
+	outline-offset: 0px;
+}
+.select2-selection--single:focus{
+	outline: none;
+}
+.sr-only{
+	background: transparent;
+}
+.date-range-element{
+	float: left;
+	width: 300px;
+}
+div.dataTables_wrapper{
+	padding-top: 0px;
+}
+div.dataTables_wrapper div.dataTables_processing{
+	
+}
+.extra_toolbar {
+	height: 50px;
+}
+.extra_toolbar .p-0{
+	float: left;
+}
+.extra_toolbar .glyphicon-calendar{
+	position: absolute;
+    right: 15px;
+    top: 12px;
+}
+.daterangepicker{
+	top: 205px !important;
+}
+.daterangepicker .calendar-table td, .daterangepicker .calendar-table th{
+	line-height: 16px;
+}
+.daterangepicker td.active, .daterangepicker td.active:hover{
+	background: #2DCEE3;
+}
+.daterangepicker .ranges li.active{
+	background: #2DCEE3;
+}
+
+/* form */
+
+form > .row > .col-md-3{
+		padding-left: 8px;
+	}
+	
+	.card.meta-boxes .form-group{
+		margin-bottom: 0px;
+	}
+	.dropdown-language{
+		display: none;
+	}
+	.card-header{
+		padding: 15px;
+		border-bottom: 1px solid #eee;
+		background: none;
+		padding-bottom: 6px;
+	}
+	.card-body{
+		padding: 1rem;
+	}
+	.content-box{
+		margin-top: 20px;
+	}
+	.nav-tabs{
+		border-bottom: none !important;
+	}
+	.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+		border-top: 1px solid #ddd;
+		border-left: 1px solid #ddd;
+		border-right: 1px solid #ddd;
+	}
+	button[type="submit"]{
+		display: block;
+	}
+	.row-container {
+    flex: 100;
+	}
+	.add-column-drop {
+    border: 1px dashed #e2e4e8;
+	}
+	.p15 {
+    padding: 15px;
+	}
+	#txt-image{ 
+	height: auto;
+	width: 100%;
+	background: #dedede;
+	border-radius: 0px;
+	border: none;
+	}
+	.title-bar {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 0;
+    padding-left: 0px;
+	}
+	.tox-tinymce{
+		margin: 10px 1px;
+		
+	}
+	
+	.select-box ul:first-child{
+		padding-left: 0px;
+	}
+	.select-box ul li{
+		list-style-type: none;
+	}
+	#basic-layout-category .card-body{
+		padding: 0px !important;
+	}
+	#a3-category .select-box{
+		border: none;
+	}
+	#search-list-category{
+		border-top: none;
+		border-left: none;
+		border-right: none;
+	}
+	.image_cover_trash{
+		position: absolute;
+		bottom: 5px;
+		right: 10px;
+		font-size: 1.2em;
+	}
+	
+	.content-wrapper .dropdown .dropdown-menu{
+		display: none;
+	}
+	
+	.content-wrapper .dropdown.show .dropdown-menu.show{
+		display: block !important;
+	}
+	
+	.dropdown-menu>li>a {
+		padding: 8px 16px;
+		color: #6f6f6f;
+		text-decoration: none;
+		display: block;
+		clear: both;
+		font-weight: 300;
+		line-height: 18px;
+		white-space: nowrap;
+	}
+	
+	.dropdown-menu>li.active:hover>a, .dropdown-menu>li.active>a, .dropdown-menu>li:hover>a {
+		text-decoration: none;
+		background-image: none;
+		background-color: #f6f6f6;
+		color: #555;
+		-webkit-filter: none;
+		filter: none;
+	}
+	
+	.preview-image-wrapper{
+		position: relative;
+	}
+	
+	.btn_remove_image{
+		position: absolute;
+		right: 5px;
+		top: 5px;
+		width: 30px;
+		height: 30px;
+		background: #fff;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}

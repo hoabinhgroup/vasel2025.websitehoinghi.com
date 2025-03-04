@@ -1,0 +1,17 @@
+{
+    "name": "Sitemap",
+    "alias": "sitemap",
+    "author": "Tuấn Louis",
+    "email": "louis.standbyme@gmail.com",
+    "version": "1.0",
+    "description": "",
+    "keywords": [],
+    "active": 0,
+    "order": 0,
+    "providers": [
+        "Modules\\Sitemap\\Providers\\SitemapServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

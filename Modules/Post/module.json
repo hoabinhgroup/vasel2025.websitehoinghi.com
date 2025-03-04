@@ -1,0 +1,17 @@
+{
+    "name": "Post",
+    "alias": "post",
+    "author": "Tu\u1ea5n Louis",
+    "email": "louis.standbyme@gmail.com",
+    "version": "2.0",
+    "description": "",
+    "keywords": [],
+    "active": 0,
+    "order": 0,
+    "providers": [
+        "Modules\\Post\\Providers\\PostServiceProvider"
+    ],
+    "aliases": [],
+    "files": [],
+    "requires": []
+}

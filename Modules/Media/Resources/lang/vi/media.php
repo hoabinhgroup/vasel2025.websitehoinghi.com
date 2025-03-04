@@ -1,0 +1,148 @@
+<?php
+
+return [
+    'filter'                     => 'Lọc',
+    'everything'                 => 'Tất cả',
+    'image'                      => 'Ảnh',
+    'video'                      => 'Video',
+    'document'                   => 'Tài liệu',
+    'view_in'                    => 'Xem trong',
+    'all_media'                  => 'Tất cả tệp tin',
+    'trash'                      => 'Thùng tác',
+    'recent'                     => 'Gần đây',
+    'favorites'                  => 'Ưa chuộng',
+    'upload'                     => 'Tải lên',
+    'create_folder'              => 'Tạo thư mục',
+    'refresh'                    => 'Làm mới',
+    'empty_trash'                => 'Làm rỗng thùng rác',
+    'search_file_and_folder'     => 'Tìm tệp tin và thư mục',
+    'sort'                       => 'Sắp xếp',
+    'file_name_asc'              => 'Tên file - ASC',
+    'file_name_desc'             => 'Tên file - DESC',
+    'created_date_asc'           => 'Ngày tạo - ASC',
+    'created_date_desc'          => 'Ngày tạo - DESC',
+    'uploaded_date_asc'          => 'Ngày tải lên - ASC',
+    'uploaded_date_desc'         => 'Ngày tải lên - DESC',
+    'size_asc'                   => 'Kích Thước - ASC',
+    'size_desc'                  => 'Kích Thước - DESC',
+    'actions'                    => 'Hành động',
+    'nothing_is_selected'        => 'Không có gì được chọn',
+    'insert'                     => 'Thêm vào',
+    'folder_name'                => 'Tên thư mục',
+    'create'                     => 'Tạo',
+    'rename'                     => 'Đổi tên',
+    'close'                      => 'Đóng',
+    'save_changes'               => 'Lưu thay đổi',
+    'move_to_trash'              => 'Cho vào thùng rác',
+    'confirm_trash'              => 'Bạn có chắc chắn muốn bỏ những tệp tin này vào thùng rác?',
+    'confirm'                    => 'Xác nhận',
+    'confirm_delete'             => 'Xóa tệp tin(s)',
+    'confirm_delete_description' => 'Hành động này không thể khôi phục. Bạn có chắc chắn muốn xóa những tệp tin này?',
+    'empty_trash_title'          => 'Xóa thùng rác',
+    'empty_trash_description'    => 'Hành động này không thể khôi phục. Bạn có muốn dọn sạch thùng rác?',
+    'up_level'                   => 'Up one level',
+    'upload_progress'            => 'Đang tải lên',
+
+    'folder_created' => 'Thư mục được tạo thành công!',
+    'gallery'        => 'Media gallery',
+
+    'trash_error'                   => 'Error when delete selected item(s)',
+    'trash_success'                 => 'Moved selected item(s) to trash successfully!',
+    'restore_error'                 => 'Error when restore selected item(s)',
+    'restore_success'               => 'Restore selected item(s) successfully!',
+    'copy_success'                  => 'Copied selected item(s) successfully!',
+    'delete_success'                => 'Deleted selected item(s) successfully!',
+    'favorite_success'              => 'Favorite selected item(s) successfully!',
+    'remove_favorite_success'       => 'Remove selected item(s) from favorites successfully!',
+    'rename_error'                  => 'Error when rename item(s)',
+    'rename_success'                => 'Rename selected item(s) successfully!',
+    'empty_trash_success'           => 'Empty trash successfully!',
+    'invalid_action'                => 'Invalid action!',
+    'file_not_exists'               => 'File is not exists!',
+    'download_file_error'           => 'Error when downloading files!',
+    'missing_zip_archive_extension' => 'Please enable ZipArchive extension to download file!',
+    'can_not_download_file'         => 'Can not download this file!',
+    'invalid_request'               => 'Invalid request!',
+    'add_success'                   => 'Add item successfully!',
+    'file_too_big'                  => 'File too big. Max file upload is :size bytes',
+    'can_not_detect_file_type'      => 'File type is not allowed or can not detect file type!',
+    'upload_failed'                 => 'The file is NOT uploaded completely. The server allows max upload file size is :size . Please check your file size OR try to upload again in case of having network errors',
+
+    'menu_name' => 'Media',
+    'add'       => 'Add media',
+
+    'javascript'   => [
+        'name'             => 'Tên',
+        'url'              => 'Đường dẫn',
+        'full_url'         => 'Đường dẫn hoàn chỉnh',
+        'size'             => 'Kích thước',
+        'mime_type'        => 'Kiểu',
+        'created_at'       => 'Tải lên lúc',
+        'updated_at'       => 'Chỉnh sửa lúc',
+        'nothing_selected' => 'Không có gì được chọn',
+        'visit_link'       => 'Open link',
+
+        'no_item' => [
+            'all_media' => [
+                'icon'    => 'fas fa-cloud-upload-alt',
+                'title'   => 'Kéo tệp tin và thư mục vào đây',
+                'message' => 'Hoặc sử dụng nút tải lên bên trên',
+            ],
+            'trash'     => [
+                'icon'    => 'fas fa-trash-alt',
+                'title'   => 'Hiện tại thùng rác của bạn trống',
+                'message' => 'Delete files to move them to trash automatically. Delete files from trash to remove them permanently',
+            ],
+            'favorites' => [
+                'icon'    => 'fas fa-star',
+                'title'   => 'You have not added anything to your favorites yet',
+                'message' => 'Add files to favorites to easily find them later',
+            ],
+            'recent'    => [
+                'icon'    => 'far fa-clock',
+                'title'   => 'You did not opened anything yet',
+                'message' => 'All recent files that you opened will be appeared here',
+            ],
+            'default'   => [
+                'icon'    => 'fas fa-sync',
+                'title'   => 'No items',
+                'message' => 'This directory has no item',
+            ],
+        ],
+
+        'clipboard' => [
+            'success' => 'These file links has been copied to clipboard',
+        ],
+
+        'message' => [
+            'error_header'   => 'Error',
+            'success_header' => 'Success',
+        ],
+
+        'download' => [
+            'error' => 'No files selected or cannot download these files',
+        ],
+
+        'actions_list' => [
+            'basic' => [
+                'preview' => 'Preview',
+            ],
+            'file'  => [
+                'copy_link' => 'Copy link',
+                'rename'    => 'Rename',
+                'make_copy' => 'Make a copy',
+            ],
+            'user'  => [
+                'favorite'        => 'Add to favorite',
+                'remove_favorite' => 'Remove favorite',
+            ],
+            'other' => [
+                'download' => 'Download',
+                'trash'    => 'Move to trash',
+                'delete'   => 'Delete permanently',
+                'restore'  => 'Restore',
+            ],
+        ],
+    ],
+    'name_invalid' => 'The folder name has invalid character(s).',
+];

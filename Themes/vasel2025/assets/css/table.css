@@ -1,0 +1,21 @@
+table p {
+	margin-bottom: 0px;
+}
+
+b,
+strong {
+	font-weight: 700;
+}
+
+table tr:first-child td {
+	padding: 5px 8px;
+}
+
+table tbody tr:first-child,
+table tbody tr:first-child td span {
+	color: #fff !important;
+}
+
+table tr td {
+	border-color: #000 !important;
+}

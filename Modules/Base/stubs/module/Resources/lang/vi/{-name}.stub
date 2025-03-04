@@ -1,0 +1,8 @@
+<?php
+
+return [
+    'name'   => '{++Names}',
+    'create' => '{++Names} mới',
+    'edit'   => 'Sửa {++name}',
+    'list'   => 'Danh sách {++name}'
+];

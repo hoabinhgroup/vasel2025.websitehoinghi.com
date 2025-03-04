@@ -1,0 +1,245 @@
+.form-group-attach {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+    column-gap: 50px;
+}
+
+.form-group-attach .form-group {
+    width: 45%;
+}
+
+.sub-tit-wrap {
+    margin: 30px auto;
+}
+
+h3.sub-tit {
+    text-align: center;
+    color: #000 !important;
+
+}
+
+.wire_transfer_description,
+.cash_payment_description {
+    display: none;
+    background: #2d78d2;
+    padding: 15px;
+    color: #fff
+}
+
+.file-upload-wrapper {
+    /* Tùy chọn kích thước, kiểu dáng container */
+    display: inline-flex;
+    /* hoặc display: flex; */
+    border: 1px solid #000;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.form-group-attach ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    padding-left: 0px;
+}
+
+.form-group-attach ul li {
+    list-style-type: none;
+}
+
+.file-upload-label {
+    /* Phần hiển thị nút "Chọn file" */
+    background-color: #2d78d2;
+    color: #fff;
+    padding: 8px 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    /* Giữ cố định kích thước nút (tuỳ nhu cầu) */
+    white-space: nowrap;
+    margin-bottom: 0px;
+}
+
+.file-upload-input {
+    /* Ẩn input file thật */
+    display: none;
+
+}
+
+#shortCV_input-error,
+#passport_input-error {
+    position: absolute;
+    right: 140px;
+}
+
+.file-upload-filename {
+    /* Phần hiển thị tên file */
+    flex: 1;
+    /* để chiếm phần còn lại trong container nếu muốn */
+    padding: 8px;
+    font-weight: bold;
+    color: #7e7e7e;
+}
+
+h2.heading_red {
+    background-color: #a50b0b;
+    font-weight: bold;
+    color: #fff;
+    padding: 8px 12px;
+    font-size: 21px;
+}
+
+label {
+    text-transform: uppercase;
+    font-weight: normal !important;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+::placeholder {
+    font-style: italic;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    padding-left: 10px !important;
+}
+
+.birthdate-wrapper {
+    display: flex;
+    column-gap: 20px;
+}
+
+.birthdate-item {
+    width: 32%;
+}
+
+.course-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.course-list .radio-inline {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+
+.register-course {
+    display: block;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.register-course label {
+    display: flex;
+    column-gap: 5px;
+}
+
+.note-section {
+    background-color: rgb(240, 191, 69);
+    padding: 20px;
+}
+
+
+.course-other {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+
+.general-information-title {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.other-specify-title {
+    display: flex;
+    column-gap: 5px;
+}
+
+.deadline-submit-abstract {
+    padding-left: 0px;
+}
+
+.deadline-submit-abstract p {
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+.radio-list-title {
+    display: flex;
+}
+
+.radio-list-title .radio-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.radio-list-title .radio-right {
+    flex: 4;
+    display: flex;
+    align-items: center;
+}
+
+.radio-right .radio-inline input {
+    margin-right: 5px;
+}
+
+.radio-list-title-wrapper {
+    display: block;
+    width: 100%;
+}
+
+.deadline-submit-abstract {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.deadline-submit-abstract li {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.deadline-submit-abstract li span {
+    width: 40%;
+}
+
+.deadline-submit-abstract li input {
+    width: 20%;
+}
+
+.has_training {
+    display: none;
+}
+
+.other-title-wrapper {
+    display: grid;
+    grid-template-columns: 5% 50% 45%;
+    align-items: center;
+    position: relative;
+}
+
+#titleOther-error {
+    position: absolute;
+    top: 42px;
+}
+
+#registration_button {
+    margin: auto;
+    display: block;
+    background-color: #1b7b31 !important;
+    padding: 5px 15px;
+}

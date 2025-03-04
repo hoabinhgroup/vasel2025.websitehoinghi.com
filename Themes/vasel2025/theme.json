@@ -1,0 +1,9 @@
+{
+    "name": "vasel2025",
+    "namespace": "Theme\\Vasel2025\\",
+    "title": "cms",
+    "description": "Theme Vasel2025",
+    "author": "Louis",
+    "version": "1.0.0",
+    "parent": ""
+}

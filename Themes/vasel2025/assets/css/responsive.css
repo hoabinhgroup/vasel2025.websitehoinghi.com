@@ -1,0 +1,984 @@
+@charset "utf-8";
+/* ==================================================
+
+    * responsive
+    
+================================================== */
+@media screen and (max-width: 1400px){
+	.sub-visual-wrap {
+		background-position: -292px 0;
+	}
+	.main-speakers-rolling-wrap {
+		padding-right: 90px;
+		padding-left: 90px;
+	}
+}
+
+@media screen and (max-width: 1320px){
+    /* ========================================================================================================== */
+    /* ================================================ layer =============================================== */
+    /* ========================================================================================================== */
+        .inner-layer{
+                padding-left: 20px;
+                padding-right: 20px;
+        }
+
+    /* ========================================================================================================== */
+    /* ================================================ main =============================================== */
+    /* ========================================================================================================== */	
+    .main-visual-text.inner-layer {
+        padding-left: 2%;
+    }	
+    .main-visual-wrap .slick-dots {
+        top: 20px;
+        left: 2%;
+    }
+	.main-quick-menu > li > a {
+		font-size: 20px;
+		background-size: 55px;
+	}
+
+    /* main vod rolling 추가 - 24.11.13 박민지 */
+    .video-rolling-wrap.inner-layer{
+        padding: 0;
+    }
+    .video-rolling{
+        width: 100%;
+        max-width: 100%;
+    }
+    .video-rolling-wrap .btn-rolling{
+        z-index: 100;
+    }
+    .video-rolling-wrap .btn-rolling-prev{
+        left: 20px;
+    }
+    .video-rolling-wrap .btn-rolling-next{
+        right: 20px;
+    }
+}		
+@media screen and (max-width: 1200px){
+/* ========================================================================================================== */
+/* ================================================ layer =============================================== */
+/* ========================================================================================================== */
+  .gnb-wrap .gnb > li > ul {
+    padding: 15px 15px 25px 15px;
+	}
+	.host-support-wrap dl > dt {
+		margin-right: 35px;
+    font-size: 16px;
+	}
+	.footer-info > p {
+		font-size: 14px;
+	}
+
+/* ========================================================================================================== */
+/* ================================================ main =============================================== */
+/* ========================================================================================================== */
+	.main-visual-text.inner-layer {
+		padding-right: 150px;
+	}
+	.main-dates{
+		gap: 18px;
+	}
+	.main-dates > li  {
+		min-height: 192px;
+		padding: 35px 18px 25px;
+		border-radius: 10px 10px 30px 10px;
+	}
+	.main-dates > li span {
+		font-size: 17px;
+	}
+	.main-dates > li > strong {
+		margin: 15px 0;
+	}
+	.main-dates > li > strong > span {
+		font-size: 20px;
+	}
+	.main-dates > li > p > .until-date {
+		width: 84px;
+		height: 38px;
+		border-radius: 19px;
+	}
+	.main-dates > li > a {
+		background-size: 116px;
+	}
+	.main-dates > li > a > span {
+		font-size: 20px;
+	}
+	.main-quick-menu > li > a {
+		height: 158px;
+		padding: 25px 30px 90px;
+		font-size: 18px;
+		vertical-align: middle;
+		background-size: 42px;
+	}
+	.main-speakers-wrap > .inner-layer {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+	.main-speakers-tit {
+		margin-bottom: 40px;
+		font-size: 30px;
+	}
+	.main-speakers-rolling-wrap {
+		padding-right: 60px;
+		padding-left: 60px;
+	}
+	.speakers-con {
+		gap: 10px;
+	}
+	.speakers-con > .img-wrap {
+		width: 100px;
+		height: 100px;
+	}
+	.speakers-con > p > span {
+		font-size: 16px;
+	}
+	.speakers-con > p > strong {
+		margin-top: 8px;
+		margin-bottom: 3px;
+		font-size: 18px;
+	}
+	.btn-speakers {
+		width: 24px;
+		height: 50px;
+	}
+
+    /* main vod rolling 추가 - 24.11.13 박민지 */
+    .video-rolling-wrap .btn-rolling{
+        width: 24px;
+        height: 50px;
+    }
+}
+@media screen and (max-width: 1024px){
+/* ========================================================================================================== */
+/* ================================================ layer =============================================== */
+/* ========================================================================================================== */
+	.header-wrap > .inner-layer {
+		height: 60px;
+		padding: 0 20px;
+	}
+	.header-logo img {
+		height: 50px;
+	}
+	.btn-menu-open {
+		display: block;
+		float: left;
+		width: 36px;
+		height: 24px;
+		margin: 18px 0;
+		margin-left: 20px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-image: url('../image/common/ic_m_menu.png');
+		background-size: 100%;
+	}
+	.btn-menu-close{
+		position: absolute;
+		top: 10px;
+		right: -45px;
+		width: 30px;
+		height: 30px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-image: url('../image/common/ic_m_menu_close.png');
+		background-size: 100%;
+}
+	.m-gnb-header {
+		display: block;
+	}
+	.util-menu-wrap {
+		display: none;
+	}
+	#gnb{
+		position: fixed;
+		top: 0;
+		left: -100%;
+		z-index: 15;
+		width: 80%;
+		height: 100vh;
+		background: #fff;
+	}
+	.gnb-wrap .gnb {
+		display: block;
+	}
+	.gnb-wrap .inner-layer {
+		padding-right: 0;
+		padding-left: 0;
+	}
+	.gnb-wrap .gnb > li {
+		width: 100%;
+	}
+	.gnb-wrap .gnb > li + li {
+		margin-top: 15px;
+	}
+	.gnb-wrap{
+		overflow-y: auto;
+		padding: 20px 15px;
+		min-height: 100%;
+		border-bottom: 0 none;
+		background: linear-gradient(135deg, #d56aab, #4c489c, #399daf);
+	}
+	.gnb > li{
+		position: relative;
+		width: 100%;
+	}
+	.gnb > li:before{
+		display: block;
+		content: '+';
+		clear: both;
+		position: absolute;
+		top: 10px;
+		right: 20px;
+		font-size: 20px;
+		color: #fff;
+		-webkit-transition: 0.3s ease;
+		transition: 0.3s ease;
+	}
+	.gnb-wrap .gnb > li > a {
+		justify-content: flex-start;
+		height: 45px;
+		padding: 0 20px;
+		font-size: 14px;
+		color: #fff;
+		background-color: rgba(0, 0, 0, .12);
+	}
+	.gnb > li.on:before{
+		content: '-';
+	}
+	.gnb-wrap .gnb > li > ul {
+		display: none;
+		position: static;
+		top: auto;
+		left: auto;
+		padding: 10px;
+		border-left: 0;
+	}
+	.gnb > li > ul > li > a{
+		font-size: 15px;
+		font-weight: 500;
+	}
+	.m-dday-wrap {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: calc(100% - 30px);
+		height: 55px;
+		margin: 0 15px;
+		border-radius: 0 0 20px 20px;
+		background-color: #399daf;
+		background-repeat: no-repeat;
+		background-image: url('../image/common/img_dday.png');
+		background-size: 32px;
+		background-position: calc(50% - 55px) center;
+	}
+	.m-dday-wrap > .dday {
+		padding-left: 40px;
+		font-size: 24px;
+		font-weight: 500;
+		color: #fff;
+	}
+	.m-dday-wrap > .dday > .today {
+		font-size: 12px;
+		font-weight: 400;
+	}
+	.m-util-menu {
+		margin: 15px 0;
+		text-align: center;
+	}
+	.m-util-menu > li {
+		display: inline-block;
+	}
+	.m-util-menu > li > a {
+		padding: 5px 10px;
+		font-size: 12px;
+		color: #626262;
+		text-align: center;
+		border: 1px solid #b9b9b9;
+		border-radius: 5px;
+	}
+	.footer-info {
+		justify-content: center;
+		gap: 25px;
+	}
+	.footer-info > p {
+		font-size: 14px;
+	}
+
+/* ========================================================================================================== */
+/* ================================================ main =============================================== */
+/* ========================================================================================================== */
+	.main-visual-con {
+		max-height: 540px;
+	}
+	.main-visual-text.inner-layer {
+		padding-top: 15px;
+		padding-right: 225px;
+	}
+	.main-dates{
+		gap: 12px;
+		bottom: 10px;
+	}
+	.main-dates > li  {
+		min-height: 154px;
+		padding: 25px 12px 15px;
+		border-radius: 10px 10px 20px 10px;
+	}
+	.main-dates > li span {
+		font-size: 15px;
+	}
+	.main-dates > li > strong {
+		margin: 15px 0;
+	}
+	.main-dates > li > strong > span {
+		font-size: 17px;
+	}
+	.main-dates > li > p > .until-date {
+		width: 64px;
+		height: 28px;
+		border-radius: 14px;
+	}
+	.main-dates > li > a {
+		padding: 20px;
+		background-size: 96px;
+	}
+	.main-dates > li > a > span {
+		font-size: 17px;
+	}
+	.main-visual-wrap .slick-dots {
+		top: 10px;
+		left: 15px;
+	}
+	.main-visual-wrap .slick-dots > li button{
+		width: 6px;
+		height: 6px;
+	}
+	.main-visual-wrap .slick-dots > li.slick-active button{
+		width: 16px;
+		border-radius: 3px;
+	}
+	.main-quick-wrap {
+		position: relative;
+		background-color: #fff;
+	}
+	.main-quick-wrap::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: inline-block;
+		width: 100%;
+		height: 193px;
+		background-color: rgba(230, 234, 249, 0.9);
+	}
+	.main-quick-wrap > .inner-layer {
+		display: block;
+	}
+	.main-quick-menu {
+		width: 100%;
+	}
+	.main-quick-menu > li {
+		width: calc((100% - 40px) / 3);
+	}
+	.main-quick-menu > li > a {
+		height: 138px;
+		padding: 25px 30px 90px;
+		background-size: 42px;
+	}
+	.main-quick-menu > li:hover > a {
+		background-color: unset;
+		box-shadow: none;
+	}
+	.main-quick-menu > li > a:before {
+		display: none;
+	}
+	.main-board-wrap {
+		width: 100%;
+		margin: 20px auto;
+    border: 1px solid #dadce4;
+	}
+	.main-tit-wrap > p {
+		font-size: 22px;
+	}
+	.main-banner-wrap {
+		background-position: right 0 top 0;
+		background-size: cover;
+	}
+	.main-banner-tit {
+		max-width: 320px;
+		padding: 57px 20px;
+	}
+	.main-board-wrap > ul > li {
+		margin-top: 16px;
+	}
+	.main-board-wrap > ul > li > a {
+		font-size: 15px;
+	}
+	.main-sponsor-wrap {
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+	.main-sponsor-wrap > dl {
+		display: block;
+		width: 100%;
+		min-height: unset;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.main-sponsor-wrap > dl + dl {
+		border-left: 0 none;
+	}
+	.main-sponsor-wrap > dl > dt {
+		z-index: 1000;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 0;
+		width: 115px;
+	}
+	.main-sponsor-wrap > dl > dd {
+		padding-left: 130px;
+	}
+	.main-sponsor-wrap .slick-track {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.main-con-wrap {
+		display: block;
+		padding-top: 0;
+	}
+	.main-news-wrap {
+		width: 100%;
+		margin-top: 20px;
+	}
+	.main-sponsor-wrap > dl dd a img {
+		height:25px;
+	}
+}
+@media screen and (max-width: 960px){
+	.scroll-x{
+		overflow-x: auto;
+	}
+	.scroll-x table{
+		width: 960px !important;
+	}
+
+	.touch-help{
+		position: relative;
+	}
+	.touch-help:before{
+		display: block;
+		content: '';
+		color: #fff;
+		clear: both;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: 10;
+		width: 100%;
+		max-width: 80%;
+		height: 100%;
+		-webkit-transform: translate(-50%,-50%);
+		transform: translate(-50%,-50%);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 100%;
+		background-image: url('../image/common/img_touch_help_eng.png');
+	}
+	.touch-help.small:before{
+		width: 100%;
+		max-width: 100%;
+		height: 75px;
+		background-size: auto 100%;
+	}
+	.touch-help table{
+		position: relative;
+	}
+	.touch-help table:before{
+		display: block;
+		content: '';
+		clear: both;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0,0,0,0.7);
+		z-index:9;
+	}
+}
+@media screen and (max-width: 768px){
+	body {
+		font-size: 14px;
+	}
+	.m-show {
+		display: block;
+	}
+
+	.main-con-wrap{
+		display: flex !important;
+		flex-direction: column !important;
+	}
+	
+/* ========================================================================================================== */
+/* ================================================ layer =============================================== */
+/* ========================================================================================================== */
+	.inner-layer {
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+	.host-support-wrap > .inner-layer {
+		flex-direction: column;
+		align-items: flex-start;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.host-support-wrap dl + dl {
+		margin-top: 5px;
+		padding-top: 5px;
+	}
+	.host-support-wrap dl > dt {
+		font-size: 12px;
+	}
+	.host-support-wrap dd a {
+		max-width: 85px;
+	}
+	.main-sponsor-wrap {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+	.main-sponsor-wrap > dl + dl {
+		margin-top: 5px;
+	}
+	.main-sponsor-wrap > dl > dt {
+		width: 85px;
+		height: 35px;
+		font-size: 12px;
+	}
+	.main-sponsor-wrap > dl > dd {
+		padding-left: 90px;
+	}
+	.btn-top{
+		width: 40px;
+		height: 40px;
+		font-size: 12px;
+		border-radius: 4px;
+		box-shadow: 2px 2px 5px rgba(233, 21, 127, 0.2);
+	}
+	.btn-top > span{
+		margin-bottom: 3px;
+		font-size: 12px;
+	}
+	.footer-info {
+		flex-direction: column;
+		gap: 10px;
+		padding: 20px 15px;
+	}
+	.footer-copy {
+		font-size: 11px;
+		padding: 10px;
+	}
+	.btnArea {
+		padding: 30px 0 0;
+	}
+	.btn a.btnBig {
+		height: 40px;
+		padding: 9px 20px 10px;
+		font-size: 15px;
+	}
+
+/* ========================================================================================================== */
+/* ================================================ main =============================================== */
+/* ========================================================================================================== */	
+.main-visual-con:nth-child(1) {
+		background-image: url('../image/main/img_mainvisual01_m.png');
+	}
+	.main-visual-con:nth-child(2) {
+		background-image: url('../image/main/img_mainvisual02_m.png');
+	}
+	.main-visual-con > img {
+		display: block !important;
+		width: 100%;
+	}
+	.main-visual-text.inner-layer {
+		padding-top: 25px;
+		padding-left: 15px;
+		padding-right: 15px;
+		padding-bottom: 291px;
+	}
+	.main-visual-tit {
+		max-width: 320px;
+	}
+	.main-visual-tit img {
+		max-width: 100%;
+	}
+	.main-visual-text
+	.main-visual-wrap .slick-dots{
+		left: 15px;
+	}
+	.main-visual-wrap{
+		height: 600px;
+	}
+	.main-dates{
+		grid-template-columns: repeat(2, 1fr);
+		/* top: 285px; */
+		top: 150px !important;
+		right: 0;
+		gap: 10px 15px;
+		width: 100%;
+	}
+	.main-dates.n4 {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.main-dates > li  {
+		min-height: 108px;
+		padding: 15px 8px 12px;
+		text-align: center;
+		border-radius: 5px 5px 20px 5px;
+	}
+	.main-dates > li::before {
+		height: 5px;
+	}
+	.main-dates > li span {
+		font-size: 12px;
+	}
+	.main-dates > li > strong {
+		margin: 5px 0;
+	}
+	.main-dates > li > strong > span {
+		font-size: 14px;
+	}
+	.main-dates > li:nth-child(1) > strong  > span {
+		background-image: linear-gradient(transparent calc(100% - 6px), #d4deff 6px);
+	}
+	.main-dates > li:nth-child(2) > strong > span {
+		background-image: linear-gradient(transparent calc(100% - 6px), #e7f9ff 6px);
+	}
+	.main-dates > li:nth-child(3) > strong > span {
+		background-image: linear-gradient(transparent calc(100% - 6px), #f4ffec 6px);
+	}
+	.main-dates > li:nth-child(4) > strong > span {
+		background-image: linear-gradient(transparent calc(100% - 6px), #ffebf6 6px);
+	}
+	.main-dates > li > p > .until-date {
+		width: 60px;
+		height: 24px;
+		border-radius: 12px;
+	}
+	.main-dates > li:has(a) {
+		text-align: left;
+	}
+	.main-dates > li > a  {
+		padding: 15px;
+		line-height: 1.2;
+		background-size: 76px;
+	}
+	.main-dates > li > a > span {
+		font-size: 14px;
+	}
+	.main-quick-wrap::before {
+		height: 80px;
+	}
+	.main-quick-menu {
+		padding: 0;
+		/* display: grid;
+		grid-template-columns: 1fr 1fr; */
+	}
+	.main-quick-menu > li {
+		width: calc((100% - 10px) / 3);
+}
+	.main-quick-menu > li > a {
+		height: 80px;
+		padding: 15px 10px 45px;
+		font-size: 13px;
+		background-position: right 10px bottom 10px;
+		background-size: 25px;
+	}
+	.main-tit-wrap > p {
+		font-size: 16px;
+	}
+	.main-board-wrap {
+		padding: 10px 15px;
+		margin: 10px 0;
+	}
+	.main-board-wrap > ul > li > a {
+		font-size: 13px;
+	}
+	.main-board-wrap > ul > li > a > .ellipsis {
+		max-width: calc(100% - 62px);
+	}
+	.main-banner-wrap {
+		background-position: right 0 top 0;
+		background-size: cover;
+	}
+	.main-banner-tit {
+		max-width: 160px;
+		padding: 28px 11px;
+	}
+	.main-download-wrap {
+		padding: 20px 15px 15px 15px;
+	}
+	.main-download-list > li:nth-child(1) > a {
+		background-size: 26px;
+	}
+	.main-download-list > li:nth-child(2) > a {
+		background-size: 35px;
+	}
+	.main-download-list > li:nth-child(3) > a {
+		background-size: 35px;
+	}
+	.main-download-list > li:nth-child(4) > a {
+		background-size: 36px;
+	}
+	.main-download-list a {
+		height: 55px;
+		padding: 15px 0 0 10px;
+		font-size: 13px;
+		background-position: right 10px bottom 12px;
+	}
+	.main-download-list a > span {
+		font-size: 12px;
+	}
+	.main-news-wrap > .main-news-con {
+		flex-direction: column;
+
+		padding: 12px 15px;
+	}
+	.main-news-con .sns {
+		padding-top: 7px;
+    padding-left: 8px;
+	}
+	.main-news-con .sns::before {
+		width: 31px;
+    height: 31px;
+		background-size: 100%;
+	}
+	.main-news-con .sns.youtube {
+		width: 100%;
+	}
+	.main-news-con .sns.twitter {
+		width: 100%;
+	}
+	.main-news-con .sns + .sns {
+		margin-top: 10px;
+		margin-left: 0;
+	}
+	.twitter-wrap {
+		height: auto;
+	}
+	.main-speakers-rolling-wrap {
+		padding-right: 25px;
+		padding-left: 25px;
+	}
+	.main-speakers-wrap > .inner-layer {
+		padding-top: 25px;
+		padding-bottom: 25px;
+	}
+	.main-speakers-tit {
+		font-size: 17px;
+		margin-bottom: 25px;
+	}
+	.speakers-con {
+		flex-direction: column;
+		justify-content: center;
+	}
+	.speakers-con > p {
+		text-align: center;
+		font-size: 12px;
+	}
+	.speakers-con > p > span {
+		font-size: 12px;
+	}
+	.speakers-con > p > strong {
+		margin-top: 4px;
+		margin-bottom: 0;
+		font-size: 14px;
+	}
+	.btn-speakers {
+		width: 17px;
+		height: 30px;
+	}
+
+    /* main vod rolling 추가 - 24.11.13 박민지 */
+    .video-rolling-wrap .main-speakers-tit{
+        margin-bottom: 10px;
+    }
+    .video-rolling-wrap.inner-layer{
+        margin: 20px auto;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .video-rolling{
+        margin: 0 auto;
+        height: auto;
+        width: calc(100% - 50px);
+    }
+    .video-rolling-wrap .btn-rolling{
+        width: 17px;
+        height: 30px;
+    }
+    .video-rolling-wrap .btn-rolling-prev{
+        left: 15px;
+    }
+    .video-rolling-wrap .btn-rolling-next{
+        right: 15px;
+    }
+    .video-rolling .swiper-slide{
+        padding: 10px;
+    }
+    .video-rolling .swiper-slide > a{
+        position: static;
+        top: auto;
+        left: auto;
+        -webkit-transform: none;
+        transform: none;
+        border-radius: 5px;
+        border-width: 1px;
+    }
+    .video-rolling .swiper-slide-active > a:after{
+        background-size: 46px;
+    }
+    .video-rolling .swiper-slide > a,
+    .video-rolling .swiper-slide-prev > a, 
+    .video-rolling .swiper-slide-next > a{
+        width: 100%;
+        height: auto;
+        filter: blur(0px);                
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }    
+    .video-rolling .swiper-slide-active > a{
+        box-shadow: 0px 0px 10px 0px rgba(9, 21, 58, 0.6);
+    }
+
+    /* main newsleter list 추가 - 24.11.14 박민지 */
+    .newsletter-link-wrap{
+        max-width: 100%;
+    }
+    .newsletter-link-wrap .tit{
+        margin-bottom: 5px;
+        font-size: 16px;
+    }
+    .btn-dropdown{
+        height: 35px;
+        font-size: 13px;
+    }
+    .btn-dropdown:after{
+        background-size: 8px;
+    }
+    .dropdown-menu{
+        top: 35px;
+    }
+    .dropdown-menu > li > a{
+        padding: 10px 15px;
+        padding-right: 30px;
+        background-size: 17px;
+        font-size: 13px;
+    }
+    
+/* ========================================================================================================== */
+/* ================================================ sub =============================================== */
+/* ========================================================================================================== */
+	.sub-visual-wrap,
+	.sub-menu .btn-home {
+		display: none;
+	}
+	.sub-menu.inner-layer {
+		padding-right: 0;
+		padding-left: 0;
+	}
+	.sub-menu .btn-home, .sub-menu-list {
+		float: none;
+	}
+	.sub-menu-list > li {
+		width: 50%;
+	}
+	.btn-sub-menu {
+		font-size: 14px;
+	}	
+	.sub-tit-wrap {
+		margin-bottom: 25px;
+	}
+	.sub-tit-wrap > .sub-tit {
+		padding-left: 40px;
+		font-size: 20px;
+	}
+	.sub-tit-wrap > .sub-tit::before {
+		width: 30px;
+		height: 30px;
+		background-size: 100%;
+	}
+	.subTit {
+    padding-left: 20px;
+		margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 16px;
+	}
+	.subTit::before {
+    top: 5px;
+    width: 14px;
+    height: 14px;
+		background-size: 100%;
+	}
+	.contents {
+		padding-top: 25px;
+		padding-bottom: 75px;
+	}
+	.sub-tab-menu > li > a {
+		height: 45px;
+		font-size: 15px;
+	}
+	.guidelines .tab-tit-wrap {
+		margin-top: 25px;
+	}
+	.guidelines .tab-tit {
+		font-size: 18px;
+	}
+	.guidelines > .sub-tab-con > .align-wrap {
+		flex-direction: column;
+	}
+}
+
+@media screen and (max-width: 400px){
+/* ========================================================================================================== */
+/* ================================================ main =============================================== */
+/* ========================================================================================================== */	
+	.main-dates > li span {
+		font-size: 10px;
+	}
+	.main-dates > li > strong > span {
+		font-size: 12px;
+	}
+	.main-quick-menu > li > a {
+		font-size: 12px;
+		background-position: right 5px bottom 10px;
+		background-size: 18px;
+	}
+	.main-dates > li > a  {
+		padding: 10px;
+		background-size: 46px;
+	}
+	.main-dates > li > a > span {
+		font-size: 13px;
+	}
+	.main-download-list a {
+		height: 55px;
+		padding: 15px 0 0 10px;
+		font-size: 11px;
+		background-position: right 10px bottom 12px;
+	}
+	.main-download-list > li:nth-child(1) > a {
+		background-size: 16px;
+	}
+	.main-download-list > li:nth-child(2) > a {
+		background-size: 25px;
+	}
+	.main-download-list > li:nth-child(3) > a {
+		background-size: 25px;
+	}
+	.main-download-list > li:nth-child(4) > a {
+		background-size: 26px;
+	}
+}

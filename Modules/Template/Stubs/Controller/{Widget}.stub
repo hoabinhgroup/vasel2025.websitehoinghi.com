@@ -1,0 +1,25 @@
+<?php
+
+namespace Modules\{Module}\Widgets;
+
+use Modules\Base\Widgets\BaseAbstractWidget;
+
+class {Widget} extends BaseAbstractWidget
+{
+    /**
+     * The configuration array.
+     *
+     * @var array
+     */
+    protected $config = [];
+
+    
+    public function run()
+    {
+        //
+
+        return view('{-module}::widgets.{-widget}', [
+            'config' => $this->config,
+        ]);
+    }
+}
