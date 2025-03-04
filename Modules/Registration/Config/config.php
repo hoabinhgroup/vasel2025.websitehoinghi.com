@@ -11,8 +11,8 @@ return [
         'code' => 'VASEL2025',
         'cc' => [
             [
-                'apscvir2025.secretariat@gmail.com',
-                'APSCVIR2025'
+                'hoabinhwebmaster@gmail.com',
+                'VASEL 2025',
             ],
         ],
         'sending_server' => 13,
