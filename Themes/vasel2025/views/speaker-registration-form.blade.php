@@ -222,11 +222,11 @@
 								<p>Submission Deadline:</p>
 								<li><span>+ Abstract Submission Deadline: </span>
 									<!-- <input type="text" name="report_deadline_summary" class="datepicker"
-																																									value="{{ $registration->report_deadline_summary ?? '' }}"> -->
+																																											value="{{ $registration->report_deadline_summary ?? '' }}"> -->
 								</li>
 								<li><span>+ Full-text Article Submission Deadline: </span>
 									<!-- <input type="text" name="report_deadline_full" class="datepicker"
-																																								value="{{ $registration->report_deadline_full ?? '' }}"> -->
+																																										value="{{ $registration->report_deadline_full ?? '' }}"> -->
 								</li>
 							</ul>
 							</p><!-- .row -->
@@ -336,8 +336,7 @@
 											checked @endif>Ms.
 										</label>
 										<label class="radio-inline other-title-wrapper">
-											<input name="title" value="other" type="radio" @if($registration->title !== null && !in_array($registration->title, $array_title)) checked @endif>Others.
-											Please Specify
+											<input name="title" value="other" type="radio" @if($registration->title !== null && !in_array($registration->title, $array_title)) checked @endif>Others
 											<input name="titleOther" id="titleOther" class="form-control input-sm"
 												value="{{ ($registration->title !== null && !in_array($registration->title, $array_title)) ? $registration->title : '' }}"
 												type="text" {{ ($registration->title == null || in_array($registration->title, $array_title)) ? 'disabled' : '' }}>
