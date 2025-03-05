@@ -337,7 +337,7 @@
 
 
 								<label class="radio-inline other-specify">
-									<input name="dietary" value="other" type="radio">Other. Please Specify:
+									<input name="dietary" value="other" type="radio">Other:
 									<div class="form-group">
 										<input name="dietaryOther" id="dietaryOther" class="form-control input-sm" value=""
 											type="text" disabled style="width: auto;">
@@ -363,9 +363,9 @@
 							</div>
 
 							<!-- <div id="international_registration_note">
-						<p>* Required a proof document (professor's referral letter) <br/>	
-					Full registration fee includes participation in conference, Congress documents, coffee and lunch breaks on each day, excluding accommodation.</p>
-						</div> -->
+							<p>* Required a proof document (professor's referral letter) <br/>	
+						Full registration fee includes participation in conference, Congress documents, coffee and lunch breaks on each day, excluding accommodation.</p>
+							</div> -->
 
 						</div>
 
