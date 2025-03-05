@@ -154,11 +154,6 @@
 				<form action="{{ route('invitee.registration.submit') }}" id="payment-registration"
 					class="form-horizontal col-md-12 col-md-offset-0" method="POST" enctype="multipart/form-data">
 					@csrf
-					<div id="registration_heading">
-						<center>
-							<i>Please complete the following details to submit your request.</i>
-						</center>
-					</div>
 					@if (isset($_GET['edit']) && $_GET['edit'] > 0)
 						<input type="hidden" name="id" value="{{ $registration->id }}">
 					@endif
@@ -200,8 +195,7 @@
 											checked @endif>Ms.
 										</label>
 										<label class="radio-inline other-title-wrapper">
-											<input name="title" value="other" type="radio" @if($registration->title !== null && !in_array($registration->title, $array_title)) checked @endif>Others.
-											Please Specify
+											<input name="title" value="other" type="radio" @if($registration->title !== null && !in_array($registration->title, $array_title)) checked @endif>Others
 											<input name="titleOther" id="titleOther" class="form-control input-sm"
 												value="{{ ($registration->title !== null && !in_array($registration->title, $array_title)) ? $registration->title : '' }}"
 												type="text" {{ ($registration->title == null || in_array($registration->title, $array_title)) ? 'disabled' : '' }}>
@@ -312,47 +306,46 @@
 
 					<div class="form-group-attach">
 						<div class="form-group">
-							<div class="row">
-								<div class="file-upload-wrapper" id="uploadCV" @if (isset($_GET['edit']) && $_GET['edit'] > 0) style="display:none;" @endif>
-									<!-- Phần hiển thị tên file -->
-									<div class="file-upload-filename" id="shortCV_name">SHORTCV
-									</div>
-
-									<label class="file-upload-label" for="shortCV_input">CHOOSE FILE</label>
-
-									<input class="file-upload-input" type="file" name="shortCV" id="shortCV_input"
-										value="{{ $registration->shortCV }}">
-
-
+							<label class="shortCV" for="shortCV"><strong>SHORTCV</strong><sup
+									style="color:red">*</sup>:</label>
+							<div class="file-upload-wrapper">
+								<!-- Phần hiển thị tên file -->
+								<div class="file-upload-filename" id="shortCV_name">
+									@if (isset($registration->shortCV) && $registration->shortCV)
+										{{ $registration->shortCV }}
+									@else 
+										SHORTCV
+									@endif
 								</div>
-								@if (isset($_GET['edit']) && $_GET['edit'] > 0)
-									<ul>
-										<li><a href="{{ get_image_url($registration->shortCV) }}">Download file</a></li>
-										<li><a href="javascript:void(0)" onclick="uploadOtherCV()"> Upload other CV</a></li>
-									</ul>
-								@endif
+
+
+								<label class="file-upload-label" for="shortCV_input">CHOOSE FILE</label>
+
+
+								<input class="file-upload-input" type="file" name="shortCV" id="shortCV_input"
+									value="{{ $registration->shortCV }}">
+
 							</div>
+
 						</div>
 						<div class="form-group">
-							<div class="row">
-								<div class="file-upload-wrapper" id="uploadPassport" @if (isset($_GET['edit']) && $_GET['edit'] > 0) style="display:none;" @endif>
-									<div class="file-upload-filename" id="passport_name">PASSPORT
-									</div>
-
-									<label class="file-upload-label" for="passport_input">CHOOSE FILE</label>
-
-
-									<input class="file-upload-input" type="file" name="passport" id="passport_input"
-										value="{{ $registration->passport }}">
-
+							<label class="passport" for="passport"><strong>PASSPORT</strong><sup
+									style="color:red">*</sup>:</label>
+							<div class="file-upload-wrapper">
+								<div class="file-upload-filename" id="passport_name">
+									@if (isset($registration->passport) && $registration->passport)
+										{{ $registration->passport }}
+									@else 
+										PASSPORT
+									@endif
 								</div>
-								@if (isset($_GET['edit']) && $_GET['edit'] > 0)
-									<ul>
-										<li><a href="{{ get_image_url($registration->passport) }}">Download passport</a></li>
-										<li><a href="javascript:void(0)" onclick="uploadOtherPassport()"> Upload other
-												passport</a></li>
-									</ul>
-								@endif
+
+								<label class="file-upload-label" for="passport_input">CHOOSE FILE</label>
+
+
+								<input class="file-upload-input" type="file" name="passport" id="passport_input"
+									value="{{ $registration->passport }}">
+
 							</div>
 						</div>
 					</div>
@@ -498,7 +491,7 @@
 									<input id="wire_transfer" name="payment_method"
 										value="{{ PaymentMethodEnum::BANK_TRANSFER }}" type="radio"
 										@if($registration->payment_method == PaymentMethodEnum::BANK_TRANSFER) checked @endif>
-									<span class="title_payment">WIRE TRANSFER</span>
+									<span class="title_payment">Wire transfer</span>
 								</label>
 								<div class="wire_transfer_description">
 									Account name: Hội Ngoại khoa và Phẫu thuật nội soi Việt Nam <br />

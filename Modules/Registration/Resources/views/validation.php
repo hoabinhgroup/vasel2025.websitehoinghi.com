@@ -13,7 +13,7 @@
 			errorElement: 'span', //default input error message container
 			errorClass: 'help-block error-help-block', // default input error message class
 			focusInvalid: true, // do not focus the last invalid input
-			ignore: ":hidden",  // validate all fields including form hidden input
+			ignore: ":hidden:not(#shortCV_input, #passport_input)",  // validate all fields including form hidden input
 			errorPlacement: function (error, element) {
 				if (element.attr('type') == 'radio' || element.attr('type') == 'checkbox') {
 					error.appendTo(element.closest('.form-group'));

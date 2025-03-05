@@ -76,7 +76,9 @@ class InviteeRegistrationController extends PublicController
         'experience.required' => 'Please enter your years of experience.',
         'course_name.required' => 'Please enter the course name.',
         'course_name.min' => 'The course name must have at least 1 character.',
-        'galadinner.required' => 'Please confirm your attendance at the gala dinner.'
+        'galadinner.required' => 'Please confirm your attendance at the gala dinner.',
+        'shortCV.required' => 'Please upload your short CV.',
+        'passport.required' => 'Please upload your short Passport.',
       ],
       [],
       '#payment-registration',

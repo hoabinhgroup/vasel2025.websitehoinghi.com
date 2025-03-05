@@ -152,14 +152,7 @@
 				<form action="{{ route('payment.registration.submit') }}" id="payment-registration"
 					class="form-horizontal col-md-12 col-md-offset-0" method="POST" enctype="multipart/form-data">
 					@csrf
-					<div id="registration_heading">
-						<center>
 
-							<i>Please complete the following details to submit your request.</i>
-						</center>
-
-
-					</div>
 					<div class="form-group">
 						<div class="row no-gutters">
 							<div class="col-md-12">
@@ -370,9 +363,9 @@
 							</div>
 
 							<!-- <div id="international_registration_note">
-					<p>* Required a proof document (professor's referral letter) <br/>	
-				Full registration fee includes participation in conference, Congress documents, coffee and lunch breaks on each day, excluding accommodation.</p>
-					</div> -->
+						<p>* Required a proof document (professor's referral letter) <br/>	
+					Full registration fee includes participation in conference, Congress documents, coffee and lunch breaks on each day, excluding accommodation.</p>
+						</div> -->
 
 						</div>
 

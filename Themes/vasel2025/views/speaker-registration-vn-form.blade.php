@@ -154,11 +154,6 @@
 				<form action="{{ route('speaker.registration.vn.submit') }}" id="payment-registration"
 					class="form-horizontal col-md-12 col-md-offset-0" method="POST" enctype="multipart/form-data">
 					@csrf
-					<div id="registration_heading">
-						<center>
-							<i>Please complete the following details to submit your request.</i>
-						</center>
-					</div>
 					@if (isset($_GET['edit']) && $_GET['edit'] > 0)
 						<input type="hidden" name="id" value="{{ $registration->id }}">
 					@endif
@@ -171,8 +166,9 @@
 						</div><!-- .row -->
 					</div>
 					<div class="form-group">
+						<label for=""><strong>LĨNH VỰC BÁO CÁO</strong><span style="color:red">*</span>:</label>
 						<div class="row no-gutters">
-							<label for=""><strong>LĨNH VỰC BÁO CÁO</strong><span style="color:red">*</span>:</label>
+
 							<div class="radio-list general-information-title">
 								@foreach (report_sessions_vn() as $session_id => $session_name)
 									<label class="radio-inline">
@@ -185,8 +181,7 @@
 								<label class="radio-inline other-specify">
 									<div class="other-specify-title">
 										<input name="session" value="other_session" type="radio" @if($registration->session !== null && !in_array($registration->session, report_sessions())) checked
-										@endif>Other.
-										Please Specify:
+										@endif>Khác
 									</div>
 									<div class="form-group other-session">
 										<input name="otherSession" id="sessionOther" class="form-control input-sm"
@@ -227,12 +222,12 @@
 								<p>Thời hạn nộp báo cáo:</p>
 								<li><span>+ Thời gian nộp bài báo cáo tóm tắt (tiếng Việt và tiếng Anh): <strong>trước
 											ngày</strong></span>
-									<input type="text" name="report_deadline_summary" class="datepicker"
-										value="{{ $registration->report_deadline_summary ?? '' }}">
+									<!-- <input type="text" name="report_deadline_summary" class="datepicker"
+																		value="{{ $registration->report_deadline_summary ?? '' }}"> -->
 								</li>
 								<li><span>+ Thời gian nộp bài toàn văn: <strong>trước ngày</strong></span>
-									<input type="text" name="report_deadline_full" class="datepicker"
-										value="{{ $registration->report_deadline_full ?? '' }}">
+									<!-- <input type="text" name="report_deadline_full" class="datepicker"
+																		value="{{ $registration->report_deadline_full ?? '' }}"> -->
 								</li>
 							</ul>
 							</p><!-- .row -->
@@ -403,7 +398,7 @@
 					</div>
 
 					<!-- <div class="passport_section form-group" style="display: none">
-																																																																																																																																																																																				</div> -->
+																																																																																																																																																																																														</div> -->
 
 					<div class="form-group">
 						<div class="row no-gutters">
@@ -426,15 +421,14 @@
 					<div class="form-group">
 						<div class="row no-gutters">
 							<label for=""><strong>Số điện thoại</strong> <sup style="color:red">*</sup>:</label>
-							<input type="phone" class="form-control col-md-12" id="phone" name="phone"
-								placeholder="Cung cấp số điện thoại chính xác để liên hệ và gửi các chứng nhận và hóa đơn (nếu có). Ban Tổ chức không chịu trách nhiệm về việc thất lạc nếu thông tin cung cấp không chính xác"
-								value="{{ $registration->phone }}">
+							<textarea class="form-control col-md-12" id="phone" name="phone"
+								placeholder="Cung cấp số điện thoại chính xác để liên hệ và gửi các chứng nhận và hóa đơn (nếu có). Ban Tổ chức không chịu trách nhiệm về việc thất lạc nếu thông tin cung cấp không chính xác">{{ $registration->phone }}</textarea>
 						</div><!-- .row -->
 					</div>
 
 					<div class="form-group">
 						<div class="row no-gutters">
-							<label for=""><strong>CMND/CCCD/Hộ chiếu</strong> <sup style="color:red">*</sup>:</label>
+							<label for=""><strong>CCCD/Hộ chiếu</strong> <sup style="color:red">*</sup>:</label>
 							<input type="text" class="form-control col-md-12" id="cid" name="cid"
 								placeholder="Số căn cước, Số hộ chiếu" value="{{ $registration->cid }}">
 						</div><!-- .row -->
@@ -491,12 +485,12 @@
 
 								<label class="radio-inline">
 									<input name="training" value="yes" type="radio" @if($registration->training == 'yes')
-									checked @endif> Yes
+									checked @endif> Có
 								</label>
 
 								<label class="radio-inline">
 									<input name="training" value="no" type="radio" @if($registration->training == 'no')
-									checked @endif> No
+									checked @endif> Không
 								</label>
 
 							</div>
@@ -581,13 +575,13 @@
 
 								<label class="radio-inline">
 									<input name="galadinner" value="yes" type="radio" @if($registration->galadinner == 'yes')
-									checked @endif> Yes
+									checked @endif> Có
 								</label>
 
 
 								<label class="radio-inline">
 									<input name="galadinner" value="no" type="radio" @if($registration->galadinner == 'no')
-									checked @endif> No
+									checked @endif> Không
 								</label>
 
 							</div>

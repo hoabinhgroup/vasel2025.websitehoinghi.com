@@ -158,11 +158,6 @@
 				<form action="{{ route('invitee.registration.vn.submit') }}" id="payment-registration"
 					class="form-horizontal col-md-12 col-md-offset-0" method="POST" enctype="multipart/form-data">
 					@csrf
-					<div id="registration_heading">
-						<center>
-							<i>Please complete the following details to submit your request.</i>
-						</center>
-					</div>
 					@if (isset($_GET['edit']) && $_GET['edit'] > 0)
 						<input type="hidden" name="id" value="{{ $registration->id }}">
 					@endif
@@ -185,8 +180,8 @@
 										@endforeach
 
 										<label class="radio-inline other-title-wrapper">
-											<input name="title" value="other" type="radio" @if($registration->title !== null && !in_array($registration->title, $array_title)) checked @endif>Others.
-											Please Specify
+											<input name="title" value="other" type="radio" @if($registration->title !== null && !in_array($registration->title, $array_title)) checked @endif>Khác
+
 											<input name="titleOther" id="titleOther" class="form-control input-sm"
 												value="{{ ($registration->title !== null && !in_array($registration->title, $array_title)) ? $registration->title : '' }}"
 												type="text" {{ ($registration->title == null || in_array($registration->title, $array_title)) ? 'disabled' : '' }}>
@@ -231,8 +226,9 @@
 					<div class="form-group">
 						<div class="row no-gutters">
 							<label for=""><strong>ĐỊA CHỈ LIÊN HỆ </strong><sup style="color:red">*</sup>:</label>
-							<textarea class="form-control col-md-12" id="address" name="address"
-								placeholder="Cung cấp địa chỉ liên hệ chính xác để gửi các thư mời và giấy chứng nhận (nếu có)">{{ $registration->address }}</textarea>
+							<input type="text" class="form-control col-md-12" id="address" name="address"
+								placeholder="Cung cấp địa chỉ liên hệ chính xác để gửi các thư mời và giấy chứng nhận (nếu có)"
+								value="{{ $registration->address }}">
 						</div>
 					</div>
 
@@ -355,8 +351,7 @@
 
 										<label class="radio-inline course-other">
 											<input name="course" value="other_course" type="radio" @if($registration->course !== null && !in_array($registration->course, array_course())) checked @endif>
-											Khác. Vui lòng
-											điền
+											Khác
 											<input type="text" class="form-control col-md-4" id="other_course"
 												name="other_course"
 												value="{{ ($registration->course !== null && !in_array($registration->course, array_course())) ? $registration->course : '' }}"

@@ -8,6 +8,7 @@
 			display: flex;
 			flex-direction: row;
 			align-items: center;
+			width: 100%
 		}
 
 		.general-information-category .radio-inline {
@@ -154,11 +155,7 @@
 				<form action="{{ route('speaker.registration.submit') }}" id="payment-registration"
 					class="form-horizontal col-md-12 col-md-offset-0" method="POST" enctype="multipart/form-data">
 					@csrf
-					<div id="registration_heading">
-						<center>
-							<i>Please complete the following details to submit your request.</i>
-						</center>
-					</div>
+
 					@if (isset($_GET['edit']) && $_GET['edit'] > 0)
 						<input type="hidden" name="id" value="{{ $registration->id }}">
 					@endif
@@ -171,8 +168,9 @@
 						</div><!-- .row -->
 					</div>
 					<div class="form-group">
+						<label for=""><strong>Session</strong><span style="color:red">*</span>:</label>
 						<div class="row no-gutters">
-							<label for=""><strong>Session</strong><span style="color:red">*</span>:</label>
+
 							<div class="radio-list general-information-title">
 								@foreach (report_sessions() as $session_id => $session_name)
 									<label class="radio-inline">
@@ -185,8 +183,7 @@
 								<label class="radio-inline other-specify">
 									<div class="other-specify-title">
 										<input name="session" value="other_session" type="radio" @if($registration->session !== null && !in_array($registration->session, report_sessions())) checked
-										@endif>Other.
-										Please Specify:
+										@endif>Other
 									</div>
 									<div class="form-group other-session">
 										<input name="otherSession" id="sessionOther" class="form-control input-sm"
@@ -224,12 +221,12 @@
 							<ul class="deadline-submit-abstract">
 								<p>Submission Deadline:</p>
 								<li><span>+ Abstract Submission Deadline: </span>
-									<input type="text" name="report_deadline_summary" class="datepicker"
-										value="{{ $registration->report_deadline_summary ?? '' }}">
+									<!-- <input type="text" name="report_deadline_summary" class="datepicker"
+																																									value="{{ $registration->report_deadline_summary ?? '' }}"> -->
 								</li>
 								<li><span>+ Full-text Article Submission Deadline: </span>
-									<input type="text" name="report_deadline_full" class="datepicker"
-										value="{{ $registration->report_deadline_full ?? '' }}">
+									<!-- <input type="text" name="report_deadline_full" class="datepicker"
+																																								value="{{ $registration->report_deadline_full ?? '' }}"> -->
 								</li>
 							</ul>
 							</p><!-- .row -->
@@ -238,45 +235,47 @@
 
 					<div class="form-group-attach">
 						<div class="form-group">
-							<div class="row">
-								<div class="file-upload-wrapper">
-									<!-- Phần hiển thị tên file -->
-									<div class="file-upload-filename" id="report_file_summary_name">ABSTRACT FILE
-									</div>
-
-									<!-- Nút chọn file -->
-									<label class="file-upload-label" for="report_file_summary_input">CHOOSE FILE</label>
-
-									<!-- Input file thật (bị ẩn) -->
-									<input class="file-upload-input" type="file" name="report_file_summary"
-										id="report_file_summary_input" value="{{ $registration->report_file_summary }}">
-
-
+							<div class="file-upload-wrapper">
+								<!-- Phần hiển thị tên file -->
+								<div class="file-upload-filename" id="report_file_summary_name">
+									@if (isset($registration->report_file_summary) && $registration->report_file_summary)
+										{{ $registration->report_file_summary }}
+									@else 
+										ABSTRACT FILE
+									@endif
 								</div>
-								@if (isset($_GET['edit']) && $_GET['edit'] > 0)
-									<a href="{{ get_image_url($registration->report_file_summary) }}">Download file</a>
-								@endif
+
+								<!-- Nút chọn file -->
+								<label class="file-upload-label" for="report_file_summary_input">CHOOSE FILE</label>
+
+								<!-- Input file thật (bị ẩn) -->
+								<input class="file-upload-input" type="file" name="report_file_summary"
+									id="report_file_summary_input" value="{{ $registration->report_file_summary }}">
+
+
 							</div>
 						</div>
 						<div class="form-group">
-							<div class="row">
-								<div class="file-upload-wrapper">
-									<!-- Phần hiển thị tên file -->
-									<div class="file-upload-filename" id="report_file_full_name">FULL-TEXT ARTICLE FILE
-									</div>
-
-									<!-- Nút chọn file -->
-									<label class="file-upload-label" for="report_file_full_input">CHOOSE FILE</label>
-
-									<!-- Input file thật (bị ẩn) -->
-									<input class="file-upload-input" type="file" name="report_file_full"
-										id="report_file_full_input" value="{{ $registration->report_file_full }}">
+							<div class="file-upload-wrapper">
+								<!-- Phần hiển thị tên file -->
+								<div class="file-upload-filename" id="report_file_full_name">
+									@if (isset($registration->report_file_full) && $registration->report_file_full)
+										{{ $registration->report_file_full }}
+									@else 
+										FULL-TEXT ARTICLE FILE
+									@endif	
 
 								</div>
-								@if (isset($_GET['edit']) && $_GET['edit'] > 0)
-									<a href="{{ get_image_url($registration->report_file_full) }}">Download file</a>
-								@endif
+
+								<!-- Nút chọn file -->
+								<label class="file-upload-label" for="report_file_full_input">CHOOSE FILE</label>
+
+								<!-- Input file thật (bị ẩn) -->
+								<input class="file-upload-input" type="file" name="report_file_full"
+									id="report_file_full_input" value="{{ $registration->report_file_full }}">
+
 							</div>
+
 						</div>
 					</div>
 
@@ -449,42 +448,46 @@
 
 					<div class="form-group-attach">
 						<div class="form-group">
-							<div class="row">
-								<div class="file-upload-wrapper">
-									<!-- Phần hiển thị tên file -->
-									<div class="file-upload-filename" id="shortCV_name">SHORTCV
-									</div>
-
-
-									<label class="file-upload-label" for="shortCV_input">CHOOSE FILE</label>
-
-
-									<input class="file-upload-input" type="file" name="shortCV" id="shortCV_input"
-										value="{{ $registration->shortCV }}">
-
-
+							<label class="shortCV" for="shortCV"><strong>SHORTCV</strong><sup
+									style="color:red">*</sup>:</label>
+							<div class="file-upload-wrapper">
+								<!-- Phần hiển thị tên file -->
+								<div class="file-upload-filename" id="shortCV_name">
+									@if (isset($registration->shortCV) && $registration->shortCV)
+										{{ $registration->shortCV }}
+									@else 
+										SHORTCV
+									@endif
 								</div>
-								@if (isset($_GET['edit']) && $_GET['edit'] > 0)
-									<a href="{{ get_image_url($registration->shortCV) }}">Download file</a>
-								@endif
+
+
+								<label class="file-upload-label" for="shortCV_input">CHOOSE FILE</label>
+
+
+								<input class="file-upload-input" type="file" name="shortCV" id="shortCV_input"
+									value="{{ $registration->shortCV }}">
+
 							</div>
+
 						</div>
 						<div class="form-group">
-							<div class="row">
-								<div class="file-upload-wrapper">
-									<div class="file-upload-filename" id="passport_name">PASSPORT
-									</div>
-
-									<label class="file-upload-label" for="passport_input">CHOOSE FILE</label>
-
-
-									<input class="file-upload-input" type="file" name="passport" id="passport_input"
-										value="{{ $registration->passport }}">
-
+							<label class="passport" for="passport"><strong>PASSPORT</strong><sup
+									style="color:red">*</sup>:</label>
+							<div class="file-upload-wrapper">
+								<div class="file-upload-filename" id="passport_name">
+									@if (isset($registration->passport) && $registration->passport)
+										{{ $registration->passport }}
+									@else 
+										PASSPORT
+									@endif
 								</div>
-								@if (isset($_GET['edit']) && $_GET['edit'] > 0)
-									<a href="{{ get_image_url($registration->passport) }}">Download file</a>
-								@endif
+
+								<label class="file-upload-label" for="passport_input">CHOOSE FILE</label>
+
+
+								<input class="file-upload-input" type="file" name="passport" id="passport_input"
+									value="{{ $registration->passport }}">
+
 							</div>
 						</div>
 					</div>
@@ -534,8 +537,7 @@
 
 										<label class="radio-inline course-other">
 											<input name="course" value="other_course" type="radio" @if($registration->course !== null && !in_array($registration->course, $array_course)) checked @endif>
-											Others. Please
-											Specify:
+											Others
 											<input type="text" class="form-control col-md-4" id="other_course"
 												name="other_course"
 												value="{{ ($registration->course !== null && !in_array($registration->course, $array_course)) ? $registration->course : '' }}"

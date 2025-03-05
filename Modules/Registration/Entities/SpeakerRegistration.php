@@ -65,8 +65,8 @@ class SpeakerRegistration extends Model implements Auditable
             $registration->session = request()->otherSession ?? request()->session;
             $registration->course = request()->other_course ?? request()->course;
             $registration->course_name = json_encode(request()->course_name);
-            $registration->report_deadline_summary = Carbon::createFromFormat('d/m/Y', request()->report_deadline_summary)->format('Y-m-d');
-            $registration->report_deadline_full = Carbon::createFromFormat('d/m/Y', request()->report_deadline_full)->format('Y-m-d');
+            // $registration->report_deadline_summary = Carbon::createFromFormat('d/m/Y', request()->report_deadline_summary)->format('Y-m-d');
+            // $registration->report_deadline_full = Carbon::createFromFormat('d/m/Y', request()->report_deadline_full)->format('Y-m-d');
         };
 
         static::creating(function ($registration) use ($setRegistrationData) {

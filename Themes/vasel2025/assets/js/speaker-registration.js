@@ -100,6 +100,7 @@ class ConferenceRegistration {
         });
     }
 
+
     initFileUploaders() {
         this.fileUploaders = this.config.fileUploadConfig.map(config =>
             new FileUploader(config.input, config.name, config.defaultText)

@@ -193,16 +193,16 @@ if (!function_exists("report_sessions_vn")) {
     {
         return [
             0 => "Tiêu hóa",
-            1 => "Chấn thương - Cột sống",
-            2 => "Ghép tạng",
-            3 => "Nội soi và nội soi can thiệp",
-            4 => "Tiết niệu",
-            5 => "Tim mạch - Lồng ngực",
-            6 => "Nhi",
-            7 => "Điều dưỡng",
-            8 => "Thần kinh - Sọ não",
-            9 => "Tạo hình - Thẩm mỹ",
-            10 => "Điện quang can thiệp"
+            1 => "Tiết niệu",
+            2 => "Thần kinh - Sọ não",
+            3 => "Chấn thương - Cột sống",
+            4 => "Tim mạch - Lồng ngực",
+            5 => "Tạo hình - Thẩm mỹ",
+            6 => "Ghép tạng",
+            7 => "Nhi",
+            8 => "Điện quang can thiệp",
+            9 => "Nội soi và nội soi can thiệp",
+            10 => "Điều dưỡng"
         ];
     }
 }

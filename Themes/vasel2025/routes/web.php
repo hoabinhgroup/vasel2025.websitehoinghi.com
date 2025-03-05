@@ -17,11 +17,11 @@ Route::group(
 				Route::get("speaker-registration-vn", 'SpeakerRegistrationVnController@form')->name('speaker.registration.vn');
 				Route::post("speaker-registration-vn-submit", 'SpeakerRegistrationVnController@submit')->name('speaker.registration.vn.submit');
 
-				Route::get("invitee-registration", 'InviteeRegistrationController@form')->name('invitee.registration');
-				Route::post("invitee-registration-submit", 'InviteeRegistrationController@submit')->name('invitee.registration.submit');
+				Route::get("delegate-registration", 'InviteeRegistrationController@form')->name('invitee.registration');
+				Route::post("delegate-registration-submit", 'InviteeRegistrationController@submit')->name('invitee.registration.submit');
 
-				Route::get("invitee-registration-vn", 'InviteeRegistrationVnController@form')->name('invitee.registration.vn');
-				Route::post("invitee-registration-vn-submit", 'InviteeRegistrationVnController@submit')->name('invitee.registration.vn.submit');
+				Route::get("delegate-registration-vn", 'InviteeRegistrationVnController@form')->name('invitee.registration.vn');
+				Route::post("delegate-registration-vn-submit", 'InviteeRegistrationVnController@submit')->name('invitee.registration.vn.submit');
 
 				Route::get("payment-registration-page", function () {
 					return view("Vasel2025::payment-registration-page");
