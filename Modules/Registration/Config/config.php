@@ -15,10 +15,10 @@ return [
                 'VASEL 2025',
             ],
         ],
-        'sending_server' => 13,
-        'from_email' => 'louis.standbyme@gmail.com',
-        'from_name' => 'louis.standbyme@gmail.com',
+        'sending_server' => 25,
+        'from_email' => 'hoithao@hoabinh-group.com',
+        'from_name' => 'hoithao@hoabinh-group.com',
         'subject' => 'VASEL 2025 - Đăng ký báo cáo thành công ',
-        'reply_to' => 'louis.standbyme@gmail.com'
+        'reply_to' => 'hoithao@hoabinh-group.com'
     ]
 ];

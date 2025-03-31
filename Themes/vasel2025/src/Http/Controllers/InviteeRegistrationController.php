@@ -33,8 +33,8 @@ class InviteeRegistrationController extends PublicController
 
     $validator = JsValidator::make(
       [
-        'title' => 'required',
-        'titleOther' => 'required_if:title,other',
+        'title[]' => 'required',
+        'titleOther' => 'required_if:title[],other',
         'shortCV' => 'required|mimes:jpg,png,pdf,doc,docx|max:8120',
         'passport' => 'required|mimes:jpg,png,pdf,doc,docx|max:8120',
         'fullname' => 'required',
@@ -57,7 +57,7 @@ class InviteeRegistrationController extends PublicController
         'payment_method' => 'required',
       ],
       [
-        'title.required' => 'Please select a title.',
+        'title[].required' => 'Please select a title.',
         'titleOther.required_if' => 'Please enter another title.',
         'fullname.required' => 'Please enter your full name.',
         'work.required' => 'Please enter your workplace.',

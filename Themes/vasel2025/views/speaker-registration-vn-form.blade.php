@@ -223,11 +223,11 @@
 								<li><span>+ Thời gian nộp bài báo cáo tóm tắt (tiếng Việt và tiếng Anh): <strong>trước
 											ngày 17/7/2025</strong></span>
 									<!-- <input type="text" name="report_deadline_summary" class="datepicker"
-																										value="{{ $registration->report_deadline_summary ?? '' }}"> -->
+																																																						value="{{ $registration->report_deadline_summary ?? '' }}"> -->
 								</li>
 								<li><span>+ Thời gian nộp bài toàn văn: <strong>trước ngày 15/8/2025</strong></span>
 									<!-- <input type="text" name="report_deadline_full" class="datepicker"
-																										value="{{ $registration->report_deadline_full ?? '' }}"> -->
+																																																						value="{{ $registration->report_deadline_full ?? '' }}"> -->
 								</li>
 							</ul>
 							</p><!-- .row -->
@@ -297,7 +297,10 @@
 						</div><!-- .row -->
 					</div>
 
-					<?php $array_title = ['GS', 'PGS', 'TS', 'ThS', 'BSCKII', 'BSCKI', 'BS', 'ĐD', 'KTV']; ?>
+					<?php $array_title = ['GS', 'PGS', 'TS', 'ThS', 'BSCKII', 'BSCKI', 'BS', 'ĐD', 'KTV'];
+	$title = json_decode($registration->title) ?? [];
+
+						?>
 					<h2 class="heading_red">THÔNG TIN BÁO CÁO VIÊN</h2>
 					<div class="form-group">
 						<label for=""><strong>Chức danh</strong><span style="color:red">*</span>:</label>
@@ -308,11 +311,11 @@
 									<div class="radio-left">Học hàm:</div>
 									<div class="radio-right">
 										<label class="radio-inline">
-											<input name="title" value="GS" type="radio" @if($registration->title == 'GS')
+											<input name="title[]" value="GS" type="checkbox" @if(in_array('GS', $title))
 											checked @endif>GS.
 										</label>
 										<label class="radio-inline">
-											<input name="title" value="PGS" type="radio" @if($registration->title == 'PGS')
+											<input name="title[]" value="PGS" type="checkbox" @if(in_array('PGS', $title))
 											checked @endif>PGS.
 										</label>
 									</div>
@@ -321,20 +324,18 @@
 									<div class="radio-left">Học vị:</div>
 									<div class="radio-right">
 										<label class="radio-inline">
-											<input name="title" value="TS" type="radio" @if($registration->title == 'TS')
+											<input name="title[]" value="TS" type="checkbox" @if(in_array('TS', $title))
 											checked @endif>TS.
 										</label>
 										<label class="radio-inline">
-											<input name="title" value="ThS" type="radio" @if($registration->title == 'ThS')
+											<input name="title[]" value="ThS" type="checkbox" @if(in_array('ThS', $title))
 											checked @endif>ThS.
 										</label>
 										<label class="radio-inline">
-											<input name="title" value="BSCKII" type="radio"
-												@if($registration->title == 'BSCKII') checked @endif>BSCKII.
+											<input name="title[]" value="BSCKII" type="checkbox" @if(in_array('BSCKII', $title)) checked @endif>BSCKII.
 										</label>
 										<label class="radio-inline">
-											<input name="title" value="BSCKI" type="radio"
-												@if($registration->title == 'BSCKI') checked @endif>BSCKI.
+											<input name="title[]" value="BSCKI" type="checkbox" @if(in_array('BSCKI', $title)) checked @endif>BSCKI.
 										</label>
 									</div>
 								</div>
@@ -342,22 +343,22 @@
 									<div class="radio-left">Đối tượng khác:</div>
 									<div class="radio-right">
 										<label class="radio-inline">
-											<input name="title" value="BS" type="radio" @if($registration->title == 'BS')
+											<input name="title[]" value="BS" type="checkbox" @if(in_array('BS', $title))
 											checked @endif>BS.
 										</label>
 										<label class="radio-inline">
-											<input name="title" value="ĐD" type="radio" @if($registration->title == 'ĐD')
+											<input name="title[]" value="ĐD" type="checkbox" @if(in_array('ĐD', $title))
 											checked @endif>ĐD.
 										</label>
 										<label class="radio-inline">
-											<input name="title" value="KTV" type="radio" @if($registration->title == 'KTV')
+											<input name="title[]" value="KTV" type="checkbox" @if(in_array('KTV', $title))
 											checked @endif>KTV.
 										</label>
 										<label class="radio-inline other-title-wrapper">
-											<input name="title" value="other" type="radio" @if($registration->title !== null && !in_array($registration->title, $array_title)) checked @endif>Khác
+											<input name="title[]" value="other" type="checkbox"
+												@if($registration->title_other) checked @endif>Khác
 											<input name="titleOther" id="titleOther" class="form-control input-sm"
-												value="{{ ($registration->title !== null && !in_array($registration->title, $array_title)) ? $registration->title : '' }}"
-												type="text" {{ ($registration->title == null || in_array($registration->title, $array_title)) ? 'disabled' : '' }}>
+												value="{{ $registration->title_other ?? '' }}" type="text" {{ $registration->title_other == null ? 'disabled' : '' }}>
 										</label>
 									</div>
 								</div>
@@ -397,7 +398,7 @@
 					</div>
 
 					<!-- <div class="passport_section form-group" style="display: none">
-																																																																																																																																																																																																						</div> -->
+																																																																																																																																																																																																																																		</div> -->
 
 					<div class="form-group">
 						<div class="row no-gutters">

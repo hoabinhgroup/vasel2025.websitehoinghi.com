@@ -33,8 +33,8 @@ class SpeakerRegistrationController extends PublicController
 
     $validator = JsValidator::make(
       [
-        'title' => 'required',
-        'titleOther' => 'required_if:title,other',
+        'title[]' => 'required',
+        'titleOther' => 'required_if:title[],other',
         'topic' => 'required',
         'session' => 'required',
         'sessionOther' => 'required_if:session,other_session',
@@ -62,7 +62,7 @@ class SpeakerRegistrationController extends PublicController
         'galadinner' => 'required',
       ],
       [
-        'title.required' => 'Please select a title.',
+        'title[].required' => 'Please select a title.',
         'titleOther.required_if' => 'Please enter another title.',
         'topic.required' => 'Please select a topic.',
         'session.required' => 'Please select a session.',

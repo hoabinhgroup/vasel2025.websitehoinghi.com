@@ -32,8 +32,8 @@ class InviteeRegistrationVnController extends PublicController
 
     $validator = JsValidator::make(
       [
-        'title' => 'required',
-        'titleOther' => 'required_if:title,other',
+        'title[]' => 'required',
+        'titleOther' => 'required_if:title[],other',
         'fullname' => 'required',
         'work' => 'required',
         'jobtitle' => 'required',
@@ -57,7 +57,7 @@ class InviteeRegistrationVnController extends PublicController
         'payment_method' => 'required',
       ],
       [
-        'title.required' => 'Vui lòng chọn danh xưng.',
+        'title[].required' => 'Vui lòng chọn danh xưng.',
         'titleOther.required_if' => 'Vui lòng nhập danh xưng khác.',
         'fullname.required' => 'Vui lòng nhập họ và tên.',
         'work.required' => 'Vui lòng nhập nơi làm việc.',

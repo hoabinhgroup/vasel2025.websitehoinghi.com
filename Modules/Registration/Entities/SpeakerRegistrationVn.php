@@ -34,6 +34,7 @@ class SpeakerRegistrationVn extends Model implements Auditable
         'report_file_full',
         'journal_vn',
         'title',
+        'title_other',
         'fullname',
         'work',
         'jobtitle',
@@ -62,7 +63,10 @@ class SpeakerRegistrationVn extends Model implements Auditable
         parent::boot();
 
         $setRegistrationData = function ($registration) {
-            $registration->title = request()->titleOther ?? request()->title;
+            $registration->title = json_encode(array_filter(request()->title, function ($item) {
+                return $item != 'other';
+            }));
+            $registration->title_other = request()->titleOther;
             $registration->session = request()->otherSession ?? request()->session;
             $registration->course = request()->other_course ?? request()->course;
             //$registration->report_deadline_summary = Carbon::createFromFormat('d/m/Y', request()->report_deadline_summary)->format('Y-m-d');

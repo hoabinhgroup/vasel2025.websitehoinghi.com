@@ -28,6 +28,9 @@ class ConferenceRegistration {
                 { selector: 'input[name="course"]', matchValue: "other_course", targetSelector: "#other_course" },
                 { selector: 'input[name="training"]', matchValue: "yes", targetSelector: ".has_training", isBlock: true }
             ],
+            checkboxButtonConfig: [
+                { selector: 'input[name="title[]"]', matchValue: "other", targetSelector: "#titleOther" },
+            ],
             fileUploadConfig: [
                 { input: '#report_file_summary_input', name: '#report_file_summary_name', defaultText: 'FILE BÁO CÁO TÓM TẮT' },
                 { input: '#report_file_full_input', name: '#report_file_full_name', defaultText: 'FILE BÁO CÁO TOÀN VĂN' },
@@ -57,6 +60,14 @@ class ConferenceRegistration {
             const targetElement = document.querySelector(config.targetSelector);
             if (elements.length && targetElement) {
                 this.bindRadioToggle(elements, config.matchValue, targetElement, config.isBlock || false);
+            }
+        });
+
+        this.config.checkboxButtonConfig.forEach(config => {
+            const elements = document.querySelectorAll(config.selector);
+            const targetElement = document.querySelector(config.targetSelector);
+            if (elements.length && targetElement) {
+                this.bindCheckboxToggle(elements, config.matchValue, targetElement, config.isBlock || false);
             }
         });
 
@@ -90,6 +101,19 @@ class ConferenceRegistration {
                     targetElement.style.display = isBlock ? (e.target.value === matchValue ? 'block' : 'none') : '';
                     targetElement.disabled = e.target.value !== matchValue;
                 }
+            });
+        });
+    }
+
+    bindCheckboxToggle(elements, matchValue, targetElement, isBlock = false) {
+        const isMatchValueSelected = () =>
+            Array.from(elements).some(checkbox => checkbox.checked && checkbox.value.includes(matchValue));
+
+        elements.forEach(item => {
+            item.addEventListener("change", () => {
+                const matchSelected = isMatchValueSelected();
+                targetElement.style.display = isBlock ? (matchSelected ? 'block' : 'none') : '';
+                targetElement.disabled = !matchSelected;
             });
         });
     }

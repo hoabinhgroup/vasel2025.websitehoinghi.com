@@ -27,6 +27,7 @@ class InviteeRegistrationVn extends Model implements Auditable
         'guest_code',
         'jobtitle',
         'title',
+        'title_other',
         'fullname',
         'work',
         'address',
@@ -62,7 +63,10 @@ class InviteeRegistrationVn extends Model implements Auditable
         parent::boot();
 
         $setRegistrationData = function ($registration) {
-            $registration->title = request()->titleOther ?? request()->title;
+            $registration->title = json_encode(array_filter(request()->title, function ($item) {
+                return $item != 'other';
+            }));
+            $registration->title_other = request()->titleOther;
             $registration->course = request()->other_course ?? request()->course;
         };
 

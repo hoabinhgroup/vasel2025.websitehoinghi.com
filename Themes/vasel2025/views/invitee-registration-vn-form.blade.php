@@ -162,7 +162,9 @@
 						<input type="hidden" name="id" value="{{ $registration->id }}">
 					@endif
 
-					<?php $array_title = ['GS', 'PGS', 'TS', 'ThS', 'BSCKII', 'BSCKI', 'BS', 'ĐD', 'KTV']; ?>
+					<?php $array_title = ['GS', 'PGS', 'TS', 'ThS', 'BSCKII', 'BSCKI', 'BS', 'ĐD', 'KTV'];
+					$registration_title = json_decode($registration->title) ?? [];
+					?>
 					<div class="form-group">
 						<label for=""><strong>HỌC HÀM/ HỌC VỊ </strong><span style="color:red">*</span>: </label><span
 							style="font-style: italic;">(Có thể chọn
@@ -174,17 +176,17 @@
 									<div class="radio-right">
 										@foreach ($array_title as $title)
 											<label class="radio-inline">
-												<input name="title" value="{{ $title }}" type="radio"
-													@if($registration->title == $title) checked @endif>{{ $title }}.
+												<input name="title[]" value="{{ $title }}" type="checkbox"
+													@if(in_array($title, $registration_title)) checked @endif>{{ $title }}.
 											</label>
 										@endforeach
 
 										<label class="radio-inline other-title-wrapper">
-											<input name="title" value="other" type="radio" @if($registration->title !== null && !in_array($registration->title, $array_title)) checked @endif>Khác
+											<input name="title[]" value="other" type="checkbox" @if($registration->title_other) checked @endif>Khác
 
 											<input name="titleOther" id="titleOther" class="form-control input-sm"
-												value="{{ ($registration->title !== null && !in_array($registration->title, $array_title)) ? $registration->title : '' }}"
-												type="text" {{ ($registration->title == null || in_array($registration->title, $array_title)) ? 'disabled' : '' }}>
+												value="{{ $registration->title_other ?? '' }}"
+												type="text" {{ $registration->title_other == null ? 'disabled' : '' }}>
 										</label>
 									</div>
 								</div>

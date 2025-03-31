@@ -32,8 +32,8 @@ class SpeakerRegistrationVnController extends PublicController
 
     $validator = JsValidator::make(
       [
-        'title' => 'required',
-        'titleOther' => 'required_if:title,other',
+        'title[]' => 'required',
+        'titleOther' => 'required_if:title[],other',
         'topic' => 'required',
         'session' => 'required',
         'sessionOther' => 'required_if:session,other_session',
@@ -62,7 +62,7 @@ class SpeakerRegistrationVnController extends PublicController
         'form_certificate' => 'required',
       ],
       [
-        'title.required' => 'Vui lòng chọn danh xưng.',
+        'title[].required' => 'Vui lòng chọn ít nhất 1 danh xưng.',
         'titleOther.required_if' => 'Vui lòng nhập danh xưng khác.',
         'topic.required' => 'Vui lòng chọn chủ đề.',
         'session.required' => 'Vui lòng chọn phiên làm việc.',

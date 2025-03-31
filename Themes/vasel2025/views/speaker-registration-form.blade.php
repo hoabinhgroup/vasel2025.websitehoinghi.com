@@ -298,7 +298,9 @@
 						</div><!-- .row -->
 					</div>
 
-					<?php $array_title = ['Prof', 'Assoc.Prof', 'Dr', 'MSc', 'BSc', 'Mr', 'Ms']; ?>
+					<?php $array_title = ['Prof', 'Assoc.Prof', 'Dr', 'MSc', 'BSc', 'Mr', 'Ms'];
+					$registration_title = json_decode($registration->title) ?? [];
+					?>
 					<h2 class="heading_red">SPEAKER INFORMATION</h2>
 					<div class="form-group">
 						<label for=""><strong>TITLE </strong><span style="color:red">*</span>:</label>
@@ -307,39 +309,19 @@
 							<div class="radio-list-title-wrapper">
 								<div class="radio-list-title">
 									<div class="radio-right">
-										<label class="radio-inline">
-											<input name="title" value="Prof" type="radio" @if($registration->title == 'Prof')
-											checked @endif>Prof.
-										</label>
-										<label class="radio-inline">
-											<input name="title" value="Assoc.Prof" type="radio"
-												@if($registration->title == 'Assoc.Prof') checked @endif>Assoc.Prof.
-										</label>
-										<label class="radio-inline">
-											<input name="title" value="Dr" type="radio" @if($registration->title == 'Dr')
-											checked @endif>Dr.
-										</label>
-										<label class="radio-inline">
-											<input name="title" value="MSc" type="radio" @if($registration->title == 'MSc')
-											checked @endif>MSc.
-										</label>
-										<label class="radio-inline">
-											<input name="title" value="BSc" type="radio" @if($registration->title == 'BSc')
-											checked @endif>BSc.
-										</label>
-										<label class="radio-inline">
-											<input name="title" value="Mr" type="radio" @if($registration->title == 'Mr')
-											checked @endif>Mr.
-										</label>
-										<label class="radio-inline">
-											<input name="title" value="Ms" type="radio" @if($registration->title == 'Ms')
-											checked @endif>Ms.
-										</label>
+									@foreach ($array_title as $title)
+											<label class="radio-inline">
+												<input name="title[]" value="{{ $title }}" type="checkbox"
+													@if(in_array($title, $registration_title)) checked @endif>{{ $title }}.
+											</label>
+										@endforeach
+
 										<label class="radio-inline other-title-wrapper">
-											<input name="title" value="other" type="radio" @if($registration->title !== null && !in_array($registration->title, $array_title)) checked @endif>Others
+											<input name="title[]" value="other" type="checkbox" @if($registration->title_other) checked @endif>Others
+
 											<input name="titleOther" id="titleOther" class="form-control input-sm"
-												value="{{ ($registration->title !== null && !in_array($registration->title, $array_title)) ? $registration->title : '' }}"
-												type="text" {{ ($registration->title == null || in_array($registration->title, $array_title)) ? 'disabled' : '' }}>
+												value="{{ $registration->title_other ?? '' }}"
+												type="text" {{ $registration->title_other == null ? 'disabled' : '' }}>
 										</label>
 									</div>
 								</div>
@@ -520,6 +502,7 @@
 									<label for=""><strong>SPECIALIZED IN </strong> <sup style="color:red">*</sup>:</label>
 									<div class="col-md-12 margin-left-20 radio-list course-list">
 
+									
 										<label class="radio-inline">
 											<input name="course" value="GI Surgery" type="radio" @if($registration->course == 'GI Surgery') checked @endif> GI Surgery
 										</label>
