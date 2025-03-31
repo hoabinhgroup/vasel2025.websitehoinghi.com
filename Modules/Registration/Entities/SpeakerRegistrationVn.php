@@ -88,6 +88,24 @@ class SpeakerRegistrationVn extends Model implements Auditable
         // });
     }
 
+    public function getTitleAttribute($value)
+    {
+        $titleOther = ($this->attributes['title_other'] ? '.' . $this->attributes['title_other'] : '');
+        $title = json_decode($value);
+
+        $fullTitle = implode(".", $title) . $titleOther;
+
+        return $fullTitle;
+    }
+
+    public function getArrTitleAttribute()
+    {
+        if (!isset($this->attributes['title'])) {
+            return [];
+        }
+        return json_decode($this->attributes['title']);
+    }
+
     protected function generateGuestCode()
     {
         $prefix = config('registration.speaker-registration-vn');
