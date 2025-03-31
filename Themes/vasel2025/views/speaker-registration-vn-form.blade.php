@@ -221,11 +221,11 @@
 							<ul class="deadline-submit-abstract">
 								<p>Thời hạn nộp báo cáo:</p>
 								<li><span>+ Thời gian nộp bài báo cáo tóm tắt (tiếng Việt và tiếng Anh): <strong>trước
-											ngày</strong></span>
+											ngày 17/7/2025</strong></span>
 									<!-- <input type="text" name="report_deadline_summary" class="datepicker"
 																		value="{{ $registration->report_deadline_summary ?? '' }}"> -->
 								</li>
-								<li><span>+ Thời gian nộp bài toàn văn: <strong>trước ngày</strong></span>
+								<li><span>+ Thời gian nộp bài toàn văn: <strong>trước ngày 15/8/2025</strong></span>
 									<!-- <input type="text" name="report_deadline_full" class="datepicker"
 																		value="{{ $registration->report_deadline_full ?? '' }}"> -->
 								</li>
@@ -354,8 +354,7 @@
 											checked @endif>KTV.
 										</label>
 										<label class="radio-inline other-title-wrapper">
-											<input name="title" value="other" type="radio" @if($registration->title !== null && !in_array($registration->title, $array_title)) checked @endif>Khác. Vui
-											lòng điền
+											<input name="title" value="other" type="radio" @if($registration->title !== null && !in_array($registration->title, $array_title)) checked @endif>Khác
 											<input name="titleOther" id="titleOther" class="form-control input-sm"
 												value="{{ ($registration->title !== null && !in_array($registration->title, $array_title)) ? $registration->title : '' }}"
 												type="text" {{ ($registration->title == null || in_array($registration->title, $array_title)) ? 'disabled' : '' }}>

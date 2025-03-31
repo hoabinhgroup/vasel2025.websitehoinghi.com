@@ -80,7 +80,7 @@
 			border-color: #005696;
 			outline: none;
 		}
-
+		
 		/* Radio and Checkbox Styles */
 		.radio-inline {
 			margin-right: 15px;
@@ -497,7 +497,7 @@
 									Account name: Hội Ngoại khoa và Phẫu thuật nội soi Việt Nam <br />
 									Account number: 113001060002156 <br />
 									Bank: Ngân hàng TMCP Bắc Á - PGD Hàng Bông - CN Hà Nội <br />
-									Transfer content: NAME + PAID REGISTRATION FEE VASEL 2025 <br />
+									Transfer content: NAME + ORGANIZATION + PAID REGISTRATION FEE VASEL 2025 <br />
 
 								</div>
 							</div>

@@ -499,7 +499,7 @@
 									Tên tài khoản: Hội Ngoại khoa và Phẫu thuật nội soi Việt Nam<br />
 									Số tài khoản: 113001060002156<br />
 									Tên ngân hàng: Ngân hàng TMCP Bắc Á - PGD Hàng Bông - CN Hà Nội<br />
-									Nội dung chuyển khoản: HỌ TÊN + ĐÓNG PHÍ THAM DỰ VASEL 2023
+									Nội dung chuyển khoản: HỌ TÊN + ĐƠN VỊ CÔNG TÁC + ĐÓNG PHÍ THAM DỰ VASEL 2025
 									<br />
 
 								</div>

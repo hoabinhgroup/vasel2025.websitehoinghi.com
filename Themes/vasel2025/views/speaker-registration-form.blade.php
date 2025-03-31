@@ -220,11 +220,11 @@
 								sent before the deadline, following the instructions provided in the confirmation email.
 							<ul class="deadline-submit-abstract">
 								<p>Submission Deadline:</p>
-								<li><span>+ Abstract Submission Deadline: </span>
+								<li><span>+ Abstract Submission Deadline: <strong>17/7/2025</strong></span>
 									<!-- <input type="text" name="report_deadline_summary" class="datepicker"
 																																											value="{{ $registration->report_deadline_summary ?? '' }}"> -->
 								</li>
-								<li><span>+ Full-text Article Submission Deadline: </span>
+								<li><span>+ Full-text Article Submission Deadline: <strong>15/8/2025</strong></span>
 									<!-- <input type="text" name="report_deadline_full" class="datepicker"
 																																										value="{{ $registration->report_deadline_full ?? '' }}"> -->
 								</li>
