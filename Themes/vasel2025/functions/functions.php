@@ -214,6 +214,17 @@ if (!function_exists("array_course")) {
     }
 }
 
+if (!function_exists("courses")) {
+    function courses()
+    {
+        return [
+            'Chuyên đề Tiêu hóa: Phẫu thuật điều trị thoát vị thành bụng',
+            'Chuyên đề Tiết niệu: Bóc nhân phì đại tuyến tiền liệt nội soi qua đường niệu đạo',
+            'Chuyên đề Chấn thương: Phẫu thuật nội soi khớp vai điều trị rách chóp xoay'
+        ];
+    }
+}
+
 
 if (!function_exists("abstract_categories")) {
     function abstract_categories()

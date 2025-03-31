@@ -64,7 +64,6 @@ class InviteeRegistrationVn extends Model implements Auditable
         $setRegistrationData = function ($registration) {
             $registration->title = request()->titleOther ?? request()->title;
             $registration->course = request()->other_course ?? request()->course;
-            $registration->course_name = json_encode(request()->course_name);
         };
 
         static::creating(function ($registration) use ($setRegistrationData) {

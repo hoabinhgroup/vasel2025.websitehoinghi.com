@@ -27,10 +27,10 @@
                                             </o:p></span></p>
                                     <p><span lang="VI">Vui lòng sử dụng liên kết bên dưới để chỉnh sửa thông tin đăng ký cho
                                             đến ngày kết thúc đăng ký.<o:p></o:p></span></p>
-                                    <p><a href="{{  route('speaker.registration') }}/?edit={{ $id }}">Chỉnh sửa thông tin
+                                    <p><a href="{{  route('speaker.registration.vn') }}/?edit={{ $id }}">Chỉnh sửa thông tin
                                             đăng ký</a>
                                     </p>
-                                    <p class="MsoNormal"><a href="{{  route('speaker.registration') }}">Gửi đăng ký
+                                    <p class="MsoNormal"><a href="{{  route('speaker.registration.vn') }}">Gửi đăng ký
                                             mới</a><b></b></p>
                                 </td>
                             </tr>

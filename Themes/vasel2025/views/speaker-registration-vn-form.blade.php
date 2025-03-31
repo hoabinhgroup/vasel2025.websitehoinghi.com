@@ -223,11 +223,11 @@
 								<li><span>+ Thời gian nộp bài báo cáo tóm tắt (tiếng Việt và tiếng Anh): <strong>trước
 											ngày 17/7/2025</strong></span>
 									<!-- <input type="text" name="report_deadline_summary" class="datepicker"
-																		value="{{ $registration->report_deadline_summary ?? '' }}"> -->
+																										value="{{ $registration->report_deadline_summary ?? '' }}"> -->
 								</li>
 								<li><span>+ Thời gian nộp bài toàn văn: <strong>trước ngày 15/8/2025</strong></span>
 									<!-- <input type="text" name="report_deadline_full" class="datepicker"
-																		value="{{ $registration->report_deadline_full ?? '' }}"> -->
+																										value="{{ $registration->report_deadline_full ?? '' }}"> -->
 								</li>
 							</ul>
 							</p><!-- .row -->
@@ -397,7 +397,7 @@
 					</div>
 
 					<!-- <div class="passport_section form-group" style="display: none">
-																																																																																																																																																																																														</div> -->
+																																																																																																																																																																																																						</div> -->
 
 					<div class="form-group">
 						<div class="row no-gutters">
@@ -547,19 +547,15 @@
 									<label for=""><strong>ĐĂNG KÝ KHÓA TẬP HUẤN THEO CHUYÊN KHOA </strong>
 										<sup style="color:red">*</sup>:</label>
 									<div class="register-course">
-										<label class="radio-inline">
-											<input type="checkbox" class="" name="course_name[]" value="1"
-												@if(isset($registration->course_name) && in_array(1, json_decode($registration->course_name))) checked @endif>
-											Khóa 1
-										</label>
-										<label for="">
-											<input type="checkbox" class="" name="course_name[]" value="2"
-												@if(isset($registration->course_name) && in_array(2, json_decode($registration->course_name))) checked @endif>Khóa 2
-										</label>
-										<label for="">
-											<input type="checkbox" class="" name="course_name[]" value="3"
-												@if(isset($registration->course_name) && in_array(3, json_decode($registration->course_name))) checked @endif>Khóa 3
-										</label>
+										@foreach (courses() as $course_name)
+											<label class="radio-inline">
+												<input type="radio" class="" name="course_name" value="{{  $course_name  }}"
+													@if(isset($registration->course_name) && in_array($course_name, courses()))
+													checked @endif>
+												{{  $course_name }}
+											</label>
+
+										@endforeach
 									</div>
 								</div><!-- .row -->
 							</div>
