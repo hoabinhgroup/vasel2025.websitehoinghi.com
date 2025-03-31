@@ -159,7 +159,7 @@
 					@endif
 
 					<?php $array_title = ['Prof', 'Assoc.Prof', 'Dr', 'MSc', 'BSc', 'Mr', 'Ms'];
-					$registration_title = json_decode($registration->title) ?? [];
+					$registration_title = $registration->arr_title;
 					?>
 					<div class="form-group">
 						<label for=""><strong>TITLE </strong><span style="color:red">*</span>:</label>

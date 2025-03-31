@@ -163,7 +163,7 @@
 					@endif
 
 					<?php $array_title = ['GS', 'PGS', 'TS', 'ThS', 'BSCKII', 'BSCKI', 'BS', 'ĐD', 'KTV'];
-					$registration_title = json_decode($registration->title) ?? [];
+					$registration_title = $registration_title = $registration->arr_title;
 					?>
 					<div class="form-group">
 						<label for=""><strong>HỌC HÀM/ HỌC VỊ </strong><span style="color:red">*</span>: </label><span

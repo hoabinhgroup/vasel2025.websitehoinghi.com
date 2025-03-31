@@ -299,7 +299,7 @@
 					</div>
 
 					<?php $array_title = ['Prof', 'Assoc.Prof', 'Dr', 'MSc', 'BSc', 'Mr', 'Ms'];
-					$registration_title = json_decode($registration->title) ?? [];
+					$registration_title = $registration->arr_title;
 					?>
 					<h2 class="heading_red">SPEAKER INFORMATION</h2>
 					<div class="form-group">
