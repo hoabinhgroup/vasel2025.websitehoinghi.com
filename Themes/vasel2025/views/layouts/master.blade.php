@@ -21,7 +21,11 @@
 
 	<script type="text/javascript" src="{{ themes('script/jquery.js') }}"></script>
 
-
+	<style>
+		#banner {
+			margin-bottom: 20px;
+		}
+	</style>
 </head>
 
 <body>
@@ -30,7 +34,11 @@
 	</script>
 
 	<div class="wrapper">
-
+		<div class="container">
+			<div id="banner">
+				<img width="100%" src="https://cdn.websitehoinghi.com/vasel2025/OPT%201-min.jpg">
+			</div>
+		</div>
 		@yield('content')
 
 	</div>

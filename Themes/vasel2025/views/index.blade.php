@@ -37,9 +37,7 @@
 		}
 	</style>
 	<div id="wrapper" class="container">
-		<div id="banner">
-			<img src="" alt="banner">
-		</div>
+
 		<div id="description">
 			<p>VUI LÒNG LỰA CHỌN MẪU ĐĂNG KÝ THEO MỤC ĐÍCH THAM DỰ <br />
 				PLEASE CHOOSE THE REGISTRATION FORM BY PURPOSE OF PARTICIPATION
