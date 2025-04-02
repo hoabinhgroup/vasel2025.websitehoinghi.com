@@ -173,14 +173,14 @@
 								@foreach (report_sessions_vn() as $session_id => $session_name)
 									<label class="radio-inline">
 										<input name="session" value="{{ $session_name }}" type="radio"
-											@if(report_sessions_vn()[$session_id] === $registration->session) checked
+											@if(report_sessions_vn()[$session_id] == $registration->session) checked
 											@endif>{{ $session_name }}
 									</label>
 								@endforeach
 
 								<label class="radio-inline other-specify">
 									<div class="other-specify-title">
-										<input name="session" value="other_session" type="radio" @if($registration->session !== null && !in_array($registration->session, report_sessions())) checked
+										<input name="session" value="other_session" type="radio" @if($registration->session !== null && !in_array($registration->session, report_sessions_vn())) checked
 										@endif>Khác
 									</div>
 									<div class="form-group other-session">
@@ -223,11 +223,11 @@
 								<li><span>+ Thời gian nộp bài báo cáo tóm tắt (tiếng Việt và tiếng Anh): <strong>trước
 											ngày 17/7/2025</strong></span>
 									<!-- <input type="text" name="report_deadline_summary" class="datepicker"
-																																																								value="{{ $registration->report_deadline_summary ?? '' }}"> -->
+																																																										value="{{ $registration->report_deadline_summary ?? '' }}"> -->
 								</li>
 								<li><span>+ Thời gian nộp bài toàn văn: <strong>trước ngày 15/8/2025</strong></span>
 									<!-- <input type="text" name="report_deadline_full" class="datepicker"
-																																																								value="{{ $registration->report_deadline_full ?? '' }}"> -->
+																																																										value="{{ $registration->report_deadline_full ?? '' }}"> -->
 								</li>
 							</ul>
 							</p><!-- .row -->
@@ -300,7 +300,7 @@
 					<?php $array_title = ['GS', 'PGS', 'TS', 'ThS', 'BSCKII', 'BSCKI', 'BS', 'ĐD', 'KTV'];
 	$title = $registration->arr_title;
 
-								?>
+										?>
 					<h2 class="heading_red">THÔNG TIN BÁO CÁO VIÊN</h2>
 					<div class="form-group">
 						<label for=""><strong>Chức danh</strong><span style="color:red">*</span>:</label>
@@ -398,7 +398,7 @@
 					</div>
 
 					<!-- <div class="passport_section form-group" style="display: none">
-																																																																																																																																																																																																																																				</div> -->
+																																																																																																																																																																																																																																						</div> -->
 
 					<div class="form-group">
 						<div class="row no-gutters">
