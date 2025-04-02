@@ -17,7 +17,7 @@ return [
         ],
         'sending_server' => 25,
         'from_email' => 'hoithao@hoabinh-group.com',
-        'from_name' => 'hoithao@hoabinh-group.com',
+        'from_name' => 'VASEL2025',
         'subject' => 'VASEL 2025 - Đăng ký báo cáo thành công ',
         'reply_to' => 'hoithao@hoabinh-group.com'
     ]
