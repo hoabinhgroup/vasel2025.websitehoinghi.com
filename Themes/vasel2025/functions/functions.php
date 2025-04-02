@@ -210,7 +210,7 @@ if (!function_exists("report_sessions_vn")) {
 if (!function_exists("array_course")) {
     function array_course()
     {
-        return ['TIÊU HÓA', 'TIẾT NIỆU', 'CHẤN THƯƠNG - CHỈNH HÌNH'];
+        return ['Tiêu hóa', 'Tiết niệu', 'Chấn thương - Chỉnh hình'];
     }
 }
 

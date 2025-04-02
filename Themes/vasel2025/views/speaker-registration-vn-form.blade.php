@@ -223,11 +223,11 @@
 								<li><span>+ Thời gian nộp bài báo cáo tóm tắt (tiếng Việt và tiếng Anh): <strong>trước
 											ngày 17/7/2025</strong></span>
 									<!-- <input type="text" name="report_deadline_summary" class="datepicker"
-																																																										value="{{ $registration->report_deadline_summary ?? '' }}"> -->
+																																																																								value="{{ $registration->report_deadline_summary ?? '' }}"> -->
 								</li>
 								<li><span>+ Thời gian nộp bài toàn văn: <strong>trước ngày 15/8/2025</strong></span>
 									<!-- <input type="text" name="report_deadline_full" class="datepicker"
-																																																										value="{{ $registration->report_deadline_full ?? '' }}"> -->
+																																																																								value="{{ $registration->report_deadline_full ?? '' }}"> -->
 								</li>
 							</ul>
 							</p><!-- .row -->
@@ -300,7 +300,7 @@
 					<?php $array_title = ['GS', 'PGS', 'TS', 'ThS', 'BSCKII', 'BSCKI', 'BS', 'ĐD', 'KTV'];
 	$title = $registration->arr_title;
 
-										?>
+																								?>
 					<h2 class="heading_red">THÔNG TIN BÁO CÁO VIÊN</h2>
 					<div class="form-group">
 						<label for=""><strong>Chức danh</strong><span style="color:red">*</span>:</label>
@@ -398,7 +398,7 @@
 					</div>
 
 					<!-- <div class="passport_section form-group" style="display: none">
-																																																																																																																																																																																																																																						</div> -->
+																																																																																																																																																																																																																																																				</div> -->
 
 					<div class="form-group">
 						<div class="row no-gutters">
@@ -498,33 +498,23 @@
 					</div>
 
 
-					@if(!isset($_GET['edit']) || isset($_GET['edit']) && $registration->training == 'yes')
+					@if(!isset($_GET['edit']) || isset($_GET['edit']))
 						<div class="has_training" @if($registration->training == 'yes') style="display:block" @endif>
 							<div class="form-group">
 								<div class="row no-gutters">
 									<label for=""><strong>CHUYÊN KHOA HIỆN TẠI ĐANG CÔNG TÁC </strong> <sup
 											style="color:red">*</sup>:</label>
 									<div class="col-md-12 margin-left-20 radio-list course-list">
-
-										<label class="radio-inline">
-											<input name="course" value="Tiêu hóa" type="radio" @if($registration->course == 'Tiêu hóa') checked @endif> Tiêu hóa
-										</label>
-
-										<label class="radio-inline">
-											<input name="course" value="Tiết niệu" type="radio" @if($registration->course == 'Tiết niệu') checked @endif> Tiết niệu
-										</label>
-										<label class="radio-inline">
-											<input name="course" value="Chấn thương - Chỉnh hình" type="radio"
-												@if($registration->course == 'Chấn thương - Chỉnh hình') checked @endif> Chấn
-											thương -
-											Chỉnh
-											hình
-										</label>
+										@foreach (array_course() as $course)
+											<label class="radio-inline">
+												<input name="course" value="{{ $course }}" type="radio"
+													@if($registration->course == $course) checked @endif> {{ $course }}
+											</label>
+										@endforeach
 
 										<label class="radio-inline course-other">
 											<input name="course" value="other_course" type="radio" @if($registration->course !== null && !in_array($registration->course, array_course())) checked @endif>
-											Khác. Vui lòng
-											điền
+											Khác.
 											<input type="text" class="form-control col-md-4" id="other_course"
 												name="other_course"
 												value="{{ ($registration->course !== null && !in_array($registration->course, array_course())) ? $registration->course : '' }}"
@@ -534,7 +524,6 @@
 									</div>
 								</div><!-- .row -->
 							</div>
-
 							<div class="form-group">
 								<div class="row no-gutters">
 									<label for=""><strong>SỐ NĂM KINH NGHIỆM </strong> <sup style="color:red">*</sup>:</label>
@@ -542,60 +531,51 @@
 										placeholder="" value="{{ $registration->experience }}">
 								</div><!-- .row -->
 							</div>
+							@php 
 
+							@endphp
 							<div class="form-group">
 								<div class="row no-gutters">
 									<label for=""><strong>ĐĂNG KÝ KHÓA TẬP HUẤN THEO CHUYÊN KHOA </strong>
 										<sup style="color:red">*</sup>:</label>
-									<div class="register-course">
-										@foreach (courses() as $course_name)
-											<label class="radio-inline">
-												<input type="radio" class="" name="course_name" value="{{  $course_name  }}"
-													@if(isset($registration->course_name) && in_array($course_name, courses()))
-													checked @endif>
+								<div class="register-course">
+									@foreach (courses() as $course_name)
+										<label class="radio-inline">
+											<input type="radio" class="" name="course_name" value="{{  $course_name  }}"
+												@if($registration->course_name == $course_name) checked @endif>
 												{{  $course_name }}
 											</label>
-
-										@endforeach
+									@endforeach
 									</div>
 								</div><!-- .row -->
+								</div>
 							</div>
-						</div>
 					@endif
-
 					<div class="form-group">
 						<div class="row no-gutters">
 							<label for=""><strong>ĐĂNG KÝ THAM DỰ TIỆC CHIÊU ĐÃI HỘI NGHỊ </strong> <sup
 									style="color:red">*</sup>:</label>
 							<div class="col-md-12 margin-left-20 radio-list">
-
-								<label class="radio-inline">
+									<label class="radio-inline">
 									<input name="galadinner" value="yes" type="radio" @if($registration->galadinner == 'yes')
 									checked @endif> Có
 								</label>
-
-
-								<label class="radio-inline">
+									<label class="radio-inline">
 									<input name="galadinner" value="no" type="radio" @if($registration->galadinner == 'no')
 									checked @endif> Không
 								</label>
-
 							</div>
-
 						</div><!-- .row -->
 					</div>
-
 					<div class="form-group">
 						<div class="row no-gutters">
 							<label for=""><strong>HÌNH THỨC NHẬN GIẤY MỜI THAM DỰ HỘI NGHỊ </strong> <sup
 									style="color:red">*</sup>:</label>
 							<div class="col-md-12 margin-left-20 radio-list">
-
 								<label class="radio-inline">
 									<input name="form_invitation" value="soft" type="radio"
 										@if($registration->form_invitation == 'soft') checked @endif> Bản mềm
 								</label>
-
 								<label class="radio-inline">
 									<input name="form_invitation" value="hard" type="radio"
 										@if($registration->form_invitation == 'hard') checked @endif> Bản cứng (Vui lòng kiểm
@@ -606,18 +586,15 @@
 							</div>
 						</div><!-- .row -->
 					</div>
-
 					<div class="form-group">
 						<div class="row no-gutters">
 							<label for=""><strong>HÌNH THỨC NHẬN GIẤY CHỨNG NHẬN BÁO CÁO TẠI HỘI NGHỊ </strong> <sup
 									style="color:red">*</sup>:</label>
 							<div class="col-md-12 margin-left-20 radio-list">
-
 								<label class="radio-inline">
 									<input name="form_certificate" value="soft" type="radio"
 										@if($registration->form_certificate == 'soft') checked @endif> Bản mềm
 								</label>
-
 								<label class="radio-inline">
 									<input name="form_certificate" value="hard" type="radio"
 										@if($registration->form_certificate == 'hard') checked @endif> Bản cứng (Vui lòng kiểm
@@ -629,7 +606,6 @@
 							</div>
 						</div><!-- .row -->
 					</div>
-
 					<div class="form-group note-section">
 						<div class="row no-gutters">
 							<div class="note">
@@ -645,27 +621,20 @@
 								<p><span lang="VI">-       </span><span lang="VI">Ban Tổ chức không chịu trách nhiệm nếu
 										thông tin cung cấp không chính xác hoặc thay đổi không đúng quy định.</span></p>
 							</div>
-						</div>
+							</div>
 					</div>
-
-
-
 					<button id="registration_button" type="submit" class="btn btn-primary">
 						ĐĂNG KÝ
 						<span id="spinner" class="spinner" style="display: none;"></span>
 					</button>
-
-
 				</form>
 			</div>
-		</div>
+			</div>
 	</div>
-
 	<script type="text/javascript">
-
 		document.addEventListener("DOMContentLoaded", () => {
-			new ConferenceRegistration();
+				new ConferenceRegistration();
 		});
 
-	</script>
+		</script>
 @endsection
