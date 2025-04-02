@@ -1,5 +1,8 @@
 <script>
 	jQuery(document).ready(function () {
+		let form = document.querySelector('<?php echo $validator['selector']; ?>');
+		let spinner = document.querySelector('#spinner');
+		let registration_button = document.querySelector('#registration_button');
 
 		$("<?php echo $validator['selector']; ?>").validate({
 			highlight: function (element) { // hightlight error inputs
@@ -24,19 +27,8 @@
 			success: function (label) {
 				label
 					.closest('.form-group').removeClass('has-error'); // set success class to the control group
-				let form = document.querySelector('<?php echo $validator['selector']; ?>');
-				let spinner = document.querySelector('#spinner');
-				let registration_button = document.querySelector('#registration_button');
-				form.addEventListener('submit', () => {
-					if ($(form).valid()) {
-						spinner.style.display = 'inline-block';
-						registration_button.disabled = true
-						setTimeout(function () {
-							registration_button.disabled = false
-							spinner.style.display = 'none';
-						}, 5000);
-					}
-				})
+
+
 			},
 			rules: <?php echo json_encode($validator['rules']); ?>
 		})
@@ -45,5 +37,38 @@
 			debug: true,
 			success: "valid"
 		});
+
+		form.addEventListener('submit', (e) => {
+			const shortCVInput = document.querySelector('#shortCV_input');
+			const passportInput = document.querySelector('#passport_input');
+			const hasShortCV = $('#shortCV_name').data('exists') == 1;
+			const hasPassport = $('#passport_name').data('exists') == 1;
+
+			const hasShortCVNew = shortCVInput.files.length > 0;
+			const hasPassportNew = passportInput.files.length > 0;
+
+			console.log({ hasShortCVNew });
+
+
+			if (!hasShortCV && !hasShortCVNew) {
+				e.preventDefault();
+				alert('Please select your CV file');
+				return;
+			}
+
+			if (!hasPassport && !hasPassportNew) {
+				e.preventDefault();
+				alert('Please select your Passport file');
+				return;
+			}
+			if ($(form).valid()) {
+				spinner.style.display = 'inline-block';
+				registration_button.disabled = true
+				setTimeout(function () {
+					registration_button.disabled = false
+					spinner.style.display = 'none';
+				}, 5000);
+			}
+		})
 	})
 </script>

@@ -292,7 +292,7 @@
 									style="color:red">*</sup>:</label>
 							<div class="file-upload-wrapper">
 								<!-- Phần hiển thị tên file -->
-								<div class="file-upload-filename" id="shortCV_name">
+								<div class="file-upload-filename" id="shortCV_name" data-exists="{{ isset($registration->shortCV) ? '1' : '0' }}">
 									@if (isset($registration->shortCV) && $registration->shortCV)
 										{{ $registration->shortCV }}
 									@else 
@@ -314,7 +314,7 @@
 							<label class="passport" for="passport"><strong>PASSPORT</strong><sup
 									style="color:red">*</sup>:</label>
 							<div class="file-upload-wrapper">
-								<div class="file-upload-filename" id="passport_name">
+								<div class="file-upload-filename" id="passport_name" data-exists="{{ isset($registration->passport) ? '1' : '0' }}">
 									@if (isset($registration->passport) && $registration->passport)
 										{{ $registration->passport }}
 									@else 

@@ -433,7 +433,7 @@
 									style="color:red">*</sup>:</label>
 							<div class="file-upload-wrapper">
 								<!-- Phần hiển thị tên file -->
-								<div class="file-upload-filename" id="shortCV_name">
+								<div class="file-upload-filename" id="shortCV_name" data-exists="{{ isset($registration->shortCV) ? '1' : '0' }}">
 									@if (isset($registration->shortCV) && $registration->shortCV)
 										{{ $registration->shortCV }}
 									@else 
@@ -455,7 +455,7 @@
 							<label class="passport" for="passport"><strong>PASSPORT</strong><sup
 									style="color:red">*</sup>:</label>
 							<div class="file-upload-wrapper">
-								<div class="file-upload-filename" id="passport_name">
+								<div class="file-upload-filename" id="passport_name" data-exists="{{ isset($registration->passport) ? '1' : '0' }}">
 									@if (isset($registration->passport) && $registration->passport)
 										{{ $registration->passport }}
 									@else 
@@ -492,7 +492,7 @@
 						</div><!-- .row -->
 					</div>
 
-					@if(!isset($_GET['edit']) || isset($_GET['edit']) && $registration->training == 'yes')
+					@if(!isset($_GET['edit']) || isset($_GET['edit']))
 						<div class="has_training" @if($registration->training == 'yes') style="display:block" @endif>
 							@php 
 								$array_course = ['GI Surgery', 'Urology', 'Orthopedic Surgery'];
@@ -543,19 +543,13 @@
 									<label for=""><strong>WORKSHOP REGISTRATION</strong>
 										<sup style="color:red">*</sup>:</label>
 									<div class="register-course">
+									@foreach (courses() as $course_name)
 										<label class="radio-inline">
-											<input type="checkbox" class="" name="course_name[]" value="1"
-												@if(isset($registration->course_name) && in_array(1, json_decode($registration->course_name))) checked @endif>
-											Khóa 1
-										</label>
-										<label for="">
-											<input type="checkbox" class="" name="course_name[]" value="2"
-												@if(isset($registration->course_name) && in_array(2, json_decode($registration->course_name))) checked @endif>Khóa 2
-										</label>
-										<label for="">
-											<input type="checkbox" class="" name="course_name[]" value="3"
-												@if(isset($registration->course_name) && in_array(3, json_decode($registration->course_name))) checked @endif>Khóa 3
-										</label>
+											<input type="radio" class="" name="course_name" value="{{  $course_name  }}"
+												@if($registration->course_name == $course_name) checked @endif>
+												{{  $course_name }}
+											</label>
+									@endforeach
 									</div>
 								</div><!-- .row -->
 							</div>
@@ -622,7 +616,10 @@
 
 		document.addEventListener("DOMContentLoaded", () => {
 			new ConferenceRegistration();
+
+			
 		});
+		
 
 	</script>
 @endsection

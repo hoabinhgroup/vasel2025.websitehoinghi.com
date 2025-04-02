@@ -98,6 +98,7 @@ class SpeakerRegistration extends Model implements Auditable
 
     public function getTitleAttribute($value)
     {
+
         $titleOther = isset($this->attributes['title_other']) ? '.' . $this->attributes['title_other'] : '';
 
         $title = json_decode($value);
