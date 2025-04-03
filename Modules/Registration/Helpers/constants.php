@@ -45,7 +45,7 @@ function showChangedValue($registration, $field, $isFile = false)
                 $oldFile = $old ? showDownloadLink($registration, $field, basename($old)) : 'Không có';
                 $newFile = $new ? showDownloadLink($registration, $field, basename($new)) : 'Không có';
 
-                return '<br><small style="color:#e67e22;">(Đã cập nhật: ' . e($oldFile) . ' → ' . e($newFile) . ')</small>';
+                return '<br><small style="color:#e67e22;">(Đã cập nhật: ' . $oldFile . ' → ' . $newFile . ')</small>';
             }
 
             return  e($old) . '<br><small style="color:#e74c3c;">(Đã cập nhật: '
