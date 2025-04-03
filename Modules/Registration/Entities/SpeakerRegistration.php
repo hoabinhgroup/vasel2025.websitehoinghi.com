@@ -103,6 +103,10 @@ class SpeakerRegistration extends Model implements Auditable
 
         $title = json_decode($value);
 
+        if (!is_array($title)) {
+            $title = [$value]; // fallback nếu không decode được
+        }
+
         $fullTitle = implode(".", $title) . $titleOther;
 
         return $fullTitle;
@@ -187,5 +191,4 @@ class SpeakerRegistration extends Model implements Auditable
     {
         return 'speaker-registration-updated';
     }
-
 }
