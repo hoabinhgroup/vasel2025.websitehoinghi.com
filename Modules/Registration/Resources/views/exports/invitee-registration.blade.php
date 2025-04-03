@@ -6,6 +6,8 @@
 		<tr>
 			@php
 				$columns = [
+					'Ngày đăng ký',
+					'Ngày chỉnh sửa',
 					'Guest Code',
 					'Title',
 					'Full Name',
@@ -39,35 +41,54 @@
 	<tbody>
 		@if($registrations->isNotEmpty())
 			@foreach($registrations as $registration)
+			@php 
+					$lastAudit = $registration->audits()
+        ->where('event', 'updated')
+        ->latest()
+        ->first();
+
+	
+	$latestFields = [];
+
+	if ($lastAudit && $lastAudit->new_values) {
+		foreach ($lastAudit->new_values as $field => $newValue) {
+			$latestFields[$field] = [
+				'old' => $lastAudit->old_values[$field] ?? null,
+				'new' => $newValue,
+			];
+		}
+	}
+
+	$registration->latest_updated_fields = $latestFields;
+    $registration->latest_updated_at = $lastAudit && $lastAudit->created_at ? $lastAudit->created_at->format('d/m/Y H:i'): null;
+				@endphp
 				<tr>
+					<td>{{ $registration->created_at->format('d/m/Y H:i') }}</td>
+					<td>{{ $registration->latest_updated_at }}</td>
 					<td>{{ $registration->guest_code }}</td>
-					<td>{{ $registration->title }}</td>
-					<td>{{ $registration->fullname }}</td>
-					<td>{{ $registration->work }}</td>
-					<td>{{ $registration->organization }}</td>
-					<td>{{ $registration->address }}</td>
-					<td>{{ $registration->email }}</td>
-					<td>{{ $registration->phone }}</td>
+					<td>{!! showChangedValue($registration, 'title') !!}</td>
+					<td>{!! showChangedValue($registration, 'fullname') !!}</td>
+					<td>{!! showChangedValue($registration, 'work') !!}</td>
+					<td>{!! showChangedValue($registration, 'organization') !!}</td>
+					<td>{!! showChangedValue($registration, 'address') !!}</td>
+					<td>{!! showChangedValue($registration, 'email') !!}</td>
+					<td>{!! showChangedValue($registration, 'phone') !!}</td>
 					<td>
-						@if($registration->shortCV)
-							<a href="{{ get_image_url($registration->shortCV) }}">Download</a>
-						@endif
+						{!! showChangedValue($registration, 'shortCV', true) !!}
 					</td>
 					<td>
-						@if($registration->passport)
-							<a href="{{ get_image_url($registration->passport) }}">Download</a>
-						@endif
+						{!! showChangedValue($registration, 'passport', true) !!}
 					</td>
-					<td>{{ $registration->gender }}</td>
-					<td>{{ $registration->birthday }}</td>
-					<td>{{ $registration->birthmonth }}</td>
-					<td>{{ $registration->birthyear }}</td>
-					<td>{{ $registration->training }}</td>
-					<td>{{ $registration->galadinner }}</td>
-					<td>{{ $registration->course }}</td>
-					<td>{{ $registration->experience }}</td>
-					<td>{{ $registration->course_name }}</td>
-					<td>{{ $registration->payment_method }}</td>
+					<td>{!! showChangedValue($registration, 'gender') !!}</td>
+					<td>{!! showChangedValue($registration, 'birthday') !!}</td>
+					<td>{!! showChangedValue($registration, 'birthmonth') !!}</td>
+					<td>{!! showChangedValue($registration, 'birthyear') !!}</td>
+					<td>{!! showChangedValue($registration, 'training') !!}</td>
+					<td>{!! showChangedValue($registration, 'galadinner') !!}</td>
+					<td>{!! showChangedValue($registration, 'course') !!}</td>
+					<td>{!! showChangedValue($registration, 'experience') !!}</td>
+					<td>{!! showChangedValue($registration, 'course_name') !!}</td>
+					<td>{!! showChangedValue($registration, 'payment_method') !!}</td>
 				</tr>
 			@endforeach
 		@endif

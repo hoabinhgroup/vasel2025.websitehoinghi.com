@@ -1,17 +1,36 @@
 @php
 	use Illuminate\Support\Str;
+	use Modules\Registration\Entities\SpeakerRegistrationVn;
+// 	$latestChanges = [];
+//     $registration = SpeakerRegistrationVn::find(12);
+// foreach ($registration->audits()->where('event', 'updated')->latest()->get() as $audit) {
+//     foreach ($audit->new_values as $field => $newValue) {
+//         // Chỉ lưu nếu chưa có thời gian thay đổi của field này
+//         if (!isset($latestChanges[$field])) {
+//             $latestChanges[$field] = [
+//                 'changed_at' => $audit->created_at,
+//                 'new_value' => $newValue,
+//                 'old_value' => $audit->old_values[$field] ?? null,
+//             ];
+//         }
+//     }
+// }
+
+// echo '<pre>';
+// print_r($latestChanges);
+// echo '</pre>'; die();
 @endphp
 <table border="1" cellspacing="0" cellpadding="0" style="width: 2000px">
 	<thead>
 		<tr>
 			@php
 				$columns = [
+					'Ngày đăng ký',
+					'Ngày chỉnh sửa',
 					'Mã đăng ký',
 					'Tên đề tài',
 					'Lĩnh vực báo cáo',
 					'Ngôn ngữ báo cáo',
-					'Hạn nộp báo cáo tóm tắt',
-					'Hạn nộp báo cáo toàn văn',
 					'File báo cáo tóm tắt',
 					'File báo cáo toàn văn',
 					'Đăng ký đăng bài',
@@ -45,42 +64,59 @@
 	<tbody>
 		@if($registrations->isNotEmpty())
 			@foreach($registrations as $registration)
+				@php 
+					$lastAudit = $registration->audits()
+        ->where('event', 'updated')
+        ->latest()
+        ->first();
+
+	
+	$latestFields = [];
+
+	if ($lastAudit && $lastAudit->new_values) {
+		foreach ($lastAudit->new_values as $field => $newValue) {
+			$latestFields[$field] = [
+				'old' => $lastAudit->old_values[$field] ?? null,
+				'new' => $newValue,
+			];
+		}
+	}
+
+	$registration->latest_updated_fields = $latestFields;
+    $registration->latest_updated_at = $lastAudit && $lastAudit->created_at ? $lastAudit->created_at->format('d/m/Y H:i'): null;
+				@endphp
 				<tr>
+					<td>{{ $registration->created_at->format('d/m/Y H:i') }}</td>
+					<td>{{ $registration->latest_updated_at }}</td>
 					<td>{{ $registration->guest_code }}</td>
-					<td>{{ $registration->topic }}</td>
-					<td>{{ $registration->session }}</td>
-					<td>{{ $registration->report_lang }}</td>
-					<td>{{ $registration->report_deadline_summary }}</td>
-					<td>{{ $registration->report_deadline_full }}</td>
+					<td>{!! showChangedValue($registration, 'topic') !!}</td>
+					<td>{!! showChangedValue($registration, 'session') !!}</td>
+					<td>{!! showChangedValue($registration, 'report_lang') !!}</td>
 					<td>
-						@if($registration->report_file_summary)
-							<a href="{{ get_image_url($registration->report_file_summary) }}">Download</a>
-						@endif
+						{!! showChangedValue($registration, 'report_file_summary', true) !!}
 					</td>
 					<td>
-						@if($registration->report_file_full)
-							<a href="{{ get_image_url($registration->report_file_full) }}">Download</a>
-						@endif
+						{!! showChangedValue($registration, 'report_file_full', true) !!}
 					</td>
-					<td>{{ $registration->journal_vn }}</td>
-					<td>{{ $registration->title }}</td>
-					<td>{{ $registration->fullname }}</td>
-					<td>{{ $registration->work }}</td>
-					<td>{{ $registration->organization }}</td>
-					<td>{{ $registration->address }}</td>
-					<td>{{ $registration->email }}</td>
-					<td>{{ $registration->phone }}</td>
-					<td>{{ $registration->cid }}</td>
-					<td>{{ $registration->gender }}</td>
-					<td>{{ $registration->birthday }}</td>
-					<td>{{ $registration->birthmonth }}</td>
-					<td>{{ $registration->birthyear }}</td>
-					<td>{{ $registration->training }}</td>
-					<td>{{ $registration->galadinner }}</td>
-					<td>{{ $registration->course }}</td>
-					<td>{{ $registration->experience }}</td>
-					<td>{{ $registration->course_name }}</td>
-					<td>{{ $registration->register_reception }}</td>
+					<td>{!! showChangedValue($registration, 'journal_vn') !!}</td>
+					<td>{!! showChangedValue($registration, 'title') !!}</td>
+					<td>{!! showChangedValue($registration, 'fullname') !!}</td>
+					<td>{!! showChangedValue($registration, 'work') !!}</td>
+					<td>{!! showChangedValue($registration, 'organization') !!}</td>
+					<td>{!! showChangedValue($registration, 'address') !!}</td>
+					<td>{!! showChangedValue($registration, 'email') !!}</td>
+					<td>{!! showChangedValue($registration, 'phone') !!}</td>
+					<td>{!! showChangedValue($registration, 'cid') !!}</td>
+					<td>{!! showChangedValue($registration, 'gender') !!}</td>
+					<td>{!! showChangedValue($registration, 'birthday') !!}</td>
+					<td>{!! showChangedValue($registration, 'birthmonth') !!}</td>
+					<td>{!! showChangedValue($registration, 'birthyear') !!}</td>
+					<td>{!! showChangedValue($registration, 'training') !!}</td>
+					<td>{!! showChangedValue($registration, 'galadinner') !!}</td>
+					<td>{!! showChangedValue($registration, 'course') !!}</td>
+					<td>{!! showChangedValue($registration, 'experience') !!}</td>
+					<td>{!! showChangedValue($registration, 'course_name') !!}</td>
+					<td>{!! showChangedValue($registration, 'register_reception') !!}</td>
 				</tr>
 			@endforeach
 		@endif
