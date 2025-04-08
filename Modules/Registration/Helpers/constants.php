@@ -48,10 +48,10 @@ function showChangedValue($registration, $field, $isFile = false)
                 $oldFile = $old ? showDownloadLink($registration, $field, basename($old)) : 'Không có';
                 $newFile = $new ? showDownloadLink($registration, $field, basename($new)) : 'Không có';
 
-                return '<small style="color:#e67e22;">(' . $newFile . ')</small> (Update ' . $created_at . ')';
+                return '<small style="color:#e67e22;">' . $newFile . '</small> (Update ' . $created_at . ')';
             }
 
-            return  '<small style="color:#e74c3c;">(' . e($new) . ')</small> (Update ' . $created_at . ')';
+            return  '<small style="color:#e74c3c;">' . e($new) . '</small> (Update ' . $created_at . ')';
         } else {
             return e($new) . ' (Update ' . $created_at . ')';
         }
