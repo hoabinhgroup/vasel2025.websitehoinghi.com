@@ -44,9 +44,9 @@ class InviteeRegistrationController extends PublicController
         'phone' => 'required',
         'email' => 'required',
         'gender' => 'required',
-        'birthday' => 'required',
-        'birthmonth' => 'required',
-        'birthyear' => 'required',
+        'birthday' => 'required|numeric',
+        'birthmonth' => 'required|numeric',
+        'birthyear' => 'required|numeric',
         'training' => 'required',
         'course' => 'required',
         'other_course' => 'required_if:course,other_course',
@@ -119,11 +119,5 @@ class InviteeRegistrationController extends PublicController
     return view(Theme::current() . '::partials.' . $view, [
       'id' => $registration->id
     ]);
-
-
   }
-
-
-
-
 }
