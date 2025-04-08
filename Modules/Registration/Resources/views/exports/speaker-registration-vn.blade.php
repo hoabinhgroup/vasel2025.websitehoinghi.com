@@ -38,7 +38,7 @@
 					'Họ và tên',
 					'Đơn vị công tác',
 					'Chức vụ',
-					'Địa chỉ liênh hệ',
+					'Địa chỉ liên hệ',
 					'Thư điện tử',
 					'Điện thoại',
 					'CMND/CCCD/HỘ CHIẾU',
@@ -46,11 +46,14 @@
 					'Ngày sinh',
 					'Tháng sinh',
 					'Năm sinh',
-					'ĐĂNG KÝ THAM DỰ TẬP HUẤN TIỀN HỘI NGHỊ',
-					'ĐĂNG KÝ THAM DỰ TIỆC CHIÊU ĐÃI HỘI NGHỊ',
 					'Chuyên khoa',
-					'Sô năm kinh nghiệm',
+					'Số năm kinh nghiệm',
+					'Khóa tập huấn',
+					'Tiệc chiêu đãi',
 					'Các khóa đăng ký',
+					'Hình thưc nhận giấy mời',
+					'Hình thức nhận chứng nhận',
+
 				];
 			@endphp
 
@@ -103,7 +106,7 @@
 					<td>{!! showChangedValue($registration, 'title') !!}</td>
 					<td>{!! showChangedValue($registration, 'fullname') !!}</td>
 					<td>{!! showChangedValue($registration, 'work') !!}</td>
-					<td>{!! showChangedValue($registration, 'organization') !!}</td>
+					<td>{!! showChangedValue($registration, 'jobtitle') !!}</td>
 					<td>{!! showChangedValue($registration, 'address') !!}</td>
 					<td>{!! showChangedValue($registration, 'email') !!}</td>
 					<td>{!! showChangedValue($registration, 'phone') !!}</td>
@@ -112,12 +115,14 @@
 					<td>{!! showChangedValue($registration, 'birthday') !!}</td>
 					<td>{!! showChangedValue($registration, 'birthmonth') !!}</td>
 					<td>{!! showChangedValue($registration, 'birthyear') !!}</td>
-					<td>{!! showChangedValue($registration, 'training') !!}</td>
-					<td>{!! showChangedValue($registration, 'galadinner') !!}</td>
 					<td>{!! showChangedValue($registration, 'course') !!}</td>
 					<td>{!! showChangedValue($registration, 'experience') !!}</td>
+					<td>{!! showChangedValue($registration, 'training') !!}</td>
+					<td>{!! showChangedValue($registration, 'galadinner') !!}</td>
 					<td>{!! showChangedValue($registration, 'course_name') !!}</td>
 					<td>{!! showChangedValue($registration, 'register_reception') !!}</td>
+					<td>{!! showChangedValue($registration, 'form_invitation') !!}</td>
+					<td>{!! showChangedValue($registration, 'form_certificate') !!}</td>
 				</tr>
 			@endforeach
 		@endif
