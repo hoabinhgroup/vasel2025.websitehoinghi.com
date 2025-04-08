@@ -34,14 +34,16 @@ function showFieldWithUpdate($registration, $field)
 }
 
 
+
 function showChangedValue($registration, $field, $isFile = false)
 {
     if (!empty($registration->latest_updated_fields[$field])) {
         $old = $registration->latest_updated_fields[$field]['old'];
+
         $new = $registration->latest_updated_fields[$field]['new'];
         $created_at = $registration->latest_updated_fields[$field]['created_at'];
 
-        if ($old != $new) {
+        if ($old !== $new) {
             if ($isFile) {
                 $oldFile = $old ? showDownloadLink($registration, $field, basename($old)) : 'Không có';
                 $newFile = $new ? showDownloadLink($registration, $field, basename($new)) : 'Không có';
