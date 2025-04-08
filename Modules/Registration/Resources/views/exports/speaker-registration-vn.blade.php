@@ -120,7 +120,6 @@
 					<td>{!! showChangedValue($registration, 'training') !!}</td>
 					<td>{!! showChangedValue($registration, 'galadinner') !!}</td>
 					<td>{!! showChangedValue($registration, 'course_name') !!}</td>
-					<td>{!! showChangedValue($registration, 'register_reception') !!}</td>
 					<td>{!! showChangedValue($registration, 'form_invitation') !!}</td>
 					<td>{!! showChangedValue($registration, 'form_certificate') !!}</td>
 				</tr>
