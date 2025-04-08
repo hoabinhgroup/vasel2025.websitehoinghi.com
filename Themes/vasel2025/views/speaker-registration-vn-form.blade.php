@@ -199,12 +199,12 @@
 							<div class="col-md-12 radio-list">
 
 								<label class="radio-inline">
-									<input name="report_lang" value="vi" type="radio" @if($registration->report_lang == 'vi')
+									<input name="report_lang" value="vi" type="radio" @if($registration->report_lang == 'Tiếng Việt')
 									checked @endif> Tiếng Việt
 								</label>
 
 								<label class="radio-inline">
-									<input name="report_lang" value="en" type="radio" @if($registration->report_lang == 'en')
+									<input name="report_lang" value="en" type="radio" @if($registration->report_lang == 'Tiếng Anh')
 									checked @endif> Tiếng Anh
 								</label>
 							</div>
