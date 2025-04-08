@@ -173,17 +173,20 @@ if (!function_exists("report_sessions")) {
     function report_sessions()
     {
         return [
-            "GI Surgery",
-            "Urology",
-            "NeuroSurgery",
-            "Orthopedic and Spinal Surgery",
-            "Cardiovascular and Thoracic Surgery",
-            "Maxillofacial and Plastic Surgery",
+            "HBP Surgery",
+            "Upper GI Surgery",
             "Transplantation",
+            "ERAS – Nutriology",
+            "Orthopedic Spinal Surgery",
+            "Neurology – Plastic Surgery",
             "Pediatric Surgery",
-            "Imaging Intervention",
-            "Endoscopy",
-            "Nursing"
+            "Nursing Care",
+            "Obstetrics And Gynecology",
+            "Cardiovascular And Thoracic Surgery",
+            "Urology",
+            "Video",
+            "General Surgery",
+            "Colorectal Surgery"
         ];
     }
 }
@@ -192,17 +195,20 @@ if (!function_exists("report_sessions_vn")) {
     function report_sessions_vn()
     {
         return [
-            0 => "Tiêu hóa",
-            1 => "Tiết niệu",
-            2 => "Thần kinh - Sọ não",
-            3 => "Chấn thương - Cột sống",
-            4 => "Tim mạch - Lồng ngực",
-            5 => "Tạo hình - Thẩm mỹ",
-            6 => "Ghép tạng",
-            7 => "Nhi",
-            8 => "Điện quang can thiệp",
-            9 => "Nội soi và nội soi can thiệp",
-            10 => "Điều dưỡng"
+            0 => "Gan mật tụy",
+            1 => "Tiêu hóa trên",
+            2 => "Ghép tạng",
+            3 => "ERAS – Dinh dưỡng",
+            4 => "Chấn thương chỉnh hình – Cột sống",
+            5 => "Thần kinh – Tạo hình",
+            6 => "Nhi",
+            7 => "Điều dưỡng",
+            8 => "Sản phụ khoa",
+            9 => "Tim mạch – Lồng ngực",
+            10 => "Tiết niệu",
+            11 => "Video",
+            12 => "Tổng quát",
+            13 => "Đại trực tràng",
         ];
     }
 }

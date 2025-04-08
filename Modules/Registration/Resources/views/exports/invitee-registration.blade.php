@@ -11,23 +11,24 @@
 					'Guest Code',
 					'Title',
 					'Full Name',
-					'Work',
 					'Organization',
+					'Position',
 					'Address',
 					'Email',
 					'Phone',
 					'Short CV',
 					'Passport',
 					'Gender',
-					'Birthday',
-					'Birth Month',
-					'Birth Year',
+					'Day',
+					'Month',
+					'Year',
 					'Training',
 					'Gala Dinner',
 					'Course',
 					'Experience',
 					'Course Name',
-					'Payment method'
+					'Payment method',
+					'Form of payment'
 				];
 			@endphp
 
@@ -68,8 +69,9 @@
 					<td>{{ $registration->guest_code }}</td>
 					<td>{!! showChangedValue($registration, 'title') !!}</td>
 					<td>{!! showChangedValue($registration, 'fullname') !!}</td>
-					<td>{!! showChangedValue($registration, 'work') !!}</td>
+					
 					<td>{!! showChangedValue($registration, 'organization') !!}</td>
+					<td>{!! showChangedValue($registration, 'work') !!}</td>
 					<td>{!! showChangedValue($registration, 'address') !!}</td>
 					<td>{!! showChangedValue($registration, 'email') !!}</td>
 					<td>{!! showChangedValue($registration, 'phone') !!}</td>
@@ -88,7 +90,9 @@
 					<td>{!! showChangedValue($registration, 'course') !!}</td>
 					<td>{!! showChangedValue($registration, 'experience') !!}</td>
 					<td>{!! showChangedValue($registration, 'course_name') !!}</td>
+					<td>{!! showChangedValue($registration, 'payment_form') !!}</td>
 					<td>{!! showChangedValue($registration, 'payment_method') !!}</td>
+					
 				</tr>
 			@endforeach
 		@endif

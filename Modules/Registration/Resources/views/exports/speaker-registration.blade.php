@@ -12,30 +12,30 @@
 					'Topic',
 					'Session',
 					'Report Language',
-					'Report Deadline Summary',
-					'Report Deadline Full',
-					'Report File Summary',
-					'Report File Full',
+					// 'Report Deadline Summary',
+					// 'Report Deadline Full',
+					'Abstract',
+					'Full paper',
 					'Journal VN',
 					'Title',
 					'Full Name',
-					'Work',
 					'Organization',
+					'Position',
 					'Address',
 					'Email',
 					'Phone',
 					'Short CV',
 					'Passport',
 					'Gender',
-					'Birthday',
-					'Birth Month',
-					'Birth Year',
+					'Day',
+					'Month',
+					'Year',
 					'Training',
 					'Gala Dinner',
 					'Course',
 					'Experience',
 					'Course Name',
-					'Register Reception',
+					// 'Register Reception',
 				];
 			@endphp
 
@@ -77,8 +77,8 @@
 					<td>{!! showChangedValue($registration, 'topic') !!}</td>
 					<td>{!! showChangedValue($registration, 'session') !!}</td>
 					<td>{!! showChangedValue($registration, 'report_lang') !!}</td>
-					<td>{!! showChangedValue($registration, 'report_deadline_summary') !!}</td>
-					<td>{!! showChangedValue($registration, 'report_deadline_full') !!}</td>
+					{{-- <td>{!! showChangedValue($registration, 'report_deadline_summary') !!}</td>
+					<td>{!! showChangedValue($registration, 'report_deadline_full') !!}</td> --}}
 					<td>
 						{!! showChangedValue($registration, 'report_file_summary', true) !!}
 					</td>
@@ -88,8 +88,8 @@
 					<td>{!! showChangedValue($registration, 'journal_vn') !!}</td>
 					<td>{!! showChangedValue($registration, 'title') !!}</td>
 					<td>{!! showChangedValue($registration, 'fullname') !!}</td>
-					<td>{!! showChangedValue($registration, 'work') !!}</td>
 					<td>{!! showChangedValue($registration, 'organization') !!}</td>
+					<td>{!! showChangedValue($registration, 'work') !!}</td>
 					<td>{!! showChangedValue($registration, 'address') !!}</td>
 					<td>{!! showChangedValue($registration, 'email') !!}</td>
 					<td>{!! showChangedValue($registration, 'phone') !!}</td>
@@ -108,7 +108,7 @@
 					<td>{!! showChangedValue($registration, 'course') !!}</td>
 					<td>{!! showChangedValue($registration, 'experience') !!}</td>
 					<td>{!! showChangedValue($registration, 'course_name') !!}</td>
-					<td>{!! showChangedValue($registration, 'register_reception') !!}</td>
+					{{-- <td>{!! showChangedValue($registration, 'register_reception') !!}</td> --}}
 				</tr>
 			@endforeach
 		@endif
