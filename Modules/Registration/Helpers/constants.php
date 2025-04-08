@@ -39,19 +39,19 @@ function showChangedValue($registration, $field, $isFile = false)
     if (!empty($registration->latest_updated_fields[$field])) {
         $old = $registration->latest_updated_fields[$field]['old'];
         $new = $registration->latest_updated_fields[$field]['new'];
+        $created_at = $registration->latest_updated_fields[$field]['created_at'];
 
         if ($old != $new) {
             if ($isFile) {
                 $oldFile = $old ? showDownloadLink($registration, $field, basename($old)) : 'Không có';
                 $newFile = $new ? showDownloadLink($registration, $field, basename($new)) : 'Không có';
 
-                return '<br><small style="color:#e67e22;">(Đã cập nhật: ' . $oldFile . ' → ' . $newFile . ')</small>';
+                return '<small style="color:#e67e22;">(' . $newFile . ')</small> (Update ' . $created_at . ')';
             }
 
-            return  e($old) . '<br><small style="color:#e74c3c;">(Đã cập nhật: '
-                . e($new) . ')</small>';
+            return  '<small style="color:#e74c3c;">(' . e($new) . ')</small> (Update ' . $created_at . ')';
         } else {
-            return e($old);
+            return e($new) . ' (Update ' . $created_at . ')';
         }
     } else {
         return $isFile ? showDownloadLink($registration, $field, basename(e($registration->$field))) : e($registration->$field);

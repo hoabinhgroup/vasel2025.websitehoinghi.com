@@ -63,6 +63,7 @@
 			$latestFields[$field] = [
 				'old' => $lastAudit->old_values[$field] ?? null,
 				'new' => $newValue,
+				'created_at' => $lastAudit->created_at->format('d/m/Y H:i'),
 			];
 		}
 	}

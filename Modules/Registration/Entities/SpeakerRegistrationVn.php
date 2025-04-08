@@ -88,6 +88,14 @@ class SpeakerRegistrationVn extends Model implements Auditable
         // });
     }
 
+    public function getReportLangAttribute($value)
+    {
+        if (!isset($this->attributes['report_lang'])) {
+            return ''; // Tránh lỗi khi giá trị null
+        }
+        return $this->attributes['report_lang'] == 'vi' ? 'Tiếng Việt' : 'Tiếng Anh';
+    }
+
     public function getTitleAttribute($value)
     {
         $titleOther = ($this->attributes['title_other'] ? '.' . $this->attributes['title_other'] : '');
