@@ -8,15 +8,15 @@
 				$columns = [
 					'Ngày đăng ký',
 					'Ngày chỉnh sửa',
-					'Guest Code',
+					'ID',
 					'Topic',
 					'Session',
-					'Report Language',
+					'Language',
 					// 'Report Deadline Summary',
 					// 'Report Deadline Full',
-					'Abstract',
-					'Full paper',
-					'Journal VN',
+					'Abstract File',
+					'Full Paper File',
+					'Publication',
 					'Title',
 					'Full Name',
 					'Organization',
@@ -27,14 +27,13 @@
 					'Short CV',
 					'Passport',
 					'Gender',
-					'Day',
+					'Date',
 					'Month',
 					'Year',
-					'Training',
+					'Pre-Conference Workshop',
+					'Specialized In',
+					'Years of Experience',
 					'Gala Dinner',
-					'Course',
-					'Experience',
-					'Course Name',
 					// 'Register Reception',
 				];
 			@endphp
@@ -105,10 +104,10 @@
 					<td>{!! showChangedValue($registration, 'birthmonth') !!}</td>
 					<td>{!! showChangedValue($registration, 'birthyear') !!}</td>
 					<td>{!! showChangedValue($registration, 'training') !!}</td>
-					<td>{!! showChangedValue($registration, 'galadinner') !!}</td>
 					<td>{!! showChangedValue($registration, 'course') !!}</td>
 					<td>{!! showChangedValue($registration, 'experience') !!}</td>
 					<td>{!! showChangedValue($registration, 'course_name') !!}</td>
+					<td>{!! showChangedValue($registration, 'galadinner') !!}</td>
 					{{-- <td>{!! showChangedValue($registration, 'register_reception') !!}</td> --}}
 				</tr>
 			@endforeach
