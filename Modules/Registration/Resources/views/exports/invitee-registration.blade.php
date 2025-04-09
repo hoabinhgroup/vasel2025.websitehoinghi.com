@@ -8,7 +8,7 @@
 				$columns = [
 					'Ngày đăng ký',
 					'Ngày chỉnh sửa',
-					'Guest Code',
+					'ID',
 					'Title',
 					'Full Name',
 					'Organization',
@@ -19,14 +19,14 @@
 					'Short CV',
 					'Passport',
 					'Gender',
-					'Day',
+					'Date',
 					'Month',
 					'Year',
-					'Training',
+					'Pre-Conference Workshop',		
+					'Specialized In',
+					'Years of Experience',
+					'Workshop',
 					'Gala Dinner',
-					'Course',
-					'Experience',
-					'Course Name',
 					'Payment method',
 					'Form of payment'
 				];
@@ -86,11 +86,11 @@
 					<td>{!! showChangedValue($registration, 'birthday') !!}</td>
 					<td>{!! showChangedValue($registration, 'birthmonth') !!}</td>
 					<td>{!! showChangedValue($registration, 'birthyear') !!}</td>
-					<td>{!! showChangedValue($registration, 'training') !!}</td>
-					<td>{!! showChangedValue($registration, 'galadinner') !!}</td>
+					<td>{!! showChangedValue($registration, 'training') !!}</td>		
 					<td>{!! showChangedValue($registration, 'course') !!}</td>
 					<td>{!! showChangedValue($registration, 'experience') !!}</td>
 					<td>{!! showChangedValue($registration, 'course_name') !!}</td>
+					<td>{!! showChangedValue($registration, 'galadinner') !!}</td>
 					<td>{!! showChangedValue($registration, 'payment_form') !!}</td>
 					<td>{!! showChangedValue($registration, 'payment_method') !!}</td>
 					
