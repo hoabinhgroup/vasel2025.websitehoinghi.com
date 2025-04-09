@@ -8,24 +8,24 @@
 				$columns = [
 					'Ngày đăng ký',
 					'Ngày chỉnh sửa',
-					'Guest Code',
+					'ID',
 					'Học hàm học vị',
 					'Họ và tên',
 					'Đơn vị công tác',
 					'Chức vụ',
 					'Địa chỉ',
 					'Email',
-					'Phone',
-					'CMND/CCCD/HỘ CHIẾU',
+					'SĐT',
+					'Số CCCD/Hộ chiếu',
 					'Giới tính',
 					'Ngày sinh',
-					'Tháng snh',
+					'Tháng sinh',
 					'Năm sinh',
-					'Đăng ký tham dự tập huấn tiền hội nghị',
-					'ĐĂNG ký tham dự tiệc chiêu đãi hội nghị',
+					'Đăng ký tham dự tập huấn tiền hội nghị',	
 					'Chuyên khoa',
-					'Số năm kn',
-					'Đăng ký các khóa',
+					'Số năm kinh nghiệm',
+					'Khóa tập huấn',
+					'Tiệc chiêu đãi',
 					'Hình thức nhận giấy mời',
 					'Hình thức nhận chứng nhận',
 					'Hình thức thanh toán',
@@ -83,10 +83,11 @@
 					<td>{!! showChangedValue($registration, 'birthmonth') !!}</td>
 					<td>{!! showChangedValue($registration, 'birthyear') !!}</td>
 					<td>{!! showChangedValue($registration, 'training') !!}</td>
-					<td>{!! showChangedValue($registration, 'galadinner') !!}</td>
 					<td>{!! showChangedValue($registration, 'course') !!}</td>
 					<td>{!! showChangedValue($registration, 'experience') !!}</td>
 					<td>{!! showChangedValue($registration, 'course_name') !!}</td>
+					
+					<td>{!! showChangedValue($registration, 'galadinner') !!}</td>
 					<td>{!! showChangedValue($registration, 'form_invitation') !!}</td>
 					<td>{!! showChangedValue($registration, 'form_certificate') !!}</td>
 					<td>{!! showChangedValue($registration, 'payment_form') !!}</td>

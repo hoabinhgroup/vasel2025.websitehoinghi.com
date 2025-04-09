@@ -134,6 +134,10 @@
 			}
 		}
 
+		#payment-method-section {
+			display: none;
+		}
+
 		#unc_section {
 			display: none;
 		}
@@ -372,46 +376,45 @@
 								</div><!-- .row -->
 							</div>
 
+						
 							<div class="form-group">
 								<div class="row no-gutters">
-									<label for=""><strong>ĐĂNG KÝ THAM DỰ TIỆC CHIÊU ĐÃI HỘI NGHỊ </strong> <sup
-											style="color:red">*</sup>:</label>
-									<div class="col-md-12 margin-left-20 radio-list">
-
-										<label class="radio-inline">
-											<input name="galadinner" value="yes" type="radio"
-												@if($registration->galadinner == 'yes') checked @endif> Có
-										</label>
-
-
-										<label class="radio-inline">
-											<input name="galadinner" value="no" type="radio"
-												@if($registration->galadinner == 'no') checked @endif> Không
-										</label>
-
-									</div>
-
-								</div><!-- .row -->
-							</div>
-
-
-							<div class="form-group">
-								<div class="row no-gutters">
-									<label for=""><strong>ĐĂNG KÝ THAM DỰ TIỆC CHIÊU ĐÃI HỘI NGHỊ </strong>
+									<label for=""><strong>ĐĂNG KÝ KHÓA TẬP HUẤN THEO CHUYÊN KHOA </strong>
 										<sup style="color:red">*</sup>:</label>
 									<div class="register-course">
-									@foreach (courses() as $course_name)
+										@foreach (courses() as $course_name)
 											<label class="radio-inline">
 												<input type="radio" class="" name="course_name" value="{{  $course_name  }}"
 													@if(isset($registration->course_name) && in_array($course_name, courses()))
 													checked @endif>
 												{{  $course_name }}
 											</label>
-
 										@endforeach
 									</div>
 								</div><!-- .row -->
 							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="row no-gutters">
+								<label for=""><strong>ĐĂNG KÝ THAM DỰ TIỆC CHIÊU ĐÃI HỘI NGHỊ </strong> <sup
+										style="color:red">*</sup>:</label>
+								<div class="col-md-12 margin-left-20 radio-list">
+
+									<label class="radio-inline">
+										<input name="galadinner" value="yes" type="radio"
+											@if($registration->galadinner == 'yes') checked @endif> Có
+									</label>
+
+
+									<label class="radio-inline">
+										<input name="galadinner" value="no" type="radio"
+											@if($registration->galadinner == 'no') checked @endif> Không
+									</label>
+
+								</div>
+
+							</div><!-- .row -->
 						</div>
 					@endif
 
@@ -483,7 +486,7 @@
 					</div>
 
 
-					<div class="form-group">
+					<div id="payment-method-section" class="form-group">
 						<div class="row no-gutters">
 							<label for=""><strong>HÌNH THỨC THANH TOÁN </strong> <sup style="color:red">*</sup>:</label>
 							<div class="col-md-12">

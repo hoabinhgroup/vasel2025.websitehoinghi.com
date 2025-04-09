@@ -133,6 +133,10 @@
 				width: 100%;
 			}
 		}
+
+		#payment-method-section {
+			display: none;
+		}
 	</style>
 	@php
 		if (isset($_GET['edit']) && $_GET['edit'] > 0) {
@@ -465,7 +469,7 @@
 					</div>
 
 
-					<div class="form-group">
+					<div id="payment-method-section" class="form-group">
 						<div class="row no-gutters">
 							<label for=""><strong>FORM OF PAYMENT </strong> <sup style="color:red">*</sup>:</label>
 							<div class="col-md-12">
