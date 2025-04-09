@@ -442,7 +442,7 @@
 
 					<div class="form-group">
 						<div class="row no-gutters">
-							<label for=""><strong>HÌNH THỨC NHẬN GIẤY CHỨNG NHẬN BÁO CÁO TẠI HỘI NGHỊ </strong> <sup
+							<label for=""><strong>HÌNH THỨC NHẬN GIẤY CHỨNG NHẬN THAM DỰ </strong> <sup
 									style="color:red">*</sup>:</label>
 							<div class="col-md-12 margin-left-20 radio-list">
 
