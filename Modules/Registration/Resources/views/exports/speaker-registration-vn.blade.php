@@ -46,11 +46,11 @@
 					'Ngày sinh',
 					'Tháng sinh',
 					'Năm sinh',
+					'Đăng ký tập huấn tiền hội nghị',
 					'Chuyên khoa',
 					'Số năm kinh nghiệm',
-					'Khóa tập huấn',
+					'Khóa đăng ký',
 					'Tiệc chiêu đãi',
-					'Các khóa đăng ký',
 					'Hình thưc nhận giấy mời',
 					'Hình thức nhận chứng nhận',
 
@@ -115,11 +115,12 @@
 					<td>{!! showChangedValue($registration, 'birthday') !!}</td>
 					<td>{!! showChangedValue($registration, 'birthmonth') !!}</td>
 					<td>{!! showChangedValue($registration, 'birthyear') !!}</td>
+					<td>{!! showChangedValue($registration, 'training') !!}</td>
 					<td>{!! showChangedValue($registration, 'course') !!}</td>
 					<td>{!! showChangedValue($registration, 'experience') !!}</td>
-					<td>{!! showChangedValue($registration, 'training') !!}</td>
-					<td>{!! showChangedValue($registration, 'galadinner') !!}</td>
 					<td>{!! showChangedValue($registration, 'course_name') !!}</td>
+					<td>{!! showChangedValue($registration, 'galadinner') !!}</td>
+					
 					<td>{!! showChangedValue($registration, 'form_invitation') !!}</td>
 					<td>{!! showChangedValue($registration, 'form_certificate') !!}</td>
 				</tr>

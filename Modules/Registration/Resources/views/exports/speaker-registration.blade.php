@@ -33,6 +33,7 @@
 					'Pre-Conference Workshop',
 					'Specialized In',
 					'Years of Experience',
+					'Workshop',
 					'Gala Dinner',
 					// 'Register Reception',
 				];
