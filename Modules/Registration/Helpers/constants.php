@@ -40,6 +40,11 @@ function showChangedValue($registration, $field, $isFile = false)
     \Log::info('Audit showChangedValue', [
         'Audit showChangedValue' => $registration->latest_updated_fields,
     ]);
+
+    if (in_array($field, ['form_invitation', 'form_certificate'])) {
+        return '<small style="color:#e67e22;">' . getTypeForm($registration->$field) . '</small>';
+    }
+
     if (!empty($registration->latest_updated_fields[$field])) {
         $old = $registration->latest_updated_fields[$field]['old'];
 
@@ -54,9 +59,14 @@ function showChangedValue($registration, $field, $isFile = false)
                 return '<small style="color:#e67e22;">' . $newFile . '</small> (Update ' . $created_at . ')';
             }
 
+            if (in_array($field, ['form_invitation', 'form_certificate'])) {
+                return '<small style="color:#e67e22;">' . getTypeForm($new) . '</small> (Update ' . $created_at . ')';
+            }
+
             return '<small style="color:#e74c3c;">' . e($new) . '</small> (Update ' . $created_at . ')';
         } else {
-            return e($new) . ' (Update ' . $created_at . ')';
+            // return e($new) . ' (Update ' . $created_at . ')';
+            return e($new);
         }
     } else {
         return $isFile ? showDownloadLink($registration, $field, basename(e($registration->$field))) : e($registration->$field);
@@ -113,4 +123,13 @@ function getLatestFields($lastAudit)
         }
     }
     return $latestFields;
+}
+
+function getTypeForm($type)
+{
+    if ($type == 'soft') {
+        return 'Bản mềm';
+    } else {
+        return 'Bản cứng';
+    }
 }

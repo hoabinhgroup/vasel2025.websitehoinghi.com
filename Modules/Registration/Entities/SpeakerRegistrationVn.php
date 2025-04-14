@@ -113,6 +113,9 @@ class SpeakerRegistrationVn extends Model implements Auditable
         return $tags;
     }
 
+
+
+
     public function getReportLangAttribute($value)
     {
         if (!isset($this->attributes['report_lang'])) {
