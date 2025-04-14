@@ -21,7 +21,7 @@
 					'Ngày sinh',
 					'Tháng sinh',
 					'Năm sinh',
-					'Đăng ký tham dự tập huấn tiền hội nghị',	
+					'Đăng ký tham dự tập huấn tiền hội nghị',
 					'Chuyên khoa',
 					'Số năm kinh nghiệm',
 					'Khóa tập huấn',
@@ -44,27 +44,15 @@
 	<tbody>
 		@if($registrations->isNotEmpty())
 			@foreach($registrations as $registration)
-			@php 
-					$lastAudit = $registration->audits()
-        ->where('event', 'updated')
-        ->latest()
-        ->first();
+				@php
 
-	
-	$latestFields = [];
+					$lastAudit = getLastAudit($registration);
+					$unc_statement = getDownloadLink($registration, 'unc_statement', 'Download');
 
-	if ($lastAudit && $lastAudit->new_values) {
-		foreach ($lastAudit->new_values as $field => $newValue) {
-			$latestFields[$field] = [
-				'old' => $lastAudit->old_values[$field] ?? null,
-				'new' => $newValue,
-				'created_at' => $lastAudit->created_at->format('d/m/Y H:i'),
-			];
-		}
-	}
-
-	$registration->latest_updated_fields = $latestFields;
-    $registration->latest_updated_at = $lastAudit && $lastAudit->created_at ? $lastAudit->created_at->format('d/m/Y H:i'): null;
+					$registration->latest_updated_fields = getLatestFields($lastAudit);
+					$registration->latest_updated_at = $lastAudit && $lastAudit->created_at
+						? $lastAudit->created_at->format('d/m/Y H:i')
+						: null;
 				@endphp
 				<tr>
 					<td>{{ $registration->created_at->format('d/m/Y H:i') }}</td>
@@ -86,14 +74,14 @@
 					<td>{!! showChangedValue($registration, 'course') !!}</td>
 					<td>{!! showChangedValue($registration, 'experience') !!}</td>
 					<td>{!! showChangedValue($registration, 'course_name') !!}</td>
-					
+
 					<td>{!! showChangedValue($registration, 'galadinner') !!}</td>
 					<td>{!! showChangedValue($registration, 'form_invitation') !!}</td>
 					<td>{!! showChangedValue($registration, 'form_certificate') !!}</td>
 					<td>{!! showChangedValue($registration, 'payment_form') !!}</td>
 					<td>{!! showChangedValue($registration, 'payment_method') !!}</td>
 					<td>
-						{!! showChangedValue($registration, 'unc_statement', true) !!}
+						{!! $unc_statement !!}
 					</td>
 				</tr>
 			@endforeach

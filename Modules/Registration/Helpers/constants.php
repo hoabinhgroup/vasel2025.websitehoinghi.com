@@ -37,6 +37,9 @@ function showFieldWithUpdate($registration, $field)
 
 function showChangedValue($registration, $field, $isFile = false)
 {
+    \Log::info('Audit showChangedValue', [
+        'Audit showChangedValue' => $registration->latest_updated_fields,
+    ]);
     if (!empty($registration->latest_updated_fields[$field])) {
         $old = $registration->latest_updated_fields[$field]['old'];
 
@@ -51,7 +54,7 @@ function showChangedValue($registration, $field, $isFile = false)
                 return '<small style="color:#e67e22;">' . $newFile . '</small> (Update ' . $created_at . ')';
             }
 
-            return  '<small style="color:#e74c3c;">' . e($new) . '</small> (Update ' . $created_at . ')';
+            return '<small style="color:#e74c3c;">' . e($new) . '</small> (Update ' . $created_at . ')';
         } else {
             return e($new) . ' (Update ' . $created_at . ')';
         }
@@ -67,4 +70,47 @@ function showDownloadLink($registration, $field, $label)
     if ($registration->$field) {
         return '<a href="' . get_image_url($registration->$field) . '">' . $label . '</a>';
     }
+}
+
+
+function getLastAudit($registration, $tag = null)
+{
+    $query = $registration->audits()
+        ->where('event', 'updated');
+
+    $query->where('tags', $tag);
+
+    return $query->latest('created_at')->first();
+}
+
+function getDownloadLink($registration, $tag, $label)
+{
+    $lastAudit = getLastAudit($registration, $tag);
+    $newValues = $lastAudit->new_values[$tag] ?? null;
+    $createdAt = $lastAudit->created_at ?? null;
+
+    if ($newValues || $createdAt) {
+        return showDownloadLink($registration, $tag, $label . ' (Update ' . $createdAt->format('d/m/Y H:i') . ')');
+    }
+
+    return null;
+}
+
+function getLatestFields($lastAudit)
+{
+
+    if (!$lastAudit)
+        return [];
+
+    $latestFields = [];
+    if ($lastAudit && $lastAudit->new_values) {
+        foreach ($lastAudit->new_values as $field => $newValue) {
+            $latestFields[$field] = [
+                'old' => $lastAudit->old_values[$field] ?? null,
+                'new' => $newValue,
+                'created_at' => $lastAudit->created_at->format('d/m/Y H:i'),
+            ];
+        }
+    }
+    return $latestFields;
 }

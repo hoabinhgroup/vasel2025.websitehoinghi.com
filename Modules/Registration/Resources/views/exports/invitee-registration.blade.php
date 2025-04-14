@@ -22,7 +22,7 @@
 					'Date',
 					'Month',
 					'Year',
-					'Pre-Conference Workshop',		
+					'Pre-Conference Workshop',
 					'Specialized In',
 					'Years of Experience',
 					'Workshop',
@@ -42,27 +42,16 @@
 	<tbody>
 		@if($registrations->isNotEmpty())
 			@foreach($registrations as $registration)
-			@php 
-					$lastAudit = $registration->audits()
-        ->where('event', 'updated')
-        ->latest()
-        ->first();
+				@php
 
-	
-	$latestFields = [];
+					$lastAudit = getLastAudit($registration);
+					$shortCV = getDownloadLink($registration, 'shortCV', 'Download');
+					$passport = getDownloadLink($registration, 'passport', 'Download');
 
-	if ($lastAudit && $lastAudit->new_values) {
-		foreach ($lastAudit->new_values as $field => $newValue) {
-			$latestFields[$field] = [
-				'old' => $lastAudit->old_values[$field] ?? null,
-				'new' => $newValue,
-				'created_at' => $lastAudit->created_at->format('d/m/Y H:i'),
-			];
-		}
-	}
-
-	$registration->latest_updated_fields = $latestFields;
-    $registration->latest_updated_at = $lastAudit && $lastAudit->created_at ? $lastAudit->created_at->format('d/m/Y H:i'): null;
+					$registration->latest_updated_fields = getLatestFields($lastAudit);
+					$registration->latest_updated_at = $lastAudit && $lastAudit->created_at
+						? $lastAudit->created_at->format('d/m/Y H:i')
+						: null;
 				@endphp
 				<tr>
 					<td>{{ $registration->created_at->format('d/m/Y H:i') }}</td>
@@ -70,30 +59,30 @@
 					<td>{{ $registration->guest_code }}</td>
 					<td>{!! showChangedValue($registration, 'title') !!}</td>
 					<td>{!! showChangedValue($registration, 'fullname') !!}</td>
-					
+
 					<td>{!! showChangedValue($registration, 'organization') !!}</td>
 					<td>{!! showChangedValue($registration, 'work') !!}</td>
 					<td>{!! showChangedValue($registration, 'address') !!}</td>
 					<td>{!! showChangedValue($registration, 'email') !!}</td>
 					<td>{!! showChangedValue($registration, 'phone') !!}</td>
 					<td>
-						{!! showChangedValue($registration, 'shortCV', true) !!}
+						{!! $shortCV !!}
 					</td>
 					<td>
-						{!! showChangedValue($registration, 'passport', true) !!}
+						{!! $passport !!}
 					</td>
 					<td>{!! showChangedValue($registration, 'gender') !!}</td>
 					<td>{!! showChangedValue($registration, 'birthday') !!}</td>
 					<td>{!! showChangedValue($registration, 'birthmonth') !!}</td>
 					<td>{!! showChangedValue($registration, 'birthyear') !!}</td>
-					<td>{!! showChangedValue($registration, 'training') !!}</td>		
+					<td>{!! showChangedValue($registration, 'training') !!}</td>
 					<td>{!! showChangedValue($registration, 'course') !!}</td>
 					<td>{!! showChangedValue($registration, 'experience') !!}</td>
 					<td>{!! showChangedValue($registration, 'course_name') !!}</td>
 					<td>{!! showChangedValue($registration, 'galadinner') !!}</td>
 					<td>{!! showChangedValue($registration, 'payment_form') !!}</td>
 					<td>{!! showChangedValue($registration, 'payment_method') !!}</td>
-					
+
 				</tr>
 			@endforeach
 		@endif

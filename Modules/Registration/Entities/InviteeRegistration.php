@@ -88,6 +88,22 @@ class InviteeRegistration extends Model implements Auditable
         // });
     }
 
+    public function generateTags(): array
+    {
+
+        $tags = [];
+
+        if ($this->isDirty('shortCV')) {
+            return ['shortCV'];
+        }
+
+        if ($this->isDirty('passport')) {
+            return ['passport'];
+        }
+
+        return $tags;
+    }
+
     public function getReportLangAttribute($value)
     {
         if (!isset($this->attributes['report_lang'])) {

@@ -247,7 +247,7 @@
 
 									<!-- Input file thật (bị ẩn) -->
 									<input class="file-upload-input" type="file" name="report_file_summary"
-										id="report_file_summary_input" value="{{ $registration->report_file_summary }}">
+										id="report_file_summary_input">
 
 
 								</div>

@@ -1,24 +1,31 @@
 @php
 	use Illuminate\Support\Str;
 	use Modules\Registration\Entities\SpeakerRegistrationVn;
-// 	$latestChanges = [];
-//     $registration = SpeakerRegistrationVn::find(12);
-// foreach ($registration->audits()->where('event', 'updated')->latest()->get() as $audit) {
-//     foreach ($audit->new_values as $field => $newValue) {
-//         // Chỉ lưu nếu chưa có thời gian thay đổi của field này
-//         if (!isset($latestChanges[$field])) {
-//             $latestChanges[$field] = [
-//                 'changed_at' => $audit->created_at,
-//                 'new_value' => $newValue,
-//                 'old_value' => $audit->old_values[$field] ?? null,
-//             ];
-//         }
-//     }
-// }
+	// 	$latestChanges = [];
+	//     $registration = SpeakerRegistrationVn::find(12);
+	// foreach ($registration->audits()->where('event', 'updated')->latest()->get() as $audit) {
+	//     foreach ($audit->new_values as $field => $newValue) {
+	//         // Chỉ lưu nếu chưa có thời gian thay đổi của field này
+	//         if (!isset($latestChanges[$field])) {
+	//             $latestChanges[$field] = [
+	//                 'changed_at' => $audit->created_at,
+	//                 'new_value' => $newValue,
+	//                 'old_value' => $audit->old_values[$field] ?? null,
+	//             ];
+	//         }
+	//     }
+	// }
 
-// echo '<pre>';
-// print_r($latestChanges);
-// echo '</pre>'; die();
+	// echo '<pre>';
+	// print_r($latestChanges);
+	// echo '</pre>'; die();
+
+	/*dd(app(SpeakerRegistrationVn::class)->find(33)->audits()
+					->where('event', 'updated')
+					->where('tags', '')
+
+					->latest()
+					->first());*/
 @endphp
 <table border="1" cellspacing="0" cellpadding="0" style="width: 2000px">
 	<thead>
@@ -67,27 +74,16 @@
 	<tbody>
 		@if($registrations->isNotEmpty())
 			@foreach($registrations as $registration)
-				@php 
-					$lastAudit = $registration->audits()
-        ->where('event', 'updated')
-        ->latest()
-        ->first();
+				@php
 
-	
-	$latestFields = [];
+					$lastAudit = getLastAudit($registration);
+					$report_file_full = getDownloadLink($registration, 'report_file_full', 'Download');
+					$report_file_summary = getDownloadLink($registration, 'report_file_summary', 'Download');
 
-	if ($lastAudit && $lastAudit->new_values) {
-		foreach ($lastAudit->new_values as $field => $newValue) {
-			$latestFields[$field] = [
-				'old' => $lastAudit->old_values[$field] ?? null,
-				'new' => $newValue,
-				'created_at' => $lastAudit->created_at->format('d/m/Y H:i'),
-			];
-		}
-	}
-
-	$registration->latest_updated_fields = $latestFields;
-    $registration->latest_updated_at = $lastAudit && $lastAudit->created_at ? $lastAudit->created_at->format('d/m/Y H:i'): null;
+					$registration->latest_updated_fields = getLatestFields($lastAudit);
+					$registration->latest_updated_at = $lastAudit && $lastAudit->created_at
+						? $lastAudit->created_at->format('d/m/Y H:i')
+						: null;
 				@endphp
 				<tr>
 					<td>{{ $registration->created_at->format('d/m/Y H:i') }}</td>
@@ -97,10 +93,12 @@
 					<td>{!! showChangedValue($registration, 'session') !!}</td>
 					<td>{!! showChangedValue($registration, 'report_lang') !!}</td>
 					<td>
-						{!! showChangedValue($registration, 'report_file_summary', true) !!}
+						{!!  $report_file_summary !!}
+						<!-- {!! showChangedValue($registration, 'report_file_summary', true) !!} -->
 					</td>
 					<td>
-						{!! showChangedValue($registration, 'report_file_full', true) !!}
+						{!!  $report_file_full !!}
+						<!-- {!! showChangedValue($registration, 'report_file_full', true) !!} -->
 					</td>
 					<td>{!! showChangedValue($registration, 'journal_vn') !!}</td>
 					<td>{!! showChangedValue($registration, 'title') !!}</td>
@@ -120,7 +118,7 @@
 					<td>{!! showChangedValue($registration, 'experience') !!}</td>
 					<td>{!! showChangedValue($registration, 'course_name') !!}</td>
 					<td>{!! showChangedValue($registration, 'galadinner') !!}</td>
-					
+
 					<td>{!! showChangedValue($registration, 'form_invitation') !!}</td>
 					<td>{!! showChangedValue($registration, 'form_certificate') !!}</td>
 				</tr>

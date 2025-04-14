@@ -2,7 +2,10 @@
 
 namespace Modules\Registration\Entities;
 
+use Exception;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Log;
 use Modules\Registration\Traits\Attendance;
 use Carbon\Carbon;
 use OwenIt\Auditing\Contracts\Auditable;
@@ -19,6 +22,8 @@ class SpeakerRegistrationVn extends Model implements Auditable
      * @var string
      */
     protected $table = 'speaker_registration_vn';
+
+    protected $auditCustomTags = [];
 
     /**
      * @var array
@@ -58,6 +63,7 @@ class SpeakerRegistrationVn extends Model implements Auditable
     ];
 
 
+
     protected static function boot()
     {
         parent::boot();
@@ -69,6 +75,8 @@ class SpeakerRegistrationVn extends Model implements Auditable
             $registration->title_other = request()->titleOther;
             $registration->session = request()->otherSession ?? request()->session;
             $registration->course = request()->other_course ?? request()->course;
+
+
             //$registration->report_deadline_summary = Carbon::createFromFormat('d/m/Y', request()->report_deadline_summary)->format('Y-m-d');
             //$registration->report_deadline_full = Carbon::createFromFormat('d/m/Y', request()->report_deadline_full)->format('Y-m-d');
         };
@@ -86,6 +94,23 @@ class SpeakerRegistrationVn extends Model implements Auditable
         //     // $registration->guest_code = $registration->getCode($registration);
         //     // $registration->save();
         // });
+    }
+
+    public function generateTags(): array
+    {
+
+        $tags = [];
+
+
+        if ($this->isDirty('report_file_full')) {
+            return ['report_file_full'];
+        }
+
+        if ($this->isDirty('report_file_summary')) {
+            return ['report_file_summary'];
+        }
+
+        return $tags;
     }
 
     public function getReportLangAttribute($value)

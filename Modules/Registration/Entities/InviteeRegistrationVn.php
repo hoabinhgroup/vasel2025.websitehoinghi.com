@@ -85,6 +85,20 @@ class InviteeRegistrationVn extends Model implements Auditable
         // });
     }
 
+    public function generateTags(): array
+    {
+
+        $tags = [];
+
+
+        if ($this->isDirty('unc_statement')) {
+            return ['unc_statement'];
+        }
+
+
+        return $tags;
+    }
+
     public function getReportLangAttribute($value)
     {
         if (!isset($this->attributes['report_lang'])) {

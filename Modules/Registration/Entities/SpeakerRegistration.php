@@ -88,6 +88,31 @@ class SpeakerRegistration extends Model implements Auditable
         // });
     }
 
+    public function generateTags(): array
+    {
+
+        $tags = [];
+
+
+        if ($this->isDirty('report_file_full')) {
+            return ['report_file_full'];
+        }
+
+        if ($this->isDirty('report_file_summary')) {
+            return ['report_file_summary'];
+        }
+
+        if ($this->isDirty('shortCV')) {
+            return ['shortCV'];
+        }
+
+        if ($this->isDirty('passport')) {
+            return ['passport'];
+        }
+
+        return $tags;
+    }
+
     public function getReportLangAttribute($value)
     {
         if (!isset($this->attributes['report_lang'])) {

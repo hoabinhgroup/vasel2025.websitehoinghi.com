@@ -109,7 +109,7 @@ class SpeakerRegistrationVnController extends PublicController
 
     //  dd($request->all());
     // if($request->has('id'))
-    $registration = SpeakerRegistrationVn::updateOrCreate(['id' => $request->id ?? null], $request->all());
+    $registration = SpeakerRegistrationVn::updateOrCreate(['id' => $request->id ?? null], $request->except(['report_file_summary', 'report_file_full']));
 
     event(new AttachEvent($request, $registration));
 

@@ -49,27 +49,18 @@
 	<tbody>
 		@if($registrations->isNotEmpty())
 			@foreach($registrations as $registration)
-			@php 
-					$lastAudit = $registration->audits()
-        ->where('event', 'updated')
-        ->latest()
-        ->first();
+				@php
 
-	
-	$latestFields = [];
+					$lastAudit = getLastAudit($registration);
+					$report_file_full = getDownloadLink($registration, 'report_file_full', 'Download');
+					$report_file_summary = getDownloadLink($registration, 'report_file_summary', 'Download');
+					$shortCV = getDownloadLink($registration, 'shortCV', 'Download');
+					$passport = getDownloadLink($registration, 'passport', 'Download');
 
-	if ($lastAudit && $lastAudit->new_values) {
-		foreach ($lastAudit->new_values as $field => $newValue) {
-			$latestFields[$field] = [
-				'old' => $lastAudit->old_values[$field] ?? null,
-				'new' => $newValue,
-				'created_at' => $lastAudit->created_at->format('d/m/Y H:i'),
-			];
-		}
-	}
-
-	$registration->latest_updated_fields = $latestFields;
-    $registration->latest_updated_at = $lastAudit && $lastAudit->created_at ? $lastAudit->created_at->format('d/m/Y H:i'): null;
+					$registration->latest_updated_fields = getLatestFields($lastAudit);
+					$registration->latest_updated_at = $lastAudit && $lastAudit->created_at
+						? $lastAudit->created_at->format('d/m/Y H:i')
+						: null;
 				@endphp
 				<tr>
 					<td>{{ $registration->created_at->format('d/m/Y H:i') }}</td>
@@ -81,10 +72,10 @@
 					{{-- <td>{!! showChangedValue($registration, 'report_deadline_summary') !!}</td>
 					<td>{!! showChangedValue($registration, 'report_deadline_full') !!}</td> --}}
 					<td>
-						{!! showChangedValue($registration, 'report_file_summary', true) !!}
+						{!! $report_file_summary !!}
 					</td>
 					<td>
-						{!! showChangedValue($registration, 'report_file_full', true) !!}
+						{!! $report_file_full !!}
 					</td>
 					<td>{!! showChangedValue($registration, 'journal_vn') !!}</td>
 					<td>{!! showChangedValue($registration, 'title') !!}</td>
@@ -95,10 +86,10 @@
 					<td>{!! showChangedValue($registration, 'email') !!}</td>
 					<td>{!! showChangedValue($registration, 'phone') !!}</td>
 					<td>
-						{!! showChangedValue($registration, 'shortCV', true) !!}
+						{!! $shortCV !!}
 					</td>
 					<td>
-						{!! showChangedValue($registration, 'passport', true) !!}
+						{!! $passport !!}
 					</td>
 					<td>{!! showChangedValue($registration, 'gender') !!}</td>
 					<td>{!! showChangedValue($registration, 'birthday') !!}</td>
