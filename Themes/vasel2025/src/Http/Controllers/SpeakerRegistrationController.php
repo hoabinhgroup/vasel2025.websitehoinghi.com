@@ -109,7 +109,7 @@ class SpeakerRegistrationController extends PublicController
 
     //  dd($request->all());
     // if($request->has('id'))
-    $registration = SpeakerRegistration::updateOrCreate(['id' => $request->id ?? null], $request->all());
+    $registration = SpeakerRegistration::updateOrCreate(['id' => $request->id ?? null], $request->except(['report_file_summary', 'report_file_full', 'shortCV', 'passport']));
 
     event(new AttachEvent($request, $registration));
 

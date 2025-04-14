@@ -97,7 +97,7 @@ class InviteeRegistrationController extends PublicController
 
     //dd($request->all());
     // if($request->has('id'))
-    $registration = InviteeRegistration::updateOrCreate(['id' => $request->id ?? null], $request->all());
+    $registration = InviteeRegistration::updateOrCreate(['id' => $request->id ?? null], $request->except(['shortCV', 'passport']));
 
     event(new AttachEvent($request, $registration));
 

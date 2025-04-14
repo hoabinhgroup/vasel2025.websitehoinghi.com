@@ -94,7 +94,7 @@ class InviteeRegistrationVnController extends PublicController
 
     //dd($request->all());
     // if($request->has('id'))
-    $registration = InviteeRegistrationVn::updateOrCreate(['id' => $request->id ?? null], $request->all());
+    $registration = InviteeRegistrationVn::updateOrCreate(['id' => $request->id ?? null], $request->except(['unc_statement']));
 
     event(new AttachEvent($request, $registration));
 
