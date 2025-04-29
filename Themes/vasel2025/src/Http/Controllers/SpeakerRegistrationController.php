@@ -31,36 +31,46 @@ class SpeakerRegistrationController extends PublicController
     //   themes('js/speaker-registration.js?v=' . time())
     // ]);
 
+    $rules = [
+      'title[]' => 'required',
+      'titleOther' => 'required_if:title[],other',
+      'topic' => 'required',
+      'session' => 'required',
+      'sessionOther' => 'required_if:session,other_session',
+      'report_lang' => 'required',
+      'report_deadline_summary' => 'required',
+      'report_deadline_full' => 'required',
+      // 'shortCV' => 'required|mimes:jpg,png,pdf,doc,docx|max:8120',
+      // 'passport' => 'required|mimes:jpg,png,pdf,doc,docx|max:8120',
+      'journal_vn' => 'required',
+      'fullname' => 'required',
+      'work' => 'required',
+      'organization' => 'required',
+      'address' => 'required',
+      'phone' => 'required',
+      'email' => 'required',
+      'gender' => 'required',
+      'birthday' => 'required|numeric',
+      'birthmonth' => 'required|numeric',
+      'birthyear' => 'required|numeric',
+      'training' => 'required',
+      'course' => 'required',
+      'other_course' => 'required_if:course,other_course',
+      'experience' => 'required',
+      'course_name' => 'required|min:1',
+      'galadinner' => 'required',
+    ];
+
+    if (isset($_GET['edit'])) {
+      $rules['shortCV'] = 'nullable|mimes:jpg,png,pdf,doc,docx|max:8120';
+      $rules['passport'] = 'nullable|mimes:jpg,png,pdf,doc,docx|max:8120';
+    } else {
+      $rules['shortCV'] = 'required|mimes:jpg,png,pdf,doc,docx|max:8120';
+      $rules['passport'] = 'required|mimes:jpg,png,pdf,doc,docx|max:8120';
+    }
+
     $validator = JsValidator::make(
-      [
-        'title[]' => 'required',
-        'titleOther' => 'required_if:title[],other',
-        'topic' => 'required',
-        'session' => 'required',
-        'sessionOther' => 'required_if:session,other_session',
-        'report_lang' => 'required',
-        'report_deadline_summary' => 'required',
-        'report_deadline_full' => 'required',
-        // 'shortCV' => 'required|mimes:jpg,png,pdf,doc,docx|max:8120',
-        // 'passport' => 'required|mimes:jpg,png,pdf,doc,docx|max:8120',
-        'journal_vn' => 'required',
-        'fullname' => 'required',
-        'work' => 'required',
-        'organization' => 'required',
-        'address' => 'required',
-        'phone' => 'required',
-        'email' => 'required',
-        'gender' => 'required',
-        'birthday' => 'required|numeric',
-        'birthmonth' => 'required|numeric',
-        'birthyear' => 'required|numeric',
-        'training' => 'required',
-        'course' => 'required',
-        'other_course' => 'required_if:course,other_course',
-        'experience' => 'required',
-        'course_name' => 'required|min:1',
-        'galadinner' => 'required',
-      ],
+      $rules,
       [
         'title[].required' => 'Please select a title.',
         'titleOther.required_if' => 'Please enter another title.',
