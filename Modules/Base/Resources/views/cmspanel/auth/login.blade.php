@@ -41,9 +41,9 @@
                 <!-- <h1 style="font-size: 2em;color: #fdd300;"><img src="https://cdn.websitehoinghi.com/apscvir-header-a4-copy.png" width="200" /></h1> -->
                 <!--                     <img src="/public/images/7b91b2efc18361b9f3d67e6102382cd4.png" alt="branding logo"> -->
               </div>
-              <h6 class="card-subtitle line-on-side text-muted text-center font-small-3 pt-2">
+              <!-- <h6 class="card-subtitle line-on-side text-muted text-center font-small-3 pt-2">
 
-              </h6>
+              </h6> -->
             </div>
             <div class="card-content">
               <div class="text-center"></div>
