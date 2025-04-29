@@ -35,6 +35,31 @@
 		.registrations a.blue {
 			background-color: #005696;
 		}
+
+		@media screen and (max-width: 768px) {
+			.registrations {
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+			}
+
+			.registrations a {
+				width: 100%;
+				height: 150px;
+				text-align: center;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: #fff;
+				text-decoration: none;
+				transition: all .3s ease;
+			}
+
+			.registrations a.green {
+				background-color: #28a745;
+			}
+
+		}
 	</style>
 	<div id="wrapper" class="container">
 

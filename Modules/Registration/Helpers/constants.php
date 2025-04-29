@@ -37,13 +37,11 @@ function showFieldWithUpdate($registration, $field)
 
 function showChangedValue($registration, $field, $isFile = false)
 {
-    \Log::info('Audit showChangedValue', [
-        'Audit showChangedValue' => $registration->latest_updated_fields,
-    ]);
+    // \Log::info('Audit showChangedValue', [
+    //     'Audit showChangedValue' => $registration->latest_updated_fields,
+    // ]);
 
-    if (in_array($field, ['form_invitation', 'form_certificate'])) {
-        return '<small style="color:#e67e22;">' . getTypeForm($registration->$field) . '</small>';
-    }
+
 
     if (!empty($registration->latest_updated_fields[$field])) {
         $old = $registration->latest_updated_fields[$field]['old'];
@@ -65,6 +63,9 @@ function showChangedValue($registration, $field, $isFile = false)
 
             return '<small style="color:#e74c3c;">' . e($new) . '</small> (Update ' . $created_at . ')';
         } else {
+            if (in_array($field, ['form_invitation', 'form_certificate'])) {
+                return '<small style="color:#e67e22;">' . getTypeForm($registration->$field) . '</small>';
+            }
             // return e($new) . ' (Update ' . $created_at . ')';
             return e($new);
         }
