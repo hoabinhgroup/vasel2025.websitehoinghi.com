@@ -69,7 +69,6 @@ class InviteeRegistration extends Model implements Auditable
             }));
             $registration->title_other = request()->titleOther;
             $registration->course = request()->other_course ?? request()->course;
-            $registration->course_name = json_encode(request()->course_name);
             $registration->is_international = 1;
         };
 

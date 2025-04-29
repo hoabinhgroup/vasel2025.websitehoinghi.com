@@ -406,19 +406,13 @@
 									<label for=""><strong>WORKSHOP REGISTRATION</strong>
 										<sup style="color:red">*</sup>:</label>
 									<div class="register-course">
+									@foreach (courses() as $course_name)
 										<label class="radio-inline">
-											<input type="checkbox" class="" name="course_name[]" value="1"
-												@if(isset($registration->course_name) && in_array(1, json_decode($registration->course_name))) checked @endif>
-											Khóa 1
-										</label>
-										<label for="">
-											<input type="checkbox" class="" name="course_name[]" value="2"
-												@if(isset($registration->course_name) && in_array(2, json_decode($registration->course_name))) checked @endif>Khóa 2
-										</label>
-										<label for="">
-											<input type="checkbox" class="" name="course_name[]" value="3"
-												@if(isset($registration->course_name) && in_array(3, json_decode($registration->course_name))) checked @endif>Khóa 3
-										</label>
+											<input type="radio" class="" name="course_name" value="{{  $course_name  }}"
+												@if($registration->course_name == $course_name) checked @endif>
+												{{  $course_name }}
+											</label>
+									@endforeach
 									</div>
 								</div><!-- .row -->
 							</div>
