@@ -318,7 +318,7 @@
 							<label class="passport" for="passport"><strong>PASSPORT</strong><sup
 									style="color:red">*</sup>:</label>
 							<div class="file-upload-wrapper">
-								<div class="file-upload-filename" id="passport_name" data-exists="{{ isset($registration->passport) ? '1' : '0' }}">
+								<div class="file-upload-filename" id="passport_name" data-exists="{{ isset($registration->passport) ? 1 : 0 }}">
 									@if (isset($registration->passport) && $registration->passport)
 										{{ $registration->passport }}
 									@else 
