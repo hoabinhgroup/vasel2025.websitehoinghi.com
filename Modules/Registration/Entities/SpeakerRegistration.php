@@ -134,6 +134,10 @@ class SpeakerRegistration extends Model implements Auditable
 
         $title = json_decode($value);
 
+        if ($this->attributes['title_other'] && empty($title)) {
+            return rtrim($this->attributes['title_other'], '.');
+        }
+
         if (!is_array($title)) {
             $title = [$value]; // fallback nếu không decode được
         }

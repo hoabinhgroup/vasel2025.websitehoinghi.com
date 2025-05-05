@@ -123,6 +123,10 @@ class InviteeRegistration extends Model implements Auditable
         $titleOther = ($this->attributes['title_other'] ? '.' . $this->attributes['title_other'] : '');
         $title = json_decode($value);
 
+        if ($this->attributes['title_other'] && empty($title)) {
+            return rtrim($this->attributes['title_other'], '.');
+        }
+
         if (!is_array($title)) {
             $title = [$value]; // fallback nếu không decode được
         }
@@ -161,6 +165,7 @@ class InviteeRegistration extends Model implements Auditable
 
     public function subjectCreated()
     {
+
         return 'VASEL 2025 - Registration Confirmation - ' . $this->title . '. ' . ucfirst($this->fullname);
     }
 
