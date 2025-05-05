@@ -329,8 +329,8 @@
 						</div><!-- .row -->
 					</div>
 
-					@if(!isset($_GET['edit']) || isset($_GET['edit']) && $registration->training == 'yes')
-						<div class="has_training" @if($registration->training == 'yes') style="display:block" @endif>
+					
+						<div class="has_training">
 							@php 
 								$array_course = ['GI Surgery', 'Urology', 'Orthopedic Surgery'];
 							@endphp
@@ -416,7 +416,6 @@
 
 							</div><!-- .row -->
 						</div>
-					@endif
 
 					<div class="form-group">
 						<div class="row no-gutters">
