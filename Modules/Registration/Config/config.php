@@ -14,6 +14,10 @@ return [
                 'hoabinhwebmaster@gmail.com',
                 'VASEL 2025',
             ],
+            [
+                'vicky@hoabinhtourist.com',
+                'Ms. Vicky',
+            ],
         ],
         'sending_server' => 25,
         'from_email' => 'hoithao@hoabinh-group.com',
