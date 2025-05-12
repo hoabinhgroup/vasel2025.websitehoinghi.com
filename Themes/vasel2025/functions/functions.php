@@ -231,6 +231,17 @@ if (!function_exists("courses")) {
     }
 }
 
+if (!function_exists("courses_en")) {
+    function courses_en()
+    {
+        return [
+            'Percutaneous Nephrolithotomy',
+            'Inguinal Hernia Surgery',
+            'Knee Arthroscopy'
+        ];
+    }
+}
+
 
 if (!function_exists("abstract_categories")) {
     function abstract_categories()
