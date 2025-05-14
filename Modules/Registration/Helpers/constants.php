@@ -70,6 +70,10 @@ function showChangedValue($registration, $field, $isFile = false)
             return e($new);
         }
     } else {
+
+        if (in_array($field, ['form_invitation', 'form_certificate'])) {
+            return '<small style="color:#e67e22;">' . getTypeForm($registration->$field) . '</small>';
+        }
         return $isFile ? showDownloadLink($registration, $field, basename(e($registration->$field))) : e($registration->$field);
     }
 
