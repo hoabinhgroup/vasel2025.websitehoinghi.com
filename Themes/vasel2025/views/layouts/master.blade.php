@@ -4,7 +4,8 @@
 <!--[if IE 8]><html xmlns="http://www.w3.org/1999/xhtml" lang="eng" xml:lang="eng" class="ie8"><![endif]-->
 <!--[if IE 9]><html xmlns="http://www.w3.org/1999/xhtml" lang="eng" xml:lang="eng" class="ie9"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!-->
-<html xmlns="http://www.w3.org/1999/xhtml" lang="eng" xml:lang="eng"><!--<![endif]-->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="eng" xml:lang="eng">
+<!--<![endif]-->
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -36,7 +37,7 @@
 	<div class="wrapper">
 		<div class="container">
 			<div id="banner">
-				<img width="100%" src="https://cdn.websitehoinghi.com/vasel2025/OPT%201-min.jpg">
+				<img width="100%" src="https://cdn.websitehoinghi.com/vasel2025/8c72c937d6f663a83ae7.jpg">
 			</div>
 		</div>
 		@yield('content')
