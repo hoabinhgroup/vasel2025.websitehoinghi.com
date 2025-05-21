@@ -67,10 +67,10 @@ Route::group(
 				])->where("getView", "^(?!" . BACKEND . ').*$');
 
 				Route::get("registration", "Vasel2025Controller@registration");
-
+				Route::get("program", function () {
+					return view('vasel2025::program');
+				});
 				Route::post("get-fee-total", "Vasel2025Controller@getFeeTotal");
-
-
 			}
 		);
 	}
