@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use Modules\Registration\Traits\Attendance;
 use Carbon\Carbon;
 use OwenIt\Auditing\Contracts\Auditable;
+use OwenIt\Auditing\Models\Audit;
+
 //use Illuminate\Database\Eloquent\SoftDeletes;
 
 class InviteeRegistrationVn extends Model implements Auditable
@@ -77,6 +79,12 @@ class InviteeRegistrationVn extends Model implements Auditable
 
         static::updating(function ($registration) use ($setRegistrationData) {
             $setRegistrationData($registration);
+        });
+
+        static::deleting(function ($registration) {
+            Audit::where('auditable_type', self::class)
+                ->where('auditable_id', $registration->id)
+                ->delete();
         });
 
         // static::created(function ($registration) {
