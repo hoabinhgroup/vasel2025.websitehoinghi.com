@@ -161,7 +161,8 @@ class SpeakerRegistrationVn extends Model implements Auditable
     protected function generateGuestCode()
     {
         $prefix = config('registration.speaker-registration-vn');
-        $sequence = sprintf("%03s", $this->count() + 1);
+        $maxId = self::max('id');
+        $sequence = sprintf("%03s", $maxId + 1);
         return "{$prefix}-{$sequence}";
     }
 
