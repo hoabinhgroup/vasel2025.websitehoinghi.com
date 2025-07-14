@@ -18,6 +18,11 @@ return [
                 'vicky@hoabinhtourist.com',
                 'Ms. Vicky',
             ],
+            [
+                'dh.qt3@hoabinh-group.com',
+                'Mr. Dustin',
+            ],
+
         ],
         'sending_server' => 25,
         'from_email' => 'hoithao@hoabinh-group.com',
