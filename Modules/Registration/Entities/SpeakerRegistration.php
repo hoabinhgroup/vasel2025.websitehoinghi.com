@@ -209,12 +209,12 @@ class SpeakerRegistration extends Model implements Auditable
 
     public function subjectCreated()
     {
-        return 'VASEL 2025 - Presentation Registration - ' . $this->title . '. ' . ucfirst($this->fullname);
+        return 'VASEL 2025 - Presentation Registration - ' . $this->title . '. ' . ucfirst($this->fullname) . ' - ' . $this->guest_code;
     }
 
     public function subjectUpdated()
     {
-        return 'VASEL 2025 - Edit Presentation Registration - ' . $this->title . '. ' . ucfirst($this->fullname);
+        return 'VASEL 2025 - Edit Presentation Registration - ' . $this->title . '. ' . ucfirst($this->fullname) . ' - ' . $this->guest_code;
     }
 
     public function updatedUrl()

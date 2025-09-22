@@ -177,12 +177,12 @@ class InviteeRegistrationVn extends Model implements Auditable
 
     public function subjectCreated()
     {
-        return 'VASEL 2025 - Đăng ký tham dự thành công - ' . $this->title . '. ' . ucfirst($this->fullname);
+        return 'VASEL 2025 - Đăng ký tham dự thành công - ' . $this->title . '. ' . ucfirst($this->fullname) . ' - ' . $this->guest_code;
     }
 
     public function subjectUpdated()
     {
-        return 'VASEL 2025 - Chỉnh sửa thành công - ' . $this->title . '. ' . ucfirst($this->fullname);
+        return 'VASEL 2025 - Chỉnh sửa thành công - ' . $this->title . '. ' . ucfirst($this->fullname) . ' - ' . $this->guest_code;
     }
 
     public function updatedUrl()
