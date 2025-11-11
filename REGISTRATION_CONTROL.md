@@ -30,16 +30,19 @@ DELEGATE_REGISTRATION_ENABLED=false
 ## Sử dụng Artisan Command
 
 ### Đóng tất cả form đăng ký:
+
 ```bash
 php artisan registration:control disable
 ```
 
 ### Mở tất cả form đăng ký:
+
 ```bash
 php artisan registration:control enable
 ```
 
 ### Đóng/mở form cụ thể:
+
 ```bash
 # Chỉ form speaker
 php artisan registration:control disable --type=speaker

@@ -30,21 +30,21 @@ class RegistrationControl extends Command
     {
         $action = $this->argument('action');
         $type = $this->option('type');
-        
+
         if (!in_array($action, ['enable', 'disable'])) {
             $this->error('Action must be either "enable" or "disable"');
             return 1;
         }
 
         $envPath = base_path('.env');
-        
+
         if (!File::exists($envPath)) {
             $this->error('.env file not found');
             return 1;
         }
 
         $envContent = File::get($envPath);
-        
+
         $enabled = $action === 'enable' ? 'true' : 'false';
 
         switch ($type) {
@@ -52,12 +52,12 @@ class RegistrationControl extends Command
                 $envContent = $this->updateEnvValue($envContent, 'SPEAKER_REGISTRATION_ENABLED', $enabled);
                 $this->info("Speaker registration has been {$action}d");
                 break;
-                
+
             case 'delegate':
                 $envContent = $this->updateEnvValue($envContent, 'DELEGATE_REGISTRATION_ENABLED', $enabled);
                 $this->info("Delegate registration has been {$action}d");
                 break;
-                
+
             case 'all':
             default:
                 $envContent = $this->updateEnvValue($envContent, 'REGISTRATION_ENABLED', $enabled);
@@ -66,10 +66,10 @@ class RegistrationControl extends Command
         }
 
         File::put($envPath, $envContent);
-        
+
         $this->call('config:clear');
         $this->info('Configuration cache cleared');
-        
+
         return 0;
     }
 
@@ -80,7 +80,7 @@ class RegistrationControl extends Command
     {
         $pattern = "/^{$key}=.*$/m";
         $replacement = "{$key}={$value}";
-        
+
         if (preg_match($pattern, $envContent)) {
             return preg_replace($pattern, $replacement, $envContent);
         } else {
