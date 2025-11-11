@@ -16,6 +16,8 @@ class RegistrationClosed
      */
     public function handle(Request $request, Closure $next)
     {
+
+        return abort(404);
         // Kiểm tra config để xem đăng ký có được bật hay không
         $registrationEnabled = config('registration.enabled', false);
 
