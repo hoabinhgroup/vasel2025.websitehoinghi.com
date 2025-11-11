@@ -11,17 +11,33 @@ Route::group(
 
 				Route::get("registration.html", 'Vasel2025Controller@registration')->name('registration');
 
-				Route::get("speaker-registration", 'SpeakerRegistrationController@form')->name('speaker.registration');
-				Route::post("speaker-registration-submit", 'SpeakerRegistrationController@submit')->name('speaker.registration.submit');
+				Route::get("speaker-registration", 'SpeakerRegistrationController@form')
+					->name('speaker.registration')
+					->middleware('registration.closed');
+				Route::post("speaker-registration-submit", 'SpeakerRegistrationController@submit')
+					->name('speaker.registration.submit')
+					->middleware('registration.closed');
 
-				Route::get("speaker-registration-vn", 'SpeakerRegistrationVnController@form')->name('speaker.registration.vn');
-				Route::post("speaker-registration-vn-submit", 'SpeakerRegistrationVnController@submit')->name('speaker.registration.vn.submit');
+				Route::get("speaker-registration-vn", 'SpeakerRegistrationVnController@form')
+					->name('speaker.registration.vn')
+					->middleware('registration.closed');
+				Route::post("speaker-registration-vn-submit", 'SpeakerRegistrationVnController@submit')
+					->name('speaker.registration.vn.submit')
+					->middleware('registration.closed');
 
-				Route::get("delegate-registration", 'InviteeRegistrationController@form')->name('invitee.registration');
-				Route::post("delegate-registration-submit", 'InviteeRegistrationController@submit')->name('invitee.registration.submit');
+				Route::get("delegate-registration", 'InviteeRegistrationController@form')
+					->name('invitee.registration')
+					->middleware('registration.closed');
+				Route::post("delegate-registration-submit", 'InviteeRegistrationController@submit')
+					->name('invitee.registration.submit')
+					->middleware('registration.closed');
 
-				Route::get("delegate-registration-vn", 'InviteeRegistrationVnController@form')->name('invitee.registration.vn');
-				Route::post("delegate-registration-vn-submit", 'InviteeRegistrationVnController@submit')->name('invitee.registration.vn.submit');
+				Route::get("delegate-registration-vn", 'InviteeRegistrationVnController@form')
+					->name('invitee.registration.vn')
+					->middleware('registration.closed');
+				Route::post("delegate-registration-vn-submit", 'InviteeRegistrationVnController@submit')
+					->name('invitee.registration.vn.submit')
+					->middleware('registration.closed');
 
 				Route::get("payment-registration-page", function () {
 					return view("Vasel2025::payment-registration-page");

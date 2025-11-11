@@ -82,5 +82,6 @@ class Kernel extends HttpKernel
     "throttle" => \Illuminate\Routing\Middleware\ThrottleRequests::class,
     "verified" => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
     'redirect.query.to.404' => \App\Http\Middleware\RedirectQueryStringTo404::class,
+    'registration.closed' => \App\Http\Middleware\RegistrationClosed::class,
   ];
 }
