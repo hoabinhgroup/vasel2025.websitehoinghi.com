@@ -17,8 +17,7 @@ class RegistrationClosed
     public function handle(Request $request, Closure $next)
     {
 
-
         // Kiểm tra config để xem đăng ký có được bật hay không
-        return response()->view('vasel2025::partials.registration-closed', 403);
+        return response()->view('vasel2025::partials.registration-closed');
     }
 }
