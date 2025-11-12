@@ -16,7 +16,7 @@ return [
     'delegate_registration_enabled' => env('DELEGATE_REGISTRATION_ENABLED', false),
 
     'close_message' => [
-        'en' => 'The registration period for VASEL 2025 has ended. We apologize for any inconvenience.',
-        'vn' => 'Thời gian đăng ký cho VASEL 2025 đã kết thúc. Chúng tôi xin lỗi vì sự bất tiện này.'
+        'en' => 'Online registration for the VASEL 2025 Conference is now closed.',
+        'vn' => 'Cổng đăng ký trực tuyến Hội nghị VASEL 2025 đã đóng. Trân trọng cảm ơn sự quan tâm của Quý vị.'
     ]
 ];

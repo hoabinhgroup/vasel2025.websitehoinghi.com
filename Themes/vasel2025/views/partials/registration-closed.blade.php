@@ -91,25 +91,12 @@
                         <h2 class="text-danger mb-3">Registration Closed</h2>
                         <h4 class="text-muted mb-4">Đăng ký đã đóng</h4>
                         <p class="text-muted mb-4">
-                            {{ $message_en ?? 'The registration period for VASEL 2025 has ended. We apologize for any
-                            inconvenience.' }}
+                            {{ $message_en ?? 'Online registration for the VASEL 2025 Conference is now closed.' }}
                         </p>
                         <p class="text-muted mb-4">
-                            <strong>{{ $message_vn ?? 'Thời gian đăng ký cho VASEL 2025 đã kết thúc. Chúng tôi xin lỗi
-                                vì sự bất tiện này.' }}</strong>
+                            <strong>{{ $message_vn ?? 'Cổng đăng ký trực tuyến Hội nghị VASEL 2025 đã đóng. Trân trọng
+                                cảm ơn sự quan tâm của Quý vị.' }}</strong>
                         </p>
-                        <div class="mt-4">
-                            <a href="{{ url('/') }}" class="btn btn-primary btn-lg">
-                                <i class="fas fa-home me-2"></i>
-                                Back to Homepage / Về trang chủ
-                            </a>
-                        </div>
-                        <div class="mt-3">
-                            <small class="text-muted">
-                                For more information, please contact us at: <br>
-                                <strong>info@vasel2025.com</strong>
-                            </small>
-                        </div>
                     </div>
                 </div>
             </div>
