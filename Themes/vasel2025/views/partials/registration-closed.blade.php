@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12 col-lg-12">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body text-center">
                     <h2 class="text-danger mb-3">Registration Closed</h2>
 
                     <p class="mb-4">
