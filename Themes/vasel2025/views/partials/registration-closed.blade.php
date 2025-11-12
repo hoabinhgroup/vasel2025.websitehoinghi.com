@@ -90,12 +90,14 @@
                         </div>
                         <h2 class="text-danger mb-3">Registration Closed</h2>
                         <h4 class="text-muted mb-4">Đăng ký đã đóng</h4>
-                        <p class="text-muted mb-4">
-                            {{ $message_en ?? 'Online registration for the VASEL 2025 Conference is now closed.' }}
-                        </p>
+
                         <p class="text-muted mb-4">
                             <strong>{{ $message_vn ?? 'Cổng đăng ký trực tuyến Hội nghị VASEL 2025 đã đóng. Trân trọng
                                 cảm ơn sự quan tâm của Quý vị.' }}</strong>
+
+                        <p class="text-muted mb-4">
+                            {{ $message_en ?? 'Online registration for the VASEL 2025 Conference is now closed.' }}
+                        </p>
                         </p>
                     </div>
                 </div>
