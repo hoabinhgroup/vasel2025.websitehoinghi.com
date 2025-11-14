@@ -84,7 +84,7 @@ Route::group(
 
 				Route::get("registration", "Vasel2025Controller@registration");
 				Route::get("program", function () {
-					return redirect('https://cdn.websitehoinghi.com/VASEL%202025.pdf');
+					return redirect('https://cdn.websitehoinghi.com/vasel2025/VASEL%202025.pdf');
 				});
 				Route::post("get-fee-total", "Vasel2025Controller@getFeeTotal");
 			}
